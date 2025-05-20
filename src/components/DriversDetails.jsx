@@ -6,7 +6,7 @@ import {Link} from "react-router";
 
 export default function DriversDetails() {
     const [driversDetails, setDriversDetails] = useState([]);
-    const [driverReasults, setDriverReasults] = useState([]);
+    const [Results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
     const params = useParams();
 
@@ -17,12 +17,17 @@ export default function DriversDetails() {
     const getDriversDetails = async () => {
         /*console.log("params", params);*/
 
-        const url = `http://ergast.com/api/f1/2013/drivers/${params.id}/driverStandings.json`
-        const url2 = `http://ergast.com/api/f1/2013/drivers/${params.id}/driverStandings.json`
-        const response = await axios.get(url);
+        const driverUrl = `http://ergast.com/api/f1/2013/drivers/${params.id}/driverStandings.json`;
+        const driverRacesUrl = `http://ergast.com/api/f1/2013/drivers/${params.id}/results.json`;
+        const response = await axios.get(driverUrl);
+        const response2 = await axios.get(driverRacesUrl);
         console.log(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]);
+        
         setDriversDetails(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0])
-
+  
+        
+        setResults(response2.data.MRData.RaceTable.Races)
+        console.log( "response2", response2.data.MRData.RaceTable.Races);
         setLoading(false);
     }
 
@@ -43,11 +48,36 @@ export default function DriversDetails() {
                     rel="noopener noreferrer">
                         <img src={`/public/img/link-black.png`} alt="" style={{ width: '18px', height: 'auto'}} />
                         </Link></li>
-                    {/*Biography: <a href={driversDetails.Driver.url} target="_blank" rel="noopener noreferrer">{driversDetails.Driver.url}</a>*/}
-                
                 </ul>
             </div>
             <div>
+         <div>           
+         <h1>Formula 1 2013 Results</h1>
+         <table>
+            <tbody>
+               <tr>
+                  <th>Round</th>
+                  <th>Grand Prix</th>
+                  <th>Team</th>
+                  <th>Grid</th>
+                  <th>Race</th>
+               </tr>
+               {Results.map((result,i) => {
+                  return (
+                     <tr key={result.round}>
+                        <td>{result.round}</td>
+                         <td>{result.raceName}</td>
+                        <td>{result.Results[0].Constructor.name}</td>
+                        <td>{result.Results[0].grid}</td>
+                        <td>{result.Results[0].position}</td>
+                     </tr>
+                  )
+               })}
+            </tbody>
+         </table>
+      </div>
+   
+
 
             </div>
         </div>
