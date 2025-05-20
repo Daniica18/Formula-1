@@ -24,13 +24,13 @@ export default function App() {
     };
 
     // const filteredData = stateFlags.filter((el) => {
-    
+
     // if (text === "" || region === "") {
-    
+
     // return el;
-    
+
     // }
-//});
+    //});
 
     return (
         <Router>
@@ -46,9 +46,12 @@ export default function App() {
                         <Link to="/races">Races</Link>
                     </li>
                 </ul>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                </ul>
             </nav>
 
-            <Routes>                
+            <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/drivers" element={<Drivers />} />
                 <Route path="/teams" element={<Teams />} />
