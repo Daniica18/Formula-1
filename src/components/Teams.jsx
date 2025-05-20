@@ -1,9 +1,7 @@
 import axios from "axios";
-// import Loader from "./Loader";
+import Loader from "./Loader";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-
-
 
 
 
