@@ -23,7 +23,7 @@ export default function Drivers() {
   };
 
   const handleClickDetails = (id) => {
-    const linkTo = `/:details/${id}`;
+    const linkTo = `/driverDetails/${id}`;
     navigate(linkTo);
   }
 
@@ -49,6 +49,7 @@ export default function Drivers() {
                 <td>{driver.position}</td>
                 <td
                   onClick={() => handleClickDetails(driver.Driver.driverId)}
+                  className="clicable"
                 >
                   {driver.Driver.familyName} {driver.Driver.givenName}</td>
                 <td>{driver.Constructors[0].name}</td>
