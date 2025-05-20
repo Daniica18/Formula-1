@@ -12,7 +12,7 @@ export default function App() {
             <nav className="main-navigation">
                 <ul>
                     <li>
-                        <Link to="/">Drivers</Link>
+                        <Link to="/drivers">Drivers</Link>
                     </li>
                     <li>
                         <Link to="/teams">Teams</Link>
@@ -25,6 +25,7 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<Drivers />} />
+                <Route path="/drivers" element={<Drivers />} />
                 <Route path="/teams" element={<Teams />} />
                 <Route path="/races" element={<Races />} />
                 <Route path="/driverDetails/:id" element={<DriversDetails />} />
