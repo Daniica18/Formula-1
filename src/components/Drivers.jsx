@@ -19,13 +19,19 @@ export default function Drivers() {
     const response = await axios.get(url);
     console.log(response);
     setDrivers(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
-
-
     setLoading(false);
-
-
   };
 
+  const handleClickDetails = (id) => {
+    const linkTo = `/:details/${id}`;
+    navigate (linkTo);
+  }
+
+  if (Loading) {
+    return <Loader />;
+  }
+
+  
   return (
     <div>
       <table>
@@ -41,7 +47,10 @@ export default function Drivers() {
             return (
               <tr key={driver.Driver.driverId}>
                 <td>{driver.position}</td>
-                <td>{driver.Driver.familyName} {driver.Driver.givenName}</td>
+                <td 
+                onClick= {()=>handleClickDetails(driver.Driver.driverId)}
+               >
+                {driver.Driver.familyName} {driver.Driver.givenName}</td>
                 <td>{driver.Constructors[0].name}</td>
                 <td>{driver.points}</td>
 
