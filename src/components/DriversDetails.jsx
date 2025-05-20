@@ -43,8 +43,6 @@ export default function DriversDetails() {
                     rel="noopener noreferrer">
                         <img src={`/public/img/link-black.png`} alt="" style={{ width: '18px', height: 'auto'}} />
                         </Link></li>
-                    {/*Biography: <a href={driversDetails.Driver.url} target="_blank" rel="noopener noreferrer">{driversDetails.Driver.url}</a>*/}
-                
                 </ul>
             </div>
             <div>
