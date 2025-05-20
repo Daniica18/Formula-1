@@ -22,6 +22,12 @@ export default function Races() {
       setIsLoading(false);
    };
 
+   const handleClickDetailes = (id) => {
+      console.log(id);
+      const linkTo = `/details/${id}`;
+      navigate(linkTo);
+   };
+
    if (isLoading) {
       return (<Loader />)
    }
@@ -45,7 +51,9 @@ export default function Races() {
                   return (
                      <tr key={race.round}>
                         <td>{race.round}</td>
-                        <td>{race.raceName}</td>
+                        <td onClick={() => handleClickDetailes(race.round)}
+                           className="clicable">
+                           {race.raceName}</td>
                         <td>{race.Circuit.circuitName}</td>
                         <td>{race.date}</td>
                         <td>{race.Results[0].Driver.familyName}</td>
