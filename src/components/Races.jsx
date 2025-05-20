@@ -6,7 +6,7 @@ import axios from "axios";
 export default function Races() {
    const [races, setRaces] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
-
+   const navigate = useNavigate();
 
    useEffect(() => {
       getRaces();
@@ -24,7 +24,7 @@ export default function Races() {
 
    const handleClickDetailes = (id) => {
       console.log(id);
-      const linkTo = `/details/${id}`;
+      const linkTo = `/raceDetails/${id}`;
       navigate(linkTo);
    };
 

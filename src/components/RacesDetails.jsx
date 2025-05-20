@@ -22,7 +22,7 @@ export default function RacesDetails() {
         console.log(response1);
         setRsultsDettails(response1.data);
         console.log(response1);
-        setQualifyingDettails(response1.data);
+        setQualifyingDettails(response2.data);
         setIsLoading(false);
     };
     
