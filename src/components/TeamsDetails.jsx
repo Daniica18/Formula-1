@@ -15,8 +15,8 @@ export default function TeamDetails() {
     const getTeamDetails = async () => {
         const url = `http://ergast.com/api/f1/2013/constructors/${params.id}/constructorStandings.json`;
         const response = await axios.get(url);
-        console.log(response.data.MRData);
-        // setTeamDetails(response.data.MRData);
+        console.log(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
+        setTeamDetails(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
         setIsLoading(false);
     };
 
@@ -25,9 +25,9 @@ export default function TeamDetails() {
     }
 
     return (
-        <>
-
-        </>
+        <div>
+            <></>
+        </div>
 
     )
 };
