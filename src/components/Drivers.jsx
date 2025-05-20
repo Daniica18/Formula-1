@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 
 export default function Drivers() {
   const [drivers, setDrivers] = useState([]);
-  const[loading,setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
 
@@ -24,14 +24,14 @@ export default function Drivers() {
 
   const handleClickDetails = (id) => {
     const linkTo = `/:details/${id}`;
-    navigate (linkTo);
+    navigate(linkTo);
   }
 
-  if (Loading) {
+  if (loading) {
     return <Loader />;
   }
 
-  
+
   return (
     <div>
       <table>
@@ -47,10 +47,10 @@ export default function Drivers() {
             return (
               <tr key={driver.Driver.driverId}>
                 <td>{driver.position}</td>
-                <td 
-                onClick= {()=>handleClickDetails(driver.Driver.driverId)}
-               >
-                {driver.Driver.familyName} {driver.Driver.givenName}</td>
+                <td
+                  onClick={() => handleClickDetails(driver.Driver.driverId)}
+                >
+                  {driver.Driver.familyName} {driver.Driver.givenName}</td>
                 <td>{driver.Constructors[0].name}</td>
                 <td>{driver.points}</td>
 

@@ -3,6 +3,8 @@ import Drivers from "./components/Drivers";
 import Teams from "./components/Teams";
 import Races from "./components/Races";
 import DriversDetails from "./components/DriversDetails";
+import TeamsDetails from "./components/TeamsDetails";
+import RacesDetails from "./components/RacesDetails";
 
 export default function App() {
     return (
@@ -22,12 +24,12 @@ export default function App() {
             </nav>
 
             <Routes>
-                <Route path="/" element={< Drivers />} />
-                <Route path="/teams" element={< Teams />} />
-                <Route path="/races" element={< Races />} />
-                {/* <Route path="/details/:id" element={<DriversDetails />} /> */}
-                {/* <Route path="/teams/details/:id" element={<TeamsDetails />} /> */}
-                <Route path="/races/details/:id" element={<RacesDetails />} />
+                <Route path="/" element={<Drivers />} />
+                <Route path="/teams" element={<Teams />} />
+                <Route path="/races" element={<Races />} />
+                <Route path="/driverDetails/:id" element={<DriversDetails />} />
+                <Route path="/teamDetails/:id" element={<TeamsDetails />} />
+                <Route path="/raceDetails/:id" element={<RacesDetails />} />
 
             </Routes>
         </Router>
