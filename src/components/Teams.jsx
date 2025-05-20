@@ -22,8 +22,14 @@ export default function Teams() {
         setIsLoading(false);
     }
 
-    if(isLoading){
-        return<Loader />
+    const handleClickDetails = (id) => {
+        console.log(id);
+        const linkTo = `/teamDetails/${id}`
+        navigate(linkTo);
+    }
+
+    if (isLoading) {
+        return <Loader />
     }
 
     return (
@@ -39,11 +45,16 @@ export default function Teams() {
                         <tbody>
                             <tr key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
-                                <td>{team.Constructor.name}</td>
+                                <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
+                                    className="teams">
+                                    {team.Constructor.name}</td>
+                               
                                 <td><a href="Details" /></td>
                                 <td>{team.points}</td>
                             </tr>
                         </tbody>
+
+
 
 
                     )
