@@ -30,6 +30,27 @@ export default function RacesDetails(props) {
         console.log("qualifyingResponse ", qualifyingDetails);
     };
 
+    const filteredFlag = (nationality) => {
+        console.log("nationality ", nationality);
+        if (nationality === "British" || nationality === "UK") {
+            return "GB";
+        } else if (nationality === "USA") {
+            return "US";
+        } else if (nationality === "Dutch") {
+            return "NL";
+        } else if (nationality === "Korea") {
+            return "KR";
+        } else if (nationality === "UAE") {
+            return "AE";
+        } else {
+            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
+            console.log("flag ", flag);
+            if (flag) {
+                return flag.alpha_2_code;
+            }
+        }
+    };
+
     const handleClickDriverDetailes = (id) => {
         console.log(id);
         const linkTo = `/driverDetails/${id}`;
@@ -39,7 +60,7 @@ export default function RacesDetails(props) {
     const handleClickTeamDetails = (id) => {
         const linkTo = `/teamDetails/${id}`;
         navigate(linkTo);
-    }
+    };
 
 
     if (isLoading) {
@@ -50,6 +71,7 @@ export default function RacesDetails(props) {
             <div>
                 <div></div>
                 <div>
+                    <Flag country={filteredFlag(resultsDetails.Circuit.Location.country)} />
                     <h2>{resultsDetails.Circuit.circuitName}</h2>
                 </div>
                 <div>
@@ -100,6 +122,7 @@ export default function RacesDetails(props) {
                                     <td
                                         onClick={() => handleClickDriverDetailes(qualify.Driver.driverId)}
                                         className="clicable">
+                                        <Flag country={filteredFlag(qualify.Driver.nationality)} />
                                         {qualify.Driver.familyName}</td>
                                     <td
                                         onClick={() => handleClickTeamDetails(qualify.Constructor.constructorId)}
@@ -132,6 +155,7 @@ export default function RacesDetails(props) {
                                     <td
                                         onClick={() => handleClickDriverDetailes(result.Driver.driverId)}
                                         className="clicable">
+                                        <Flag country={filteredFlag(result.Driver.nationality)} />
                                         {result.Driver.familyName}</td>
                                     <td
                                         onClick={() => handleClickTeamDetails(result.Constructor.constructorId)}

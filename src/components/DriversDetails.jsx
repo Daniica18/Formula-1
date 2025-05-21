@@ -18,7 +18,6 @@ export default function DriversDetails(props) {
     }, []);
 
     const getDriversDetails = async () => {
-        /*console.log("params", params);*/
 
         const driverUrl = `http://ergast.com/api/f1/2013/drivers/${params.id}/driverStandings.json`;
         const driverRacesUrl = `http://ergast.com/api/f1/2013/drivers/${params.id}/results.json`;
@@ -28,37 +27,58 @@ export default function DriversDetails(props) {
 
         setDriversDetails(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0])
 
-
         setResults(response2.data.MRData.RaceTable.Races)
         console.log("response2", response2.data.MRData.RaceTable.Races);
         setLoading(false);
-    }
+    };
+
+    const filteredFlag = (nationality) => {
+        console.log("nationality ", nationality);
+        if (nationality === "British" || nationality === "UK") {
+            return "GB";
+        } else if (nationality === "USA") {
+            return "US";
+        } else if (nationality === "Dutch") {
+            return "NL";
+        } else if (nationality === "Korea") {
+            return "KR";
+        } else if (nationality === "UAE") {
+            return "AE";
+        } else {
+            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
+            console.log("flag ", flag);
+            if (flag) {
+                return flag.alpha_2_code;
+            }
+        }
+    };
 
     const handleClickDetails = () => {
         const linkTo = `/teams`;
         navigate(linkTo);
-    }
+    };
 
     const handleClickTeamDetails = (id) => {
         const linkTo = `/teamDetails/${id}`;
         navigate(linkTo);
-    }
+    };
 
     const handleClickRaceDetails = (id) => {
         const linkTo = `/raceDetails/${id}`;
         navigate(linkTo);
-    }
+    };
 
     if (loading) {
         return <Loader />;
-    }
+    };
 
     return (
         <div>
             <div>
                 <ul>
                     <li><img src={`/public/img/_${driversDetails.Driver.driverId}.jpg`} alt=""
-                    style={{ width: '150px', height: 'auto' }}  /></li>
+                        style={{ width: '150px', height: 'auto' }} /></li>
+                    <li><Flag country={filteredFlag(driversDetails.Driver.nationality)} /></li>
                     <li>{driversDetails.Driver.givenName}</li>
                     <li>{driversDetails.Driver.familyName}</li>
                     <li>Country: {driversDetails.Driver.nationality}</li>
@@ -91,6 +111,7 @@ export default function DriversDetails(props) {
                                         <td
                                             onClick={() => handleClickRaceDetails(result.round)}
                                             className="clicable">
+                                            <Flag country={filteredFlag(result.Circuit.Location.country)} />
                                             {result.raceName}</td>
                                         <td
                                             onClick={() => handleClickDetails()}
