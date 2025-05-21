@@ -64,7 +64,7 @@ export default function App() {
                 <Link to="/PrivacyPolicy">Privacy Policy</Link>
                 <Link to="/Partners">Partners</Link>
                 <Link to="/TermsOfUse">Terms of use</Link>
-                <Link to="/">Become an affiliate</Link>
+                <Link to="/BecomeAnAffiliate">Become an affiliate</Link>
             </footer>
 
         </Router>
