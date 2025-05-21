@@ -55,7 +55,7 @@ export default function App() {
 
             <footer>
                 <Link to="/Contact">Contact</Link>
-                <Link to="/">Privacy Policy</Link>
+                <Link to="/PrivacyPolicy">Privacy Policy</Link>
                 <Link to="/">Partners</Link>
                 <Link to="/">Terms of use</Link>
                 <Link to="/">Become an affiliate</Link>
