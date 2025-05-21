@@ -59,7 +59,7 @@ export default function App() {
                 <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} />} />
             </Routes>
 
-            <footer>
+            <footer className="footer">
                 <Link to="/Contact">Contact</Link>
                 <Link to="/PrivacyPolicy">Privacy Policy</Link>
                 <Link to="/Partners">Partners</Link>
