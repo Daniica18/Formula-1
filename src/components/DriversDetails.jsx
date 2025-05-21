@@ -56,6 +56,8 @@ export default function DriversDetails() {
         <div>
             <div>
                 <ul>
+                    <li><img src={`/public/img/_${driversDetails.Driver.driverId}.jpg`} alt=""
+                    style={{ width: '150px', height: 'auto' }}  /></li>
                     <li>{driversDetails.Driver.givenName}</li>
                     <li>{driversDetails.Driver.familyName}</li>
                     <li>Country: {driversDetails.Driver.nationality}</li>

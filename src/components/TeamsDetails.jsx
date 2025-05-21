@@ -48,6 +48,8 @@ export default function TeamDetails() {
         <div>
             <div>
                 <ul>
+                    <li><img src={`/public/img/${teamDetails.Constructor.constructorId}.png`} alt=""
+                    style={{ width: '100px', height: 'auto' }}  /></li> 
                     <li>Country: {teamDetails.Constructor.nationality}</li>
                     <li>Position: {teamDetails.position}</li>
                     <li>Points: {teamDetails.points}</li>
