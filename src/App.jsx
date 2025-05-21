@@ -13,6 +13,7 @@ import CardTwo from "./components/CardTwo";
 import CardThree from "./components/CardThree";
 import CardFour from "./components/CardFour";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
     const [flags, setFlags] = useState([]);
@@ -59,16 +60,7 @@ export default function App() {
                 <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} />} />
             </Routes>
 
-            <footer className="footer">
-                <Link to="/Contact">Contact</Link>
-                <Link to="/PrivacyPolicy">Privacy Policy</Link>
-                <Link to="/Partners">Partners</Link>
-                <Link to="/TermsOfUse">Terms of use</Link>
-                <Link to="/BecomeAnAffiliate">Become an affiliate</Link>
-            </footer>
-
+            <Footer />
         </Router>
-
-
     )
 };
