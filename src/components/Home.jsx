@@ -19,7 +19,7 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
-        POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?
+        <Link to="">POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?</Link> 
         </Typography>
       </CardContent>
     </Card>
@@ -32,7 +32,7 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
-        Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco
+        <Link to="">Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco</Link>
         </Typography>
       </CardContent>
     </Card>
@@ -45,7 +45,7 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
-       TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design
+       <Link to="">TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design</Link>
         </Typography>
       </CardContent>
     </Card>
@@ -58,7 +58,7 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
-        THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco
+        <Link to="">THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco</Link>
         </Typography>
       </CardContent>
     </Card>

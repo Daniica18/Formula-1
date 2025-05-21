@@ -1,8 +1,10 @@
+  import { Link } from "react-router";
+
   export default function Footer(){
   return(
   <footer className="footer">
         <div className="footer-menu">
-            <a href=""></a>
+            <Link to= ""></Link>
             <a href=""></a>
             <a href=""></a>
             <a href=""></a>
