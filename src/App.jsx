@@ -8,6 +8,12 @@ import Races from "./components/Races";
 import DriversDetails from "./components/DriversDetails";
 import TeamsDetails from "./components/TeamsDetails";
 import RacesDetails from "./components/RacesDetails";
+import CardOne from "./components/CardOne";
+import CardTwo from "./components/CardTwo";
+import CardThree from "./components/CardThree";
+import CardFour from "./components/CardFour";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
     const [flags, setFlags] = useState([]);
@@ -42,15 +48,19 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/drivers" element={<Drivers flags = {flags} />} />
-                <Route path="/teams" element={<Teams flags = {flags} />} />
-                <Route path="/races" element={<Races flags = {flags} />} />
-                <Route path="/driverDetails/:id" element={<DriversDetails flags = {flags} />} />
-                <Route path="/teamDetails/:id" element={<TeamsDetails flags = {flags} />} />
-                <Route path="/raceDetails/:id" element={<RacesDetails flags = {flags} />} />
-
+                <Route path="/cardOne" element={<CardOne />} />
+                <Route path="/cardTwo" element={<CardTwo />} />
+                <Route path="/cardThree" element={<CardThree />} />
+                <Route path="/cardFour" element={<CardFour />} />
+                <Route path="/drivers" element={<Drivers flags={flags} />} />
+                <Route path="/teams" element={<Teams flags={flags} />} />
+                <Route path="/races" element={<Races flags={flags} />} />
+                <Route path="/driverDetails/:id" element={<DriversDetails flags={flags} />} />
+                <Route path="/teamDetails/:id" element={<TeamsDetails flags={flags} />} />
+                <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} />} />
             </Routes>
-        </Router>
 
+            <Footer />
+        </Router>
     )
 };
