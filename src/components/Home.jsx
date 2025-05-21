@@ -31,7 +31,7 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
-        POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?
+        Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco
         </Typography>
       </CardContent>
     </Card>
