@@ -28,6 +28,12 @@ export default function Races() {
       navigate(linkTo);
    };
 
+   const handleClickDriverDetailes = (id) => {
+      console.log(id);
+      const linkTo = `/driverDetails/${id}`;
+      navigate(linkTo);
+   };
+
    if (isLoading) {
       return (<Loader />)
    }
@@ -56,7 +62,10 @@ export default function Races() {
                            {race.raceName}</td>
                         <td>{race.Circuit.circuitName}</td>
                         <td>{race.date}</td>
-                        <td>{race.Results[0].Driver.familyName}</td>
+                        <td
+                        onClick={() => handleClickDriverDetailes(race.Results[0].Driver.driverId)}
+                           className="clicable">
+                           {race.Results[0].Driver.familyName}</td>
                      </tr>
                   )
                })}
