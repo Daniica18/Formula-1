@@ -5,12 +5,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 
 export default function MediaCard() {
   return (
+    <div>
     <div className='Cards'>
-    
     <Card sx={{ maxWidth: 200 }}>
       <CardMedia
         sx={{ height: 100}}
@@ -50,6 +50,24 @@ export default function MediaCard() {
       </CardContent>
     </Card>
 
+     <Card sx={{ maxWidth: 200 }}>
+      <CardMedia
+        sx={{ height: 100}}
+        image="../public/img/Card4.jpg"
+        title="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
+        THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco
+        </Typography>
+      </CardContent>
+    </Card>
+
+    </div>
+
+<div>
+    <Footer />
+</div>
     </div>
 
 
