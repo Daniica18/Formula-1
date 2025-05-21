@@ -58,10 +58,12 @@ export default function Drivers(props) {
 
   return (
     <div>
+          <h1>Drivers Championship</h1>
       <table>
         <thead>
           <tr>
-            <th>Drivers Chamionship Standing</th>
+            <th>Drivers Chamionship Standing -2013</th>
+
           </tr>
         </thead>
         <tbody>

@@ -1,9 +1,55 @@
-import React from "react"
-export default function RacesDetails() {
-    return (
-        <div className="homeDiv">
-            <img src={`/public/img/F1-2013-Legends-Edition.jpg`} alt="background_img"
-                style={{ width: '100%', height: 'auto' }} />
-        </div>
-    )
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
+export default function MediaCard() {
+  return (
+    <div>
+    
+    <Card sx={{ maxWidth: 200 }}>
+      <CardMedia
+        sx={{ height: 100}}
+        image="../public/img/Card1.jpg"
+        title="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
+        POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?
+        </Typography>
+      </CardContent>
+    </Card>
+
+  <Card sx={{ maxWidth: 200 }}>
+      <CardMedia
+        sx={{ height: 100}}
+        image="../public/img/Card2.jpg"
+        title="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
+        Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco
+        </Typography>
+      </CardContent>
+    </Card>
+
+      <Card sx={{ maxWidth: 200 }}>
+      <CardMedia
+        sx={{ height: 100}}
+        image="../public/img/Card3.jpg"
+        title="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
+       TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design
+        </Typography>
+      </CardContent>
+    </Card>
+
+    </div>
+  );
 }
+    
