@@ -2,6 +2,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router";
 
 
 
@@ -48,21 +49,17 @@ export default function Teams() {
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
                                     className="teams">
                                     {team.Constructor.name}</td>
-                               
-                                <td><a href="Details" /></td>
+                                <td>Details: <Link to={team.Constructor.url} target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img src={`/public/img/link-black.png`} alt="" style={{ width: '18px', height: 'auto' }} />
+                                </Link></td>
                                 <td>{team.points}</td>
                             </tr>
                         </tbody>
-
-
-
-
                     )
                 })}
             </table>
 
         </div>
     );
-
-
 }
