@@ -26,12 +26,25 @@ export default function MediaCard() {
   <Card sx={{ maxWidth: 200 }}>
       <CardMedia
         sx={{ height: 100}}
-        image="../public/img/Card1.jpg"
+        image="../public/img/Card2.jpg"
         title="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
         Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco
+        </Typography>
+      </CardContent>
+    </Card>
+
+      <Card sx={{ maxWidth: 200 }}>
+      <CardMedia
+        sx={{ height: 100}}
+        image="../public/img/Card3.jpg"
+        title="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
+       TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design
         </Typography>
       </CardContent>
     </Card>
