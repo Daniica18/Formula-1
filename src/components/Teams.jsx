@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
 import Flag from 'react-flagkit';
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 
 export default function Teams(props) {
     const [teams, setTeams] = useState([]);
@@ -56,15 +57,15 @@ export default function Teams(props) {
     return (
         <div>
             <h1>Constructors Championship</h1>
-            <table>
+            <table className="detail_table">
                 <thead>
                     <tr>
-                        <th>Constructors Champions Standings</th>
+                        <th colSpan={4}>Constructors Champions Standings</th>
                     </tr>
                 </thead>
-                {teams.map((team) => {
-                    return (
-                        <tbody>
+                <tbody>
+                    {teams.map((team) => {
+                        return (
                             <tr key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
@@ -73,13 +74,14 @@ export default function Teams(props) {
                                     {team.Constructor.name}</td>
                                 <td>Details: <Link to={team.Constructor.url} target="_blank"
                                     rel="noopener noreferrer">
-                                    <img src={`/public/img/link-black.png`} alt="" style={{ width: '18px', height: 'auto' }} />
+                                    <OpenInNewRoundedIcon
+                                        style={{ color: "black", width: '19px', height: 'auto' }} />
                                 </Link></td>
                                 <td>{team.points}</td>
                             </tr>
-                        </tbody>
-                    )
-                })}
+                        )
+                    })}
+                </tbody>
             </table>
 
         </div>

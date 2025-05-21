@@ -5,6 +5,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 
 export default function DriversDetails(props) {
     const [driversDetails, setDriversDetails] = useState([]);
@@ -88,15 +89,16 @@ export default function DriversDetails(props) {
                     <li>Birth: {driversDetails.Driver.dateOfBirth}</li>
                     <li>Biography: <Link to={driversDetails.Driver.url} target="_blank"
                         rel="noopener noreferrer">
-                        <img src={`/public/img/link-black.png`} alt="" style={{ width: '18px', height: 'auto' }} />
+                        <OpenInNewRoundedIcon
+                            style={{ color: "black", width: '19px', height: 'auto' }} />
                     </Link></li>
                 </ul>
             </div>
             <div>
                 <div>
                     <h1>Formula 1 2013 Results</h1>
-                    <table>
-                        <tbody>
+                    <table className="detail_table">
+                        <thead>
                             <tr>
                                 <th>Round</th>
                                 <th>Grand Prix</th>
@@ -104,6 +106,8 @@ export default function DriversDetails(props) {
                                 <th>Grid</th>
                                 <th>Race</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             {Results.map((result, i) => {
                                 return (
                                     <tr key={result.round}>

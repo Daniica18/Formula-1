@@ -63,10 +63,10 @@ export default function Races(props) {
    return (
       <div>
          <h1>Race Calendar</h1>
-         <table>
-            <tbody>
+         <table className="detail_table">
+            <thead>
                <tr>
-                  <th>Race Calendar - 2013</th>
+                  <th colSpan={5}>Race Calendar - 2013</th>
                </tr>
                <tr>
                   <th>Round</th>
@@ -75,6 +75,8 @@ export default function Races(props) {
                   <th>Date</th>
                   <th>Winner</th>
                </tr>
+            </thead>
+            <tbody>
                {races.map((race) => {
                   return (
                      <tr key={race.round}>

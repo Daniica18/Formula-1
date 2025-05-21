@@ -59,15 +59,15 @@ export default function Drivers(props) {
   return (
     <div>
           <h1>Drivers Championship</h1>
-      <table>
+      <table className="detail_table">
         <thead>
           <tr>
-            <th>Drivers Chamionship Standing -2013</th>
+            <th colSpan={4}>Drivers Chamionship Standing -2013</th>
 
           </tr>
         </thead>
         <tbody>
-          {drivers.map((driver, i) => {
+          {drivers.map((driver) => {
             return (
               <tr key={driver.Driver.driverId}>
                 <td>{driver.position}</td>

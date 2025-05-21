@@ -5,6 +5,7 @@ import Loader from "./Loader";
 import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 
 export default function TeamDetails(props) {
     const [teamDetails, setTeamDetails] = useState({});
@@ -79,18 +80,18 @@ export default function TeamDetails(props) {
                     <li>Points: {teamDetails.points}</li>
                     <li>History: <Link to={teamDetails.Constructor.url} target="_blank"
                         rel="noopener noreferrer">
-                        <img src={`/public/img/link-black.png`} alt="" style={{ width: '18px', height: 'auto' }} />
+                        <OpenInNewRoundedIcon
+                            style={{ color: "black", width: '19px', height: 'auto' }} />
                     </Link></li>
                 </ul>
             </div>
 
-
             <div>
-                <table >
+                <table className="detail_table">
                     <thead>
 
                         <tr>
-                            <th>Formula 1 2013 Results</th>
+                            <th colSpan={5}>Formula 1 2013 Results</th>
                         </tr>
                         <tr>
                             <th>Round</th>
@@ -107,10 +108,10 @@ export default function TeamDetails(props) {
                         </tr>
 
                     </thead>
-                    {teamResults.map((teamResult) => {
-                        return (
-                            <tbody key={teamResult.round}>
-                                <tr>
+                    <tbody>
+                        {teamResults.map((teamResult) => {
+                            return (
+                                <tr key={teamResult.round}>
                                     <td>{teamResult.round}</td>
                                     <td
                                         onClick={() => handleClickDetailes(teamResult.round)}
@@ -121,10 +122,10 @@ export default function TeamDetails(props) {
                                     <td>{teamResult.Results[1].position}</td>
                                     <td>{parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}</td>
                                 </tr>
-                            </tbody>
 
-                        )
-                    })}
+                            )
+                        })}
+                    </tbody>
                 </table>
             </div>
 

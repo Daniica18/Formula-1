@@ -21,8 +21,6 @@
     }
 }
 
-
-
 .Cards{
     margin-top: 40px;
     padding: 12px;
@@ -35,6 +33,64 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.details_div {
+    display: flex;
+    justify-content: space-around;
+      
+}
+
+.tableOne {
+    flex-grow: 1;
+}
+
+.tableTwo {
+    flex-grow: 4;
+}
+
+.tableThree {
+    flex-grow: 3;
+}
+
+.details_div_info{
+    border: black 1px solid;
+    border-radius: 9px;
+    background-color: #e439398c;
+    width: 25%;
+    height: 20%;
+}
+
+.detail_table {
+    border: black 1px solid;
+    border-collapse: collapse;
+    border-radius: 5px;
+    width: 70%;
+
+    thead {
+        
+        th {
+            border: black 1px solid;
+            padding: 10px;
+            background-color: #cccccc8c;
+        }
+    }
+
+    tbody {
+        tr {
+            border: black 1px solid;
+            padding: 8px;
+
+            td {
+                border: black 1px solid;
+            }
+
+            &:nth-child(even) {
+                background-color: #ccc;
+            }
+
+        }
+    }
 }
 
 .clicable {

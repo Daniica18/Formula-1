@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from "react-router";
 import { useNavigate } from "react-router"
 import Flag from 'react-flagkit';
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 
 export default function RacesDetails(props) {
     const [resultsDetails, setResultsDetails] = useState([]);
@@ -67,46 +68,47 @@ export default function RacesDetails(props) {
         return (<Loader />)
     }
     return (
-        <div>
-            <div>
-                <div></div>
-                <div>
-                    <Flag country={filteredFlag(resultsDetails.Circuit.Location.country)} />
-                    <h2>{resultsDetails.Circuit.circuitName}</h2>
-                </div>
-                <div>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Country: </th>
-                                <td>{resultsDetails.Circuit.Location.country}</td>
-                            </tr>
-                            <tr>
-                                <th>Location: </th>
-                                <td>{resultsDetails.Circuit.Location.locality}</td>
-                            </tr>
-                            <tr>
-                                <th>Date: </th>
-                                <td>{resultsDetails.date}</td>
-                            </tr>
-                            <tr>
-                                <th>Full Report: </th>
-                                <td><Link to={resultsDetails.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-                                    <img src={`/public/img/link-black.png`} alt="link"
-                                        style={{ width: '18px', height: 'auto' }} />
-                                </Link></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div>
+        <div className="details_div">
+            <div className="details_div_info tableOne">
                 <table>
+                    <thead>
+                        <tr>
+                            <th colSpan={2}><Flag country={filteredFlag(resultsDetails.Circuit.Location.country)} size={124} /></th>
+                        </tr>
+                        <tr>
+                            <th colSpan={2}>{resultsDetails.Circuit.circuitName}</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
-                            <th>Qualifying results</th>
+                            <th>Country: </th>
+                            <td>{resultsDetails.Circuit.Location.country}</td>
+                        </tr>
+                        <tr>
+                            <th>Location: </th>
+                            <td>{resultsDetails.Circuit.Location.locality}</td>
+                        </tr>
+                        <tr>
+                            <th>Date: </th>
+                            <td>{resultsDetails.date}</td>
+                        </tr>
+                        <tr>
+                            <th>Full Report: </th>
+                            <td><Link to={resultsDetails.url}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <OpenInNewRoundedIcon
+                                    style={{ color: "black", width: '19px', height: 'auto' }} />
+                            </Link></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div className="tableTwo">
+                <table className="detail_table">
+                    <thead>
+                        <tr>
+                            <th colSpan={5}>Qualifying results</th>
                         </tr>
                         <tr>
                             <th>Position</th>
@@ -114,6 +116,8 @@ export default function RacesDetails(props) {
                             <th>Team</th>
                             <th>Best Time</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         {qualifyingDetails.QualifyingResults.map((qualify) => {
                             const times = [qualify.Q1, qualify.Q2, qualify.Q3].sort();
                             return (
@@ -135,11 +139,11 @@ export default function RacesDetails(props) {
                     </tbody>
                 </table>
             </div>
-            <div>
-                <table>
-                    <tbody>
+            <div className="tableThree">
+                <table className="detail_table">
+                    <thead>
                         <tr>
-                            <th>Race results</th>
+                            <th colSpan={5}>Race results</th>
                         </tr>
                         <tr>
                             <th>Position</th>
@@ -148,6 +152,8 @@ export default function RacesDetails(props) {
                             <th>Results</th>
                             <th>Points</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         {resultsDetails.Results.map((result) => {
                             return (
                                 <tr key={result.position}>
