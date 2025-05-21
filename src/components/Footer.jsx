@@ -5,9 +5,9 @@
   <footer className="footer">
         <div className="footer-menu">
             <Link to= ""></Link>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
+            <Link to= ""></Link>
+             <Link to= ""></Link>
+              <Link to= ""></Link>
         </div>
     </footer>
     )
