@@ -3,10 +3,9 @@ import Loader from "./Loader";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
+import Flag from 'react-flagkit';
 
-
-
-export default function Teams() {
+export default function Teams(props) {
     const [teams, setTeams] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const navigate = useNavigate();

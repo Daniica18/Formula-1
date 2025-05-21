@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router"
 import Loader from "./Loader";
 import axios from "axios";
+import Flag from 'react-flagkit';
 
-export default function Races() {
+export default function Races(props) {
    const [races, setRaces] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
    const navigate = useNavigate();

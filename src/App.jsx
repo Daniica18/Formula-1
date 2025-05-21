@@ -10,16 +10,16 @@ import TeamsDetails from "./components/TeamsDetails";
 import RacesDetails from "./components/RacesDetails";
 
 export default function App() {
-    const [stateFlags, setStateFlags] = useState([]);
+    const [flags, setFlags] = useState([]);
 
     useEffect(() => {
-        getStateFlags();
+        getFlags();
     }, []);
 
-    const getStateFlags = async () => {
+    const getFlags = async () => {
         const url = `https://raw.githubusercontent.com/Dinuks/country-nationality-list/master/countries.json`;
         const response = await axios.get(url);
-        setStateFlags(response.data);
+        setFlags(response.data);
         console.log(response.data);
     };
 
@@ -53,12 +53,12 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/drivers" element={<Drivers />} />
-                <Route path="/teams" element={<Teams />} />
-                <Route path="/races" element={<Races />} />
-                <Route path="/driverDetails/:id" element={<DriversDetails />} />
-                <Route path="/teamDetails/:id" element={<TeamsDetails />} />
-                <Route path="/raceDetails/:id" element={<RacesDetails />} />
+                <Route path="/drivers" element={<Drivers flags = {flags} />} />
+                <Route path="/teams" element={<Teams flags = {flags} />} />
+                <Route path="/races" element={<Races flags = {flags} />} />
+                <Route path="/driverDetails/:id" element={<DriversDetails flags = {flags} />} />
+                <Route path="/teamDetails/:id" element={<TeamsDetails flags = {flags} />} />
+                <Route path="/raceDetails/:id" element={<RacesDetails flags = {flags} />} />
 
             </Routes>
         </Router>
