@@ -9,6 +9,9 @@ import DriversDetails from "./components/DriversDetails";
 import TeamsDetails from "./components/TeamsDetails";
 import RacesDetails from "./components/RacesDetails";
 import CardOne from "./components/CardOne";
+import CardTwo from "./components/CardTwo";
+import CardThree from "./components/CardThree";
+import CardFour from "./components/CardFour";
 import Contact from "./components/Contact";
 
 export default function App() {
@@ -44,7 +47,10 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/" element={<CardOne />} />
+                <Route path="/cardOne" element={<CardOne />} />
+                <Route path="/cardTwo" element={<CardTwo />} />
+                <Route path="/cardThree" element={<CardThree />} />
+                <Route path="/cardFour" element={<CardFour />} />
                 <Route path="/drivers" element={<Drivers flags={flags} />} />
                 <Route path="/teams" element={<Teams flags={flags} />} />
                 <Route path="/races" element={<Races flags={flags} />} />
@@ -56,7 +62,7 @@ export default function App() {
             <footer>
                 <Link to="/Contact">Contact</Link>
                 <Link to="/PrivacyPolicy">Privacy Policy</Link>
-                <Link to="/">Partners</Link>
+                <Link to="/Partners">Partners</Link>
                 <Link to="/">Terms of use</Link>
                 <Link to="/">Become an affiliate</Link>
             </footer>
