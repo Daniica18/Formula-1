@@ -35,10 +35,11 @@ export default function Teams() {
 
     return (
         <div>
+            <h1>Constructors Championship</h1>
             <table>
                 <thead>
                     <tr>
-                        <th>Constructors Standings</th>
+                        <th>Constructors Champions Standings</th>
                     </tr>
                 </thead>
                 {teams.map((team) => {
