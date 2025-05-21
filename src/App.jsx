@@ -46,19 +46,23 @@ export default function App() {
                 </ul>
             </nav>
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/cardOne" element={<CardOne />} />
-                <Route path="/cardTwo" element={<CardTwo />} />
-                <Route path="/cardThree" element={<CardThree />} />
-                <Route path="/cardFour" element={<CardFour />} />
-                <Route path="/drivers" element={<Drivers flags={flags} />} />
-                <Route path="/teams" element={<Teams flags={flags} />} />
-                <Route path="/races" element={<Races flags={flags} />} />
-                <Route path="/driverDetails/:id" element={<DriversDetails flags={flags} />} />
-                <Route path="/teamDetails/:id" element={<TeamsDetails flags={flags} />} />
-                <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} />} />
-            </Routes>
+            <div className="container">
+                <div className="content_wrap">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/cardOne" element={<CardOne />} />
+                        <Route path="/cardTwo" element={<CardTwo />} />
+                        <Route path="/cardThree" element={<CardThree />} />
+                        <Route path="/cardFour" element={<CardFour />} />
+                        <Route path="/drivers" element={<Drivers flags={flags} />} />
+                        <Route path="/teams" element={<Teams flags={flags} />} />
+                        <Route path="/races" element={<Races flags={flags} />} />
+                        <Route path="/driverDetails/:id" element={<DriversDetails flags={flags} />} />
+                        <Route path="/teamDetails/:id" element={<TeamsDetails flags={flags} />} />
+                        <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} />} />
+                    </Routes>
+                </div>
+            </div>
 
             <Footer />
         </Router>
