@@ -20,17 +20,38 @@ export default function Teams(props) {
         console.log(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
         setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
         setIsLoading(false);
-    }
+    };
+
+    const filteredFlag = (nationality) => {
+        console.log("nationality ", nationality);
+        if (nationality === "British" || nationality === "UK") {
+            return "GB";
+        } else if (nationality === "USA") {
+            return "US";
+        } else if (nationality === "Dutch") {
+            return "NL";
+        } else if (nationality === "Korea") {
+            return "KR";
+        } else if (nationality === "UAE") {
+            return "AE";
+        } else {
+            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
+            console.log("flag ", flag);
+            if (flag) {
+                return flag.alpha_2_code;
+            }
+        }
+    };
 
     const handleClickDetails = (id) => {
         console.log(id);
         const linkTo = `/teamDetails/${id}`
         navigate(linkTo);
-    }
+    };
 
     if (isLoading) {
         return <Loader />
-    }
+    };
 
     return (
         <div>
@@ -48,6 +69,7 @@ export default function Teams(props) {
                                 <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
                                     className="clicable">
+                                    <Flag country={filteredFlag(team.Constructor.nationality)} />
                                     {team.Constructor.name}</td>
                                 <td>Details: <Link to={team.Constructor.url} target="_blank"
                                     rel="noopener noreferrer">

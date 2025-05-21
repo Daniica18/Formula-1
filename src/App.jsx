@@ -23,17 +23,6 @@ export default function App() {
         console.log(response.data);
     };
 
-
-//     const filteredData = stateFlags.filter((e) => {
-
-//     if (e.nationality.toLowerCase().includes(text) || e.en_short_name.toLowerCase().includes(text)) {
-
-//       return e.alpha_2_code;
-
-//     }
-
-//   });
-
     return (
         <Router>
             <nav className="main-navigation">

@@ -8,11 +8,9 @@ export default function Drivers(props) {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  console.log(props.flags);
 
   useEffect(() => {
     getDrivers();
-
   }, []);
 
   const getDrivers = async () => {
@@ -22,6 +20,27 @@ export default function Drivers(props) {
     setDrivers(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
     setLoading(false);
   };
+
+  const filteredFlag = (nationality) => {
+        console.log("nationality ", nationality);
+        if (nationality === "British" || nationality === "UK") {
+            return "GB";
+        } else if (nationality === "USA") {
+            return "US";
+        } else if (nationality === "Dutch") {
+            return "NL";
+        } else if (nationality === "Korea") {
+            return "KR";
+        } else if (nationality === "UAE") {
+            return "AE";
+        } else {
+            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
+            console.log("flag ", flag);
+            if (flag) {
+                return flag.alpha_2_code;
+            }
+        }
+    };
 
   const handleClickDetails = (id) => {
     const linkTo = `/driverDetails/${id}`;
@@ -37,19 +56,16 @@ export default function Drivers(props) {
     return <Loader />;
   }
 
-
   return (
     <div>
       <table>
         <thead>
           <tr>
             <th>Drivers Chamionship Standing</th>
-
           </tr>
         </thead>
         <tbody>
           {drivers.map((driver, i) => {
-
             return (
               <tr key={driver.Driver.driverId}>
                 <td>{driver.position}</td>
@@ -57,22 +73,19 @@ export default function Drivers(props) {
                   onClick={() => handleClickDetails(driver.Driver.driverId)}
                   className="clicable"
                 >
-                  {driver.Driver.familyName} {driver.Driver.givenName}</td>
+                  <Flag country={filteredFlag(driver.Driver.nationality)} />
+                  {driver.Driver.familyName} {driver.Driver.givenName}
+                </td>
                 <td
                   onClick={() => handleClickTeamDetails(driver.Constructors[0].constructorId)}
                   className="clicable">
                   {driver.Constructors[0].name}</td>
                 <td>{driver.points}</td>
-
               </tr>
             )
-
           })}
-
-
         </tbody>
       </table>
     </div>
-
   )
 }

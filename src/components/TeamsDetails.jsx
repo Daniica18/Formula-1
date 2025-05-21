@@ -29,6 +29,28 @@ export default function TeamDetails(props) {
         setIsLoading(false);
     };
 
+    const filteredFlag = (nationality) => {
+        console.log("nationality ", nationality);
+        if (nationality === "British" || nationality === "UK") {
+            return "GB";
+        } else if (nationality === "USA") {
+            return "US";
+        } else if (nationality === "Dutch") {
+            return "NL";
+        } else if (nationality === "Korea") {
+            return "KR";
+        } else if (nationality === "UAE") {
+            return "AE";
+        } else {
+            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
+            console.log("flag ", flag);
+            if (flag) {
+                return flag.alpha_2_code;
+            }
+        }
+    };
+
+
     const handleClickDetailes = (id) => {
         console.log(id);
         const linkTo = `/raceDetails/${id}`;
@@ -50,7 +72,8 @@ export default function TeamDetails(props) {
             <div>
                 <ul>
                     <li><img src={`/public/img/${teamDetails.Constructor.constructorId}.png`} alt=""
-                    style={{ width: '100px', height: 'auto' }}  /></li> 
+                        style={{ width: '100px', height: 'auto' }} /></li>
+                    <li><Flag country={filteredFlag(teamDetails.Constructor.nationality)} /></li>
                     <li>Country: {teamDetails.Constructor.nationality}</li>
                     <li>Position: {teamDetails.position}</li>
                     <li>Points: {teamDetails.points}</li>
@@ -92,6 +115,7 @@ export default function TeamDetails(props) {
                                     <td
                                         onClick={() => handleClickDetailes(teamResult.round)}
                                         className="clicable">
+                                        <Flag country={filteredFlag(teamResult.Circuit.Location.country)} />
                                         {teamResult.raceName}</td>
                                     <td>{teamResult.Results[0].position}</td>
                                     <td>{teamResult.Results[1].position}</td>
