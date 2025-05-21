@@ -33,7 +33,7 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
-        <Link to="">Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco</Link>
+        <Link to="./CardTwo">Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco</Link>
         </Typography>
       </CardContent>
     </Card>
