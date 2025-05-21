@@ -46,7 +46,7 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
-       <Link to="">TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design</Link>
+       <Link to="./CardThree">TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design</Link>
         </Typography>
       </CardContent>
     </Card>
