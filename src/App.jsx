@@ -63,7 +63,7 @@ export default function App() {
                 <Link to="/Contact">Contact</Link>
                 <Link to="/PrivacyPolicy">Privacy Policy</Link>
                 <Link to="/Partners">Partners</Link>
-                <Link to="/">Terms of use</Link>
+                <Link to="/TermsOfUse">Terms of use</Link>
                 <Link to="/">Become an affiliate</Link>
             </footer>
 
