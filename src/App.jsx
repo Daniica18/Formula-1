@@ -8,6 +8,7 @@ import Races from "./components/Races";
 import DriversDetails from "./components/DriversDetails";
 import TeamsDetails from "./components/TeamsDetails";
 import RacesDetails from "./components/RacesDetails";
+import CardOne from "./components/CardOne";
 
 
 export default function App() {
@@ -43,13 +44,13 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                 <Route path="/" element={<CardOne />} />
-                <Route path="/drivers" element={<Drivers flags = {flags} />} />
-                <Route path="/teams" element={<Teams flags = {flags} />} />
-                <Route path="/races" element={<Races flags = {flags} />} />
-                <Route path="/driverDetails/:id" element={<DriversDetails flags = {flags} />} />
-                <Route path="/teamDetails/:id" element={<TeamsDetails flags = {flags} />} />
-                <Route path="/raceDetails/:id" element={<RacesDetails flags = {flags} />} />
+                <Route path="/" element={<CardOne />} />
+                <Route path="/drivers" element={<Drivers flags={flags} />} />
+                <Route path="/teams" element={<Teams flags={flags} />} />
+                <Route path="/races" element={<Races flags={flags} />} />
+                <Route path="/driverDetails/:id" element={<DriversDetails flags={flags} />} />
+                <Route path="/teamDetails/:id" element={<TeamsDetails flags={flags} />} />
+                <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} />} />
 
             </Routes>
         </Router>
