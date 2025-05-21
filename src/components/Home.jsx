@@ -19,7 +19,7 @@ export default function MediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"15px" }}>
-        <Link to="">POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?</Link> 
+        <Link to="./CardOne">POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?</Link> 
         </Typography>
       </CardContent>
     </Card>
