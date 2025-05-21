@@ -9,7 +9,7 @@ import DriversDetails from "./components/DriversDetails";
 import TeamsDetails from "./components/TeamsDetails";
 import RacesDetails from "./components/RacesDetails";
 import CardOne from "./components/CardOne";
-
+import Contact from "./components/Contact";
 
 export default function App() {
     const [flags, setFlags] = useState([]);
@@ -51,14 +51,18 @@ export default function App() {
                 <Route path="/driverDetails/:id" element={<DriversDetails flags={flags} />} />
                 <Route path="/teamDetails/:id" element={<TeamsDetails flags={flags} />} />
                 <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} />} />
-
             </Routes>
 
-<Footer>
-    
-</Footer>
+            <footer>
+                <Link to="/Contact">Contact</Link>
+                <Link to="/">Privacy Policy</Link>
+                <Link to="/">Partners</Link>
+                <Link to="/">Terms of use</Link>
+                <Link to="/">Become an affiliate</Link>
+            </footer>
 
         </Router>
+
 
     )
 };
