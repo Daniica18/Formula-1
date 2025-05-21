@@ -77,7 +77,7 @@ export default function TeamDetails(props) {
                                 className="clicable">
                                 {teamResults[0].Results[0].Driver.familyName}</th>
                             <th
-                                onClick={() => handleClickDriverDetailes(teamResults[0].Results[0].Driver.driverId)}
+                                onClick={() => handleClickDriverDetailes(teamResults[0].Results[1].Driver.driverId)}
                                 className="clicable">
                                 {teamResults[0].Results[1].Driver.familyName}</th>
                             <th>Points</th>
