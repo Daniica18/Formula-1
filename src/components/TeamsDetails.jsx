@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Loader from "./Loader";
 import { Link } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function TeamDetails() {
     const [teamDetails, setTeamDetails] = useState({});
     const [teamResults, setTeamResults] = useState([])
     const [isLoading, setIsLoading] = useState(true);
     const params = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         getTeamDetails();
@@ -25,6 +27,12 @@ export default function TeamDetails() {
         setTeamResults(response2.data.MRData.RaceTable.Races)
         setIsLoading(false);
     };
+
+    const handleClickDetailes = (id) => {
+      console.log(id);
+      const linkTo = `/raceDetails/${id}`;
+      navigate(linkTo);
+   };
 
     if (isLoading) {
         return (<Loader />)
@@ -66,7 +74,10 @@ export default function TeamDetails() {
                             <tbody key={teamResult.round}>
                                 <tr>
                                     <td>{teamResult.round}</td>
-                                    <td>{teamResult.raceName}</td>
+                                    <td
+                                        onClick={() => handleClickDetailes(teamResult.round)}
+                                        className="clicable">
+                                        {teamResult.raceName}</td>
                                     <td>{teamResult.Results[0].position}</td>
                                     <td>{teamResult.Results[1].position}</td>
                                     <td>{parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}</td>
