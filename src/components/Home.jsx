@@ -5,10 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Footer from "./components/Footer";
 
 export default function MediaCard() {
   return (
-    <div>
+    <div className='Cards'>
     
     <Card sx={{ maxWidth: 200 }}>
       <CardMedia
@@ -50,6 +51,10 @@ export default function MediaCard() {
     </Card>
 
     </div>
+
+
+
+   
   );
 }
     
