@@ -23,14 +23,16 @@ export default function App() {
         console.log(response.data);
     };
 
-    // const filteredData = stateFlags.filter((el) => {
 
-    // if (text === "" || region === "") {
+//     const filteredData = stateFlags.filter((e) => {
 
-    // return el;
+//     if (e.nationality.toLowerCase().includes(text) || e.en_short_name.toLowerCase().includes(text)) {
 
-    // }
-    //});
+//       return e.alpha_2_code;
+
+//     }
+
+//   });
 
     return (
         <Router>
