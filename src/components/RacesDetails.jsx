@@ -3,12 +3,14 @@ import { useParams } from "react-router"
 import Loader from "./Loader";
 import axios from "axios";
 import { Link } from "react-router";
+import { useNavigate } from "react-router"
 
 export default function RacesDetails() {
     const [resultsDetails, setResultsDetails] = useState([]);
     const [qualifyingDetails, setQualifyingDetails] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const params = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         getRaceDetails();
@@ -26,6 +28,17 @@ export default function RacesDetails() {
         console.log("resultResponse ", resultsDetails);
         console.log("qualifyingResponse ", qualifyingDetails);
     };
+
+    const handleClickDriverDetailes = (id) => {
+        console.log(id);
+        const linkTo = `/driverDetails/${id}`;
+        navigate(linkTo);
+    };
+
+    const handleClickTeamDetails = (id) => {
+        const linkTo = `/teamDetails/${id}`;
+        navigate(linkTo);
+    }
 
 
     if (isLoading) {
@@ -83,8 +96,14 @@ export default function RacesDetails() {
                             return (
                                 <tr key={qualify.position}>
                                     <td>{qualify.position}</td>
-                                    <td>{qualify.Driver.familyName}</td>
-                                    <td>{qualify.Constructor.name}</td>
+                                    <td
+                                        onClick={() => handleClickDriverDetailes(qualify.Driver.driverId)}
+                                        className="clicable">
+                                        {qualify.Driver.familyName}</td>
+                                    <td
+                                        onClick={() => handleClickTeamDetails(qualify.Constructor.constructorId)}
+                                        className="clicable">
+                                        {qualify.Constructor.name}</td>
                                     <td>{times[0]}</td>
                                 </tr>
                             )
@@ -109,8 +128,14 @@ export default function RacesDetails() {
                             return (
                                 <tr key={result.position}>
                                     <td>{result.position}</td>
-                                    <td>{result.Driver.familyName}</td>
-                                    <td>{result.Constructor.name}</td>
+                                    <td
+                                        onClick={() => handleClickDriverDetailes(result.Driver.driverId)}
+                                        className="clicable">
+                                        {result.Driver.familyName}</td>
+                                    <td
+                                        onClick={() => handleClickTeamDetails(result.Constructor.constructorId)}
+                                        className="clicable">
+                                        {result.Constructor.name}</td>
                                     <td>{result.Time?.time}</td>
                                     <td>{result.points}</td>
                                 </tr>

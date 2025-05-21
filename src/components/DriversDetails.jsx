@@ -38,6 +38,11 @@ export default function DriversDetails() {
         navigate(linkTo);
     }
 
+    const handleClickTeamDetails = (id) => {
+        const linkTo = `/teamDetails/${id}`;
+        navigate(linkTo);
+    }
+
     const handleClickRaceDetails = (id) => {
         const linkTo = `/raceDetails/${id}`;
         navigate(linkTo);
@@ -54,7 +59,9 @@ export default function DriversDetails() {
                     <li>{driversDetails.Driver.givenName}</li>
                     <li>{driversDetails.Driver.familyName}</li>
                     <li>Country: {driversDetails.Driver.nationality}</li>
-                    <li>Team: {driversDetails.Constructors[0].name} </li>
+                    <li
+                        onClick={() => handleClickTeamDetails(driversDetails.Constructors[0].constructorId)}
+                        className="clicable">Team: {driversDetails.Constructors[0].name} </li>
                     <li>Birth: {driversDetails.Driver.dateOfBirth}</li>
                     <li>Biography: <Link to={driversDetails.Driver.url} target="_blank"
                         rel="noopener noreferrer">
