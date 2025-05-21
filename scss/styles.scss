@@ -52,11 +52,11 @@
     color: white;
     padding: 15px 15px;
     display: flex;
-    text-decoration: underline;
     justify-content: space-between;
-    
-    Link {
-        color: white;
-        }
-    
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
 }

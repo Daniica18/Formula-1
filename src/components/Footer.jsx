@@ -7,7 +7,7 @@ export default function Footer() {
             <Link to="./PrivacyPolicy"></Link>
             <Link to="./Partenrs"></Link>
             <Link to="./TermsOfUse"></Link>
-             <Link to="./BecomeAnAffiliate"></Link>
+            <Link to="./BecomeAnAffiliate"></Link>
 
         </footer>
     )
