@@ -1,15 +1,15 @@
-  import { Link } from "react-router";
+import { Link } from "react-router";
 
-  export default function Footer(){
-  return(
-  <footer className="footer">
-        <div className="footer-menu">
-            <Link to= "./Contact"></Link>
-            <Link to= ""></Link>
-             <Link to= ""></Link>
-              <Link to= ""></Link>
-        </div>
-    </footer>
+export default function Footer() {
+    return (
+        <footer className="footer">
+            <Link to="./Contact"></Link>
+            <Link to="./PrivacyPolicy"></Link>
+            <Link to="./Partenrs"></Link>
+            <Link to="./TermsOfUse"></Link>
+             <Link to="./BecomeAnAffiliate"></Link>
+
+        </footer>
     )
 
-    }
+}
