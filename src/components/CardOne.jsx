@@ -1,7 +1,6 @@
 export default function CardOne(){
   return(
   <>
-<<<<<<< HEAD
  <h1> POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?</h1>
 
  <p>
@@ -18,9 +17,6 @@ Our experts’ scores are then averaged out to produce a race score – with tho
  <img src="../public/img/Card1.jpg"/>
  
  </p>
-=======
-
->>>>>>> 5aeb9c6d2e1df92a45927e3c790ea16da275208a
   </>
     )
 
