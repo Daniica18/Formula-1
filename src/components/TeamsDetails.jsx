@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Loader from "./Loader";
 import { Link } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function TeamDetails() {
     const [teamDetails, setTeamDetails] = useState({});
     const [teamResults, setTeamResults] = useState([])
     const [isLoading, setIsLoading] = useState(true);
     const params = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         getTeamDetails();
@@ -24,6 +26,18 @@ export default function TeamDetails() {
         console.log("response2", response2.data.MRData.RaceTable.Races);
         setTeamResults(response2.data.MRData.RaceTable.Races)
         setIsLoading(false);
+    };
+
+    const handleClickDetailes = (id) => {
+        console.log(id);
+        const linkTo = `/raceDetails/${id}`;
+        navigate(linkTo);
+    };
+
+    const handleClickDriverDetailes = (id) => {
+        console.log(id);
+        const linkTo = `/driverDetails/${id}`;
+        navigate(linkTo);
     };
 
     if (isLoading) {
@@ -55,8 +69,14 @@ export default function TeamDetails() {
                         <tr>
                             <th>Round</th>
                             <th>Grand Prix</th>
-                            <th>{teamResults[0].Results[0].Driver.familyName}</th>
-                            <th>{teamResults[0].Results[1].Driver.familyName}</th>
+                            <th
+                                onClick={() => handleClickDriverDetailes(teamResults[0].Results[0].Driver.driverId)}
+                                className="clicable">
+                                {teamResults[0].Results[0].Driver.familyName}</th>
+                            <th
+                                onClick={() => handleClickDriverDetailes(teamResults[0].Results[0].Driver.driverId)}
+                                className="clicable">
+                                {teamResults[0].Results[1].Driver.familyName}</th>
                             <th>Points</th>
                         </tr>
 
@@ -66,7 +86,10 @@ export default function TeamDetails() {
                             <tbody key={teamResult.round}>
                                 <tr>
                                     <td>{teamResult.round}</td>
-                                    <td>{teamResult.raceName}</td>
+                                    <td
+                                        onClick={() => handleClickDetailes(teamResult.round)}
+                                        className="clicable">
+                                        {teamResult.raceName}</td>
                                     <td>{teamResult.Results[0].position}</td>
                                     <td>{teamResult.Results[1].position}</td>
                                     <td>{parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}</td>

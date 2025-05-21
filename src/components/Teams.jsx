@@ -47,7 +47,7 @@ export default function Teams() {
                             <tr key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
-                                    className="teams">
+                                    className="clicable">
                                     {team.Constructor.name}</td>
                                 <td>Details: <Link to={team.Constructor.url} target="_blank"
                                     rel="noopener noreferrer">

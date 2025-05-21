@@ -25,6 +25,11 @@ export default function Drivers() {
   const handleClickDetails = (id) => {
     const linkTo = `/driverDetails/${id}`;
     navigate(linkTo);
+  };
+
+  const handleClickTeamDetails = (id) => {
+    const linkTo = `/teamDetails/${id}`;
+    navigate(linkTo);
   }
 
   if (loading) {
@@ -52,7 +57,10 @@ export default function Drivers() {
                   className="clicable"
                 >
                   {driver.Driver.familyName} {driver.Driver.givenName}</td>
-                <td>{driver.Constructors[0].name}</td>
+                <td
+                  onClick={() => handleClickTeamDetails(driver.Constructors[0].constructorId)}
+                  className="clicable">
+                  {driver.Constructors[0].name}</td>
                 <td>{driver.points}</td>
 
               </tr>

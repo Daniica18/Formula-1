@@ -36,6 +36,7 @@ export default function App() {
         <Router>
             <nav className="main-navigation">
                 <ul>
+                    <li><Link to="/">Home</Link></li>
                     <li>
                         <Link to="/drivers">Drivers</Link>
                     </li>
@@ -45,9 +46,6 @@ export default function App() {
                     <li>
                         <Link to="/races">Races</Link>
                     </li>
-                </ul>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
                 </ul>
             </nav>
 
