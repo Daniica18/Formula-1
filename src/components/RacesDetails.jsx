@@ -4,8 +4,9 @@ import Loader from "./Loader";
 import axios from "axios";
 import { Link } from "react-router";
 import { useNavigate } from "react-router"
+import Flag from 'react-flagkit';
 
-export default function RacesDetails() {
+export default function RacesDetails(props) {
     const [resultsDetails, setResultsDetails] = useState([]);
     const [qualifyingDetails, setQualifyingDetails] = useState([]);
     const [isLoading, setIsLoading] = useState(true);

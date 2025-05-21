@@ -4,8 +4,9 @@ import Loader from "./Loader";
 import { useParams } from "react-router";
 import { Link } from "react-router";
 import { useNavigate } from "react-router";
+import Flag from 'react-flagkit';
 
-export default function DriversDetails() {
+export default function DriversDetails(props) {
     const [driversDetails, setDriversDetails] = useState([]);
     const [Results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);

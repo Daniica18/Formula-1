@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { useNavigate } from "react-router";
+import Flag from 'react-flagkit';
 
-export default function Drivers() {
+export default function Drivers(props) {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  console.log(props.flags);
 
   useEffect(() => {
     getDrivers();
