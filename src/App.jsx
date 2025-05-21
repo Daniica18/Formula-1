@@ -53,6 +53,11 @@ export default function App() {
                 <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} />} />
 
             </Routes>
+
+<Footer>
+    
+</Footer>
+
         </Router>
 
     )

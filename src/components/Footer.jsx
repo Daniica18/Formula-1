@@ -4,7 +4,7 @@
   return(
   <footer className="footer">
         <div className="footer-menu">
-            <Link to= ""></Link>
+            <Link to= "./Contact"></Link>
             <Link to= ""></Link>
              <Link to= ""></Link>
               <Link to= ""></Link>
