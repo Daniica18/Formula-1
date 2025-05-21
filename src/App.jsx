@@ -9,6 +9,7 @@ import DriversDetails from "./components/DriversDetails";
 import TeamsDetails from "./components/TeamsDetails";
 import RacesDetails from "./components/RacesDetails";
 
+
 export default function App() {
     const [flags, setFlags] = useState([]);
 
@@ -42,6 +43,7 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
+                 <Route path="/" element={<CardOne />} />
                 <Route path="/drivers" element={<Drivers flags = {flags} />} />
                 <Route path="/teams" element={<Teams flags = {flags} />} />
                 <Route path="/races" element={<Races flags = {flags} />} />
