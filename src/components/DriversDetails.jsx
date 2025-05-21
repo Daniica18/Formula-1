@@ -38,6 +38,11 @@ export default function DriversDetails() {
         navigate(linkTo);
     }
 
+    const handleClickRaceDetails = (id) => {
+        const linkTo = `/raceDetails/${id}`;
+        navigate(linkTo);
+    }
+
     if (loading) {
         return <Loader />;
     }
@@ -73,7 +78,10 @@ export default function DriversDetails() {
                                 return (
                                     <tr key={result.round}>
                                         <td>{result.round}</td>
-                                        <td>{result.raceName}</td>
+                                        <td
+                                            onClick={() => handleClickRaceDetails(result.round)}
+                                            className="clicable">
+                                            {result.raceName}</td>
                                         <td
                                             onClick={() => handleClickDetails()}
                                             className="clicable">

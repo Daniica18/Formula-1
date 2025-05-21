@@ -29,10 +29,16 @@ export default function TeamDetails() {
     };
 
     const handleClickDetailes = (id) => {
-      console.log(id);
-      const linkTo = `/raceDetails/${id}`;
-      navigate(linkTo);
-   };
+        console.log(id);
+        const linkTo = `/raceDetails/${id}`;
+        navigate(linkTo);
+    };
+
+    const handleClickDriverDetailes = (id) => {
+        console.log(id);
+        const linkTo = `/driverDetails/${id}`;
+        navigate(linkTo);
+    };
 
     if (isLoading) {
         return (<Loader />)
@@ -63,8 +69,14 @@ export default function TeamDetails() {
                         <tr>
                             <th>Round</th>
                             <th>Grand Prix</th>
-                            <th>{teamResults[0].Results[0].Driver.familyName}</th>
-                            <th>{teamResults[0].Results[1].Driver.familyName}</th>
+                            <th
+                                onClick={() => handleClickDriverDetailes(teamResults[0].Results[0].Driver.driverId)}
+                                className="clicable">
+                                {teamResults[0].Results[0].Driver.familyName}</th>
+                            <th
+                                onClick={() => handleClickDriverDetailes(teamResults[0].Results[0].Driver.driverId)}
+                                className="clicable">
+                                {teamResults[0].Results[1].Driver.familyName}</th>
                             <th>Points</th>
                         </tr>
 
