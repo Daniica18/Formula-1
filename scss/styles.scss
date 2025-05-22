@@ -8,6 +8,8 @@
 
 .main-navigation {
     background-color: red;
+    display: flex;
+    justify-content: space-between;
 
     ul {
         display: flex;
