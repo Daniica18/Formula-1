@@ -31,7 +31,6 @@ export default function TeamDetails(props) {
     };
 
     const filteredFlag = (nationality) => {
-        console.log("nationality ", nationality);
         if (nationality === "British" || nationality === "UK") {
             return "GB";
         } else if (nationality === "USA") {
@@ -44,22 +43,37 @@ export default function TeamDetails(props) {
             return "AE";
         } else {
             const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            console.log("flag ", flag);
             if (flag) {
                 return flag.alpha_2_code;
             }
         }
     };
 
+    const addClass = (position) => {
+        console.log("position ", position);
+        if (position == 1) {
+            return "fisrt_place";
+        } else if (position == 2) {
+            return "second_place";
+        } else if (position == 3) {
+            return "third_place";
+        } else if (position == 4) {
+            return "forth_place";
+        } else if (position == 5) {
+            return "fifth_place";
+        } else if (position > 5 && position < 11) {
+            return "fisrt_ten_place";
+        } else {
+            return "other_place";
+        }
+    };
 
     const handleClickDetailes = (id) => {
-        console.log(id);
         const linkTo = `/raceDetails/${id}`;
         navigate(linkTo);
     };
 
     const handleClickDriverDetailes = (id) => {
-        console.log(id);
         const linkTo = `/driverDetails/${id}`;
         navigate(linkTo);
     };
@@ -118,8 +132,8 @@ export default function TeamDetails(props) {
                                         className="clicable">
                                         <Flag country={filteredFlag(teamResult.Circuit.Location.country)} />
                                         {teamResult.raceName}</td>
-                                    <td>{teamResult.Results[0].position}</td>
-                                    <td>{teamResult.Results[1].position}</td>
+                                    <td className={addClass(teamResult.Results[0].position)}>{teamResult.Results[0].position}</td>
+                                    <td className={addClass(teamResult.Results[1].position)}>{teamResult.Results[1].position}</td>
                                     <td>{parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}</td>
                                 </tr>
 
