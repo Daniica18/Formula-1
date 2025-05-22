@@ -1,7 +1,7 @@
 export default function CardFour() {
   return (
     <>
-      <div className="card1">
+      <div className="card4">
 
         <h1>THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco</h1>
 
