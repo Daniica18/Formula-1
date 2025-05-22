@@ -125,7 +125,7 @@ export default function Home() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                                <Link to="./CardSix">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
+                                <Link to="./CardSix"> What time is the Formula 1 2025 Monaco Grand Prix and how can I watch it?</Link>
                             </Typography>
                         </CardContent>
                     </Card>
