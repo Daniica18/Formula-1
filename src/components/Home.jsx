@@ -35,7 +35,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../public/img/Slider2.jpg" alt="Formula 1" />
+                        <img src="../public/img/f1celeb.jpg" alt="Formula 1" />
                         <div className="bottom-left">
                             <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
                         </div>
