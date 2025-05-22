@@ -45,7 +45,7 @@ export default function App() {
         <Router>
             <nav className="main-navigation">
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/"><img src="./public/img/logo.png" /></Link></li>
                     <li>
                         <Link to="/drivers">Drivers</Link>
                     </li>
