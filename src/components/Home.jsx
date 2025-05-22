@@ -92,8 +92,8 @@ export default function Home() {
                         <img src="../public/img/Slider2.jpg" alt="Hit Netfilx Show" width="800" height="400" />
                     </div>
                     <div>
-                        <h3>3</h3>
-
+                        <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
+                        <img src="../public/img/Slider3.jpg" alt="Hit Netfilx Show" width="800" height="400" />
                     </div>
                 </Slider>
 
