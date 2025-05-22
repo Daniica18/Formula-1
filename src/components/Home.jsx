@@ -29,19 +29,19 @@ export default function Home() {
             <div className="slider-container">
                 <Slider {...settings}>
                     <div className="slider">
-                        <img src="../public/img/Slider1.jpg" alt="Hit Netfilx Show" />
+                        <img src="../public/img/Slider1.png" alt="Hit Netfilx Show" />
                         <div className="bottom-left">
                             <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../public/img/PictureSlider2.jpg" alt="Hit Netfilx Show" />
+                        <img src="../public/img/f1celeb.jpg" alt="Hit Netfilx Show" />
                         <div className="bottom-left">
                             <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../public/img/Slider3.jpg" alt="RACE WEEK" />
+                        <img src="../public/img/Slider3.png" alt="RACE WEEK" />
                         <div className="bottom-left">
                             <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
                         </div>
@@ -113,7 +113,7 @@ export default function Home() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                                <Link to="./CardFour">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
+                                <Link to="./CardFive">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
                             </Typography>
                         </CardContent>
                     </Card>
@@ -125,7 +125,7 @@ export default function Home() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                                <Link to="./CardFour">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
+                                <Link to="./CardSix">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
                             </Typography>
                         </CardContent>
                     </Card>

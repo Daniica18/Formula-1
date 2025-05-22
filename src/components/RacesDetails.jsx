@@ -53,7 +53,7 @@ export default function RacesDetails(props) {
     const addClass = (position) => {
         console.log("position ", position);
         if (position == 1) {
-            return "fisrt_place";
+            return "first_place";
         } else if (position == 2) {
             return "second_place";
         } else if (position == 3) {

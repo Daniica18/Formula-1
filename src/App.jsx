@@ -1,12 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Box from "@mui/system/Box";
-import FormControl from '@mui/material/FormControl';
-import TextField from "@mui/material/TextField";
-import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
 import Home from "./components/Home"
+import SearchForm from "./components/SearchForm"
 import Drivers from "./components/Drivers";
 import Teams from "./components/Teams";
 import Races from "./components/Races";
@@ -23,27 +19,39 @@ import PrivacyPolicy from "./components/PrivacyPolicy"
 import Partners from "./components/Partners"
 import TearmsOfUse from "./components/TermsOfUse"
 import BecomeAnAffiliate from "./components/BecomeAnAffiliate"
+import CardFive from "./components/CardFive";
+import CardSix from "./components/CardSix";
 
 export default function App() {
     const [flags, setFlags] = useState([]);
-    const [year, setYears] = useState("");
+    const [years, setYears] = useState([]);
 
     useEffect(() => {
         getFlags();
+        getYears();
     }, []);
 
     const getFlags = async () => {
         const url = `https://raw.githubusercontent.com/Dinuks/country-nationality-list/master/countries.json`;
         const response = await axios.get(url);
         setFlags(response.data);
-        console.log(response.data);
+    };
+
+    const getYears = () => {
+        const curentYear = (new Date()).getFullYear() - 1;
+        const minYear = 2000;
+        const yearArray = [];
+        for (var i = curentYear; i >= minYear; i--) {
+            yearArray.push(i)      
+        }
+        setYears(yearArray)
     };
 
     return (
         <Router>
             <nav className="main-navigation">
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/"><img src="./public/img/logo.png" /></Link></li>
                     <li>
                         <Link to="/drivers">Drivers</Link>
                     </li>
@@ -54,24 +62,7 @@ export default function App() {
                         <Link to="/races">Races</Link>
                     </li>
                 </ul>
-                <ul>
-                    <li>
-                        <TextField
-                            id="outlined-basic"
-                            value=""
-                            variant="outlined"
-                            label="Search for..."
-                        />
-                    </li>
-                    <li>
-                        <FormControl>
-                            <Box sx={{ minWidth: 120 }}>
-                                <InputLabel id="demo-simple-select-label">Select a year</InputLabel>
-                                <Select sx={{ minWidth: 140 }}></Select>
-                            </Box>
-                        </FormControl>
-                    </li>
-                </ul>
+                <SearchForm years={years} />
             </nav>
 
             <div className="container">
@@ -82,8 +73,8 @@ export default function App() {
                         <Route path="/cardTwo" element={<CardTwo />} />
                         <Route path="/cardThree" element={<CardThree />} />
                         <Route path="/cardFour" element={<CardFour />} />
-                        <Route path="/cardFive" element={<CardFour />} />
-                        <Route path="/cardSix" element={<CardFour />} />
+                        <Route path="/cardFive" element={<CardFive />} />
+                        <Route path="/cardSix" element={<CardSix />} />
                         <Route path="/Contact" element={<Contact />} />
                         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                         <Route path="/Partners" element={<Partners />} />

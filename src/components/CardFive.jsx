@@ -1,0 +1,35 @@
+export default function CardFive() {
+    return (
+        <>
+            <div className="card5">
+                <h1>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h1>
+                <br></br>
+
+                <img src="../public/img/CardFive.jpg" style={{ width: '1050px', height: '450px' }} />
+
+                <p><b>McLaren have revealed a special ‘Riviera-inspired’ livery enhancement that will run on their Formula 1 cars at the upcoming Monaco and Spanish Grands Prix.</b>
+                    <br></br>
+                    In collaboration with team partner OKX, the livery change is a nod to McLaren’s iconic M7A race car, while “drawing inspiration from the elegance of the Riviera”.
+                    <br></br>
+                    McLaren’s new design will run on both MCL39s throughout the entirety of the Monaco and Spanish Grand Prix weekends, with drivers Lando Norris and Oscar Piastri also sporting fresh overalls in Monaco.
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+
+
+
+        </>
+
+
+
+
+
+    )
+}
