@@ -23,6 +23,8 @@ import PrivacyPolicy from "./components/PrivacyPolicy"
 import Partners from "./components/Partners"
 import TearmsOfUse from "./components/TermsOfUse"
 import BecomeAnAffiliate from "./components/BecomeAnAffiliate"
+import CardFive from "./components/CardFive";
+import CardSix from "./components/CardSix";
 
 export default function App() {
     const [flags, setFlags] = useState([]);
@@ -82,8 +84,8 @@ export default function App() {
                         <Route path="/cardTwo" element={<CardTwo />} />
                         <Route path="/cardThree" element={<CardThree />} />
                         <Route path="/cardFour" element={<CardFour />} />
-                        <Route path="/cardFive" element={<CardFour />} />
-                        <Route path="/cardSix" element={<CardFour />} />
+                        <Route path="/cardFive" element={<CardFive />} />
+                        <Route path="/cardSix" element={<CardSix />} />
                         <Route path="/Contact" element={<Contact />} />
                         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                         <Route path="/Partners" element={<Partners />} />
