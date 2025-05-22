@@ -1,4 +1,4 @@
-export default function CardOne() {
+export default function CardTwo() {
   return (
     <>
       <div className="card1">
