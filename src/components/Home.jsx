@@ -113,7 +113,7 @@ export default function Home() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                                <Link to="./CardFour">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
+                                <Link to="./CardFive">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
                             </Typography>
                         </CardContent>
                     </Card>
@@ -125,7 +125,7 @@ export default function Home() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                                <Link to="./CardFour">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
+                                <Link to="./CardSix">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
                             </Typography>
                         </CardContent>
                     </Card>
