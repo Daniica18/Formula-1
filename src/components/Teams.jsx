@@ -68,7 +68,7 @@ export default function Teams(props) {
     };
 
     return (
-        <div>
+        <div className="detail">
             <h1>Constructors Championship</h1>
             <table className="detail_table">
                 <thead>
