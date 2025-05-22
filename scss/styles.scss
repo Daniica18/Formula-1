@@ -231,4 +231,16 @@ body {
         bottom: 0;
         padding: 20px;
     }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
 }
