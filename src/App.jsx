@@ -1,6 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Box from "@mui/system/Box";
+import FormControl from '@mui/material/FormControl';
+import TextField from "@mui/material/TextField";
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
 import Home from "./components/Home"
 import Drivers from "./components/Drivers";
 import Teams from "./components/Teams";
@@ -14,9 +19,14 @@ import CardThree from "./components/CardThree";
 import CardFour from "./components/CardFour";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import PrivacyPolicy from "./components/PrivacyPolicy"
+import Partners from "./components/Partners"
+import TearmsOfUse from "./components/TermsOfUse"
+import BecomeAnAffiliate from "./components/BecomeAnAffiliate"
 
 export default function App() {
     const [flags, setFlags] = useState([]);
+    const [year, setYears] = useState("");
 
     useEffect(() => {
         getFlags();
@@ -44,6 +54,24 @@ export default function App() {
                         <Link to="/races">Races</Link>
                     </li>
                 </ul>
+                    <ul>
+                        <li>
+                            <TextField
+                                id="outlined-basic"
+                                value=""
+                                variant="outlined"
+                                label="Search for..."
+                                />
+                        </li>
+                        <li>
+                                <FormControl>
+                            <Box sx={{ minWidth: 120 }}>
+                            <InputLabel id="demo-simple-select-label">Select a year</InputLabel>
+                            <Select sx={{ minWidth: 140 }}></Select>
+                            </Box>
+                </FormControl>
+                        </li>
+                    </ul>
             </nav>
 
             <div className="container">
@@ -54,6 +82,11 @@ export default function App() {
                         <Route path="/cardTwo" element={<CardTwo />} />
                         <Route path="/cardThree" element={<CardThree />} />
                         <Route path="/cardFour" element={<CardFour />} />
+                        <Route path="/Contact" element={<Contact />} />
+                        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+                        <Route path="/Partners" element={<Partners />} />
+                        <Route path="/TearmsOfUse" element={<TearmsOfUse />} />
+                        <Route path="/BecomeAnAffiliate" element={<BecomeAnAffiliate />} />
                         <Route path="/drivers" element={<Drivers flags={flags} />} />
                         <Route path="/teams" element={<Teams flags={flags} />} />
                         <Route path="/races" element={<Races flags={flags} />} />

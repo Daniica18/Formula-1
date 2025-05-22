@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -6,10 +6,30 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-export default function MediaCard() {
+
+export default function Home() {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        slidesToScroll: 1,
+        pauseOnHover: true,
+    };
+
     return (
+
         <div>
+
+            {/* CARDS */}
+
+
             <div className='Cards'>
                 <Card sx={{ maxWidth: 200 }}>
                     <CardMedia
@@ -62,6 +82,24 @@ export default function MediaCard() {
                         </Typography>
                     </CardContent>
                 </Card>
+
+                {/* SLIDER */}
+                <div>
+                    <Slider {...settings}>
+                        <div>
+                            <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
+                            <img src="../public/img/Slider1.jpg" alt="Hit Netfilx Show" width="800" height="400" />
+                        </div>
+                        <div>
+                            <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
+                            <img src="../public/img/Slider2.jpg" alt="Hit Netfilx Show" width="800" height="400" />
+                        </div>
+                        <div>
+                            <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
+                            <img src="../public/img/Slider3.jpg" alt="RACE WEEK" width="800" height="400" />
+                        </div>
+                    </Slider>
+                </div>
 
             </div>
         </div>

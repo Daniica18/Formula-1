@@ -1,7 +1,7 @@
-export default function CardOne() {
+export default function CardTwo() {
   return (
     <>
-      <div className="card1">
+      <div className="card2">
         <h1> Vasseur admits Ferrari ‘are not fast enough’ as he highlights Qualifying concerns ahead of Monaco</h1>
         <br></br>
 
