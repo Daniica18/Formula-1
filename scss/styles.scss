@@ -5,11 +5,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100%;
 }
 
 .container {
-    min-height: calc(100vh - 101px);
+    min-height: calc(100vh - 153px);
     display: flex;
     flex-direction: column;
 }
@@ -31,6 +31,7 @@ body {
             padding: 20px;
             font-size: 20px;
             text-decoration: none;
+            height: 100%;
 
             .logo {
                 width: 150px;
@@ -123,8 +124,12 @@ body {
                 border: black 1px solid;
             }
 
+            &:nth-child(odd) {
+                background-color: #f58982;
+            }
+
             &:nth-child(even) {
-                background-color: #ccc;
+                background-color: #d9cf9e;
             }
 
         }
@@ -156,13 +161,15 @@ body {
 }
 
 .card1,
-.card2 {
+.card2,
+.card3,
+.card5 {
     width: 72%;
     font-size: 20px;
     padding: 15px;
 }
 
-.fisrt_place {
+.first_place {
     background-color: yellow;
 }
 

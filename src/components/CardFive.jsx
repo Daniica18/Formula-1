@@ -3,8 +3,9 @@ export default function CardFive() {
         <>
             <div className="card5">
                 <h1>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h1>
+                <br></br>
 
-                <img src="../public/img/CardFive.jpg" />
+                <img src="../public/img/CardFive.jpg" style={{ width: '1050px', height: '450px' }} />
 
                 <p><b>McLaren have revealed a special ‘Riviera-inspired’ livery enhancement that will run on their Formula 1 cars at the upcoming Monaco and Spanish Grands Prix.</b>
                     <br></br>
