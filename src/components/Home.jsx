@@ -35,7 +35,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../public/img/Slider2.jpg" alt="Hit Netfilx Show" />
+                        <img src="../public/img/f1celeb.jpg" alt="Hit Netfilx Show" />
                         <div className="bottom-left">
                             <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
                         </div>
