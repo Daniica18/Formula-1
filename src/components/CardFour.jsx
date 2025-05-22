@@ -7,7 +7,7 @@ export default function CardFour() {
 
         <br /><br />
 
-        <img src="../public/img/Card4.new.jpg" style={{width:'800px'}}></img>
+        <img src="../public/img/Card4.new.jpg" style={{width:'1000px'}}></img>
 
         <br /><br />
 
