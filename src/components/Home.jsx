@@ -35,7 +35,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../public/img/Slider2.jpg" alt="Formula 1" />
+                        <img src="../public/img/f1celeb.jpg" alt="Formula 1" />
                         <div className="bottom-left">
                             <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
                         </div>
@@ -125,7 +125,7 @@ export default function Home() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                                <Link to="./CardSix">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
+                                <Link to="./CardSix"> What time is the Formula 1 2025 Monaco Grand Prix and how can I watch it?</Link>
                             </Typography>
                         </CardContent>
                     </Card>
