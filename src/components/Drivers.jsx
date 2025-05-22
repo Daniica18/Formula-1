@@ -11,10 +11,10 @@ export default function Drivers(props) {
 
   useEffect(() => {
     getDrivers();
-  }, []);
+  }, [props.year]);
 
   const getDrivers = async () => {
-    const url = 'http://ergast.com/api/f1/2013/driverStandings.json';
+    const url = `http://ergast.com/api/f1/${props.year}/driverStandings.json`;
     const response = await axios.get(url);
     console.log(response);
     setDrivers(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
@@ -62,7 +62,7 @@ export default function Drivers(props) {
       <table className="detail_table">
         <thead>
           <tr>
-            <th colSpan={4}>Drivers Chamionship Standing -2013</th>
+            <th colSpan={4}>Drivers Chamionship Standing -{props.year}</th>
 
           </tr>
         </thead>
