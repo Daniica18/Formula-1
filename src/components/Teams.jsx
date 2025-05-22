@@ -68,7 +68,7 @@ export default function Teams(props) {
     };
 
     return (
-        <div>
+        <div className="detail">
             <h1>Constructors Championship</h1>
             <table className="detail_table">
                 <thead>
@@ -82,7 +82,7 @@ export default function Teams(props) {
                             <tr key={team.Constructor.constructorId}>
                                 <td className={addClass(team.position)}>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
-                                    className='clicable'>
+                                    className={'clicable'}>
                                     <Flag country={filteredFlag(team.Constructor.nationality)} />
                                     {team.Constructor.name}</td>
                                 <td className={addClass(team.position)}>Details: <Link to={team.Constructor.url} target="_blank"

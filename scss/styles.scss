@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    min-height: calc(100vh - 153px);
+    min-height: calc(100vh - 132px);
     display: flex;
     flex-direction: column;
 }
@@ -92,6 +92,14 @@ body {
     flex-grow: 3;
 }
 
+.detail {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    gap: 10px;
+    align-items: center;
+}
+
 .details_div_info {
     border: black 1px solid;
     border-radius: 9px;
@@ -104,7 +112,7 @@ body {
     border: black 1px solid;
     border-collapse: collapse;
     border-radius: 5px;
-    width: 70%;
+    width: 90%;
 
     thead {
 

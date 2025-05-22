@@ -100,7 +100,7 @@ export default function TeamDetails(props) {
                 </ul>
             </div>
 
-            <div>
+            <div className="detail">
                 <table className="detail_table">
                     <thead>
 
