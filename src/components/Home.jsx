@@ -41,7 +41,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../public/img/Slider3.jpg" alt="RACE WEEK" />
+                        <img src="../public/img/Slider3.png" alt="RACE WEEK" />
                         <div className="bottom-left">
                             <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
                         </div>
