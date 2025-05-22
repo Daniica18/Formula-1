@@ -54,24 +54,24 @@ export default function App() {
                         <Link to="/races">Races</Link>
                     </li>
                 </ul>
-                    <ul>
-                        <li>
-                            <TextField
-                                id="outlined-basic"
-                                value=""
-                                variant="outlined"
-                                label="Search for..."
-                                />
-                        </li>
-                        <li>
-                                <FormControl>
+                <ul>
+                    <li>
+                        <TextField
+                            id="outlined-basic"
+                            value=""
+                            variant="outlined"
+                            label="Search for..."
+                        />
+                    </li>
+                    <li>
+                        <FormControl>
                             <Box sx={{ minWidth: 120 }}>
-                            <InputLabel id="demo-simple-select-label">Select a year</InputLabel>
-                            <Select sx={{ minWidth: 140 }}></Select>
+                                <InputLabel id="demo-simple-select-label">Select a year</InputLabel>
+                                <Select sx={{ minWidth: 140 }}></Select>
                             </Box>
-                </FormControl>
-                        </li>
-                    </ul>
+                        </FormControl>
+                    </li>
+                </ul>
             </nav>
 
             <div className="container">
