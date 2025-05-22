@@ -49,14 +49,17 @@ export default function Home() {
                 </Slider>
             </div>
 
+            <br></br>
+            <br></br>
+
             <div>
                 {/* CARDS */}
                 <div className="cards">
-                    <Card sx={{ maxWidth: 200 }}>
+                    <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
                             image="../public/img/Card1.jpg"
-                            title="green iguana"
+
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
@@ -65,11 +68,11 @@ export default function Home() {
                         </CardContent>
                     </Card>
 
-                    <Card sx={{ maxWidth: 200 }}>
+                    <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
                             image="../public/img/Card2.jpg"
-                            title="green iguana"
+
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
@@ -78,11 +81,11 @@ export default function Home() {
                         </CardContent>
                     </Card>
 
-                    <Card sx={{ maxWidth: 200 }}>
+                    <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
                             image="../public/img/Card3.jpg"
-                            title="green iguana"
+
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
@@ -91,15 +94,38 @@ export default function Home() {
                         </CardContent>
                     </Card>
 
-                    <Card sx={{ maxWidth: 200 }}>
+                    <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
                             image="../public/img/Card4.jpg"
-                            title="green iguana"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
                                 <Link to="./CardFour">THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco</Link>
+                            </Typography>
+                        </CardContent>
+                    </Card>
+
+                    <Card sx={{ maxWidth: 200 }} className='card'>
+                        <CardMedia
+                            sx={{ height: 100 }}
+                            image="../public/img/Card5.jpg"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
+                                <Link to="./CardFour">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
+                            </Typography>
+                        </CardContent>
+                    </Card>
+
+                    <Card sx={{ maxWidth: 200 }} className='card'>
+                        <CardMedia
+                            sx={{ height: 100 }}
+                            image="../public/img/Card6.jpg"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
+                                <Link to="./CardFour">McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</Link>
                             </Typography>
                         </CardContent>
                     </Card>

@@ -47,8 +47,12 @@ body {
     display: inline;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
+}
 
+.card {
+    box-shadow: 25px 25px #c0acac8c;
 }
 
 .loader-container {
