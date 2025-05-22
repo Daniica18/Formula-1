@@ -10,7 +10,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 export default function Home() {
     const settings = {
         dots: true,
@@ -18,85 +17,89 @@ export default function Home() {
         speed: 500,
         slidesToShow: 1,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 3000,
         slidesToScroll: 1,
         pauseOnHover: true,
     };
 
     return (
-
         <div>
-
-            {/* CARDS */}
-
-
-            <div className='Cards'>
-                <Card sx={{ maxWidth: 200 }}>
-                    <CardMedia
-                        sx={{ height: 100 }}
-                        image="../public/img/Card1.jpg"
-                        title="green iguana"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                            <Link to="./CardOne">POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?</Link>
-                        </Typography>
-                    </CardContent>
-                </Card>
-
-                <Card sx={{ maxWidth: 200 }}>
-                    <CardMedia
-                        sx={{ height: 100 }}
-                        image="../public/img/Card2.jpg"
-                        title="green iguana"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                            <Link to="./CardTwo">Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco</Link>
-                        </Typography>
-                    </CardContent>
-                </Card>
-
-                <Card sx={{ maxWidth: 200 }}>
-                    <CardMedia
-                        sx={{ height: 100 }}
-                        image="../public/img/Card3.jpg"
-                        title="green iguana"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                            <Link to="./CardThree">TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design</Link>
-                        </Typography>
-                    </CardContent>
-                </Card>
-
-                <Card sx={{ maxWidth: 200 }}>
-                    <CardMedia
-                        sx={{ height: 100 }}
-                        image="../public/img/Card4.jpg"
-                        title="green iguana"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
-                            <Link to="./CardFour">THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco</Link>
-                        </Typography>
-                    </CardContent>
-                </Card>
-
-                {/* SLIDER */}
+            <div className="cards">
+                {/* CARDS */}
                 <div>
+                    <Card sx={{ maxWidth: 200 }}>
+                        <CardMedia
+                            sx={{ height: 100 }}
+                            image="../public/img/Card1.jpg"
+                            title="green iguana"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
+                                <Link to="./CardOne">POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?</Link>
+                            </Typography>
+                        </CardContent>
+                    </Card>
+
+                    <Card sx={{ maxWidth: 200 }}>
+                        <CardMedia
+                            sx={{ height: 100 }}
+                            image="../public/img/Card2.jpg"
+                            title="green iguana"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
+                                <Link to="./CardTwo">Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco</Link>
+                            </Typography>
+                        </CardContent>
+                    </Card>
+
+                    <Card sx={{ maxWidth: 200 }}>
+                        <CardMedia
+                            sx={{ height: 100 }}
+                            image="../public/img/Card3.jpg"
+                            title="green iguana"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
+                                <Link to="./CardThree">TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design</Link>
+                            </Typography>
+                        </CardContent>
+                    </Card>
+
+                    <Card sx={{ maxWidth: 200 }}>
+                        <CardMedia
+                            sx={{ height: 100 }}
+                            image="../public/img/Card4.jpg"
+                            title="green iguana"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
+                                <Link to="./CardFour">THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco</Link>
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </div>
+                {/* SLIDER */}
+
+                <div className="slider-container">
                     <Slider {...settings}>
-                        <div>
-                            <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
-                            <img src="../public/img/Slider1.jpg" alt="Hit Netfilx Show" width="800" height="400" />
+                        <div className="slider">
+                            <img src="../public/img/Slider1.jpg" alt="Hit Netfilx Show" />
+                            <div className="bottom-left">
+                                <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
+                            </div>
                         </div>
-                        <div>
-                            <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
-                            <img src="../public/img/Slider2.jpg" alt="Hit Netfilx Show" width="800" height="400" />
+                        <div className="slider">
+                            <img src="../public/img/Slider2.jpg" alt="Hit Netfilx Show" />
+                            <div className="bottom-left">
+                                <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
+                            </div>
                         </div>
-                        <div>
-                            <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
-                            <img src="../public/img/Slider3.jpg" alt="RACE WEEK" width="800" height="400" />
+                        <div className="slider">
+                            <img src="../public/img/Slider3.jpg" alt="RACE WEEK" />
+                            <div className="bottom-left">
+                                <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
+                            </div>
                         </div>
                     </Slider>
                 </div>
