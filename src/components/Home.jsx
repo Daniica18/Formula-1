@@ -31,19 +31,25 @@ export default function Home() {
                     <div className="slider">
                         <img src="../public/img/Slider1.png" alt="Hit Netfilx Show" />
                         <div className="bottom-left">
-                            <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
+                            <Link to="Slider1">
+                                <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
+                            </Link>
                         </div>
                     </div>
                     <div className="slider">
                         <img src="../public/img/f1celeb.jpg" alt="Formula 1" />
                         <div className="bottom-left">
-                            <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
+                            <Link to="Slider2">
+                                <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
+                            </Link>
                         </div>
                     </div>
                     <div className="slider">
                         <img src="../public/img/Slider3.png" alt="RACE WEEK" />
                         <div className="bottom-left">
-                            <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
+                            <Link to="Slider3">
+                                <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
+                            </Link>
                         </div>
                     </div>
                 </Slider>

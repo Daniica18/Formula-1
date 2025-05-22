@@ -177,6 +177,12 @@ body {
     width: 72%;
     font-size: 20px;
     padding: 15px;
+
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .first_place {
@@ -231,4 +237,16 @@ body {
         bottom: 0;
         padding: 20px;
     }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
 }
