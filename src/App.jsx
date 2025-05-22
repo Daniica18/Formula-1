@@ -42,7 +42,7 @@ export default function App() {
         const minYear = 2000;
         const yearArray = [];
         for (var i = curentYear; i >= minYear; i--) {
-            yearArray.push(i)      
+            yearArray.push(i)
         }
         setYears(yearArray)
     };
@@ -51,7 +51,7 @@ export default function App() {
         <Router>
             <nav className="main-navigation">
                 <ul>
-                    <li><Link to="/"><img src="./public/img/logo.png" /></Link></li>
+                    <li><Link to="/"><img src="./public/img/logo.png" className="logo" /></Link></li>
                     <li>
                         <Link to="/drivers">Drivers</Link>
                     </li>
