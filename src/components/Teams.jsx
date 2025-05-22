@@ -44,6 +44,19 @@ export default function Teams(props) {
         }
     };
 
+    const addClass = (position) => {
+        console.log("position ", position);
+        if (position == 1) {
+            return "first_place";
+        } else if (position == 2) {
+            return "second_place";
+        } else if (position == 3) {
+            return "third_place";
+        } else {
+            return "";
+        }
+    };
+
     const handleClickDetails = (id) => {
         console.log(id);
         const linkTo = `/teamDetails/${id}`
@@ -67,17 +80,17 @@ export default function Teams(props) {
                     {teams.map((team) => {
                         return (
                             <tr key={team.Constructor.constructorId}>
-                                <td>{team.position}</td>
+                                <td className={addClass(team.position)}>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
-                                    className="clicable">
+                                    className='clicable'>
                                     <Flag country={filteredFlag(team.Constructor.nationality)} />
                                     {team.Constructor.name}</td>
-                                <td>Details: <Link to={team.Constructor.url} target="_blank"
+                                <td className={addClass(team.position)}>Details: <Link to={team.Constructor.url} target="_blank"
                                     rel="noopener noreferrer">
                                     <OpenInNewRoundedIcon
                                         style={{ color: "black", width: '19px', height: 'auto' }} />
                                 </Link></td>
-                                <td>{team.points}</td>
+                                <td className={addClass(team.position)}>{team.points}</td>
                             </tr>
                         )
                     })}
