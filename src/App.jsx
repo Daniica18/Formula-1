@@ -25,6 +25,8 @@ import CardSix from "./components/CardSix";
 export default function App() {
     const [flags, setFlags] = useState([]);
     const [years, setYears] = useState([]);
+    const [text, setText] = useState("");
+    const [year, setYear] = useState("");
 
     useEffect(() => {
         getFlags();
@@ -62,7 +64,7 @@ export default function App() {
                         <Link to="/races">Races</Link>
                     </li>
                 </ul>
-                <SearchForm years={years} />
+                <SearchForm years={years} text={text} year={year} setYear={setYear}/>
             </nav>
 
             <div className="container">
@@ -80,7 +82,7 @@ export default function App() {
                         <Route path="/Partners" element={<Partners />} />
                         <Route path="/TearmsOfUse" element={<TearmsOfUse />} />
                         <Route path="/BecomeAnAffiliate" element={<BecomeAnAffiliate />} />
-                        <Route path="/drivers" element={<Drivers flags={flags} />} />
+                        <Route path="/drivers" element={<Drivers flags={flags} year={year} />} />
                         <Route path="/teams" element={<Teams flags={flags} />} />
                         <Route path="/races" element={<Races flags={flags} />} />
                         <Route path="/driverDetails/:id" element={<DriversDetails flags={flags} />} />
