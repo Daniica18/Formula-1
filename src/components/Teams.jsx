@@ -79,13 +79,13 @@ export default function Teams(props) {
                 <tbody>
                     {teams.map((team) => {
                         return (
-                            <tr key={team.Constructor.constructorId}>
-                                <td className={addClass(team.position)}>{team.position}</td>
+                            <tr className={addClass(team.position)} key={team.Constructor.constructorId}>
+                                <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
-                                    className={'clicable'}>
+                                    className='clicable'>
                                     <Flag country={filteredFlag(team.Constructor.nationality)} />
                                     {team.Constructor.name}</td>
-                                <td className={addClass(team.position)}>Details: <Link to={team.Constructor.url} target="_blank"
+                                <td>Details: <Link to={team.Constructor.url} target="_blank"
                                     rel="noopener noreferrer">
                                     <OpenInNewRoundedIcon
                                         style={{ color: "black", width: '19px', height: 'auto' }} />

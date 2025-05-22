@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    min-height: calc(100vh - 132px);
+    min-height: calc(100vh - 122px);
     display: flex;
     flex-direction: column;
 }
@@ -32,8 +32,6 @@ body {
             font-size: 20px;
             text-decoration: none;
             font-weight: bold;
-
-
 
             .logo {
                 width: 150px;
@@ -239,4 +237,16 @@ h1 {
         bottom: 0;
         padding: 20px;
     }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
 }
