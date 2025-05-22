@@ -82,6 +82,8 @@ export default function App() {
                         <Route path="/cardTwo" element={<CardTwo />} />
                         <Route path="/cardThree" element={<CardThree />} />
                         <Route path="/cardFour" element={<CardFour />} />
+                        <Route path="/cardFive" element={<CardFour />} />
+                        <Route path="/cardSix" element={<CardFour />} />
                         <Route path="/Contact" element={<Contact />} />
                         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                         <Route path="/Partners" element={<Partners />} />
