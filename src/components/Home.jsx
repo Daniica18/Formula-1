@@ -24,9 +24,34 @@ export default function Home() {
 
     return (
         <div>
-            <div className="cards">
+            {/* SLIDER */}
+
+            <div className="slider-container">
+                <Slider {...settings}>
+                    <div className="slider">
+                        <img src="../public/img/Slider1.jpg" alt="Hit Netfilx Show" />
+                        <div className="bottom-left">
+                            <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
+                        </div>
+                    </div>
+                    <div className="slider">
+                        <img src="../public/img/Slider2.jpg" alt="Hit Netfilx Show" />
+                        <div className="bottom-left">
+                            <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
+                        </div>
+                    </div>
+                    <div className="slider">
+                        <img src="../public/img/Slider3.jpg" alt="RACE WEEK" />
+                        <div className="bottom-left">
+                            <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
+                        </div>
+                    </div>
+                </Slider>
+            </div>
+
+            <div>
                 {/* CARDS */}
-                <div>
+                <div className="cards">
                     <Card sx={{ maxWidth: 200 }}>
                         <CardMedia
                             sx={{ height: 100 }}
@@ -79,31 +104,6 @@ export default function Home() {
                         </CardContent>
                     </Card>
                 </div>
-                {/* SLIDER */}
-
-                <div className="slider-container">
-                    <Slider {...settings}>
-                        <div className="slider">
-                            <img src="../public/img/Slider1.jpg" alt="Hit Netfilx Show" />
-                            <div className="bottom-left">
-                                <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
-                            </div>
-                        </div>
-                        <div className="slider">
-                            <img src="../public/img/Slider2.jpg" alt="Hit Netfilx Show" />
-                            <div className="bottom-left">
-                                <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
-                            </div>
-                        </div>
-                        <div className="slider">
-                            <img src="../public/img/Slider3.jpg" alt="RACE WEEK" />
-                            <div className="bottom-left">
-                                <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
-                            </div>
-                        </div>
-                    </Slider>
-                </div>
-
             </div>
         </div>
     );

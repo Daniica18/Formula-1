@@ -1,5 +1,13 @@
 @use "reset";
 
+body {
+    background-image: url("../public/img/Wallpaper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
 .container {
     min-height: calc(100vh - 101px);
     display: flex;
@@ -36,6 +44,11 @@
 .cards {
     width: 100%;
     background-color: rgb(204, 183, 183);
+    display: inline;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
 }
 
 .loader-container {
