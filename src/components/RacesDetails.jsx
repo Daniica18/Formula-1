@@ -62,7 +62,7 @@ export default function RacesDetails(props) {
             return "forth_place";
         } else if (position == 5) {
             return "fifth_place";
-        } else if (position > 5 && position < 10) {
+        } else if (position > 5 && position < 11) {
             return "fisrt_ten_place";
         } else {
             return "other_place";
