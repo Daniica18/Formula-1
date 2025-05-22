@@ -1,0 +1,88 @@
+import { useEffect, useState } from "react";
+import Box from "@mui/system/Box";
+import FormControl from '@mui/material/FormControl';
+import TextField from "@mui/material/TextField";
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import { color, maxHeight } from "@mui/system";
+
+export default function SearchForm(props) {
+    const [text, setText] = useState("");
+    const [year, setYear] = useState("");
+
+    const handleChangeText = (event) => {
+        setText(event.target.value);
+    };
+
+    const handleChangeYear = (event) => {
+        setYear(event.target.value);
+    };
+
+    return (
+        <ul>
+            <li>
+                <TextField
+                    id="outlined-basic"
+                    value={text}
+                    onChange={handleChangeText}
+                    variant="outlined"
+                    className="text_field"
+                    label="Search for..."
+                />
+            </li>
+            <li>
+                <Box sx={{ minWidth: 120 }}>
+                    <FormControl>
+                        <InputLabel id="demo-simple-select-label" sx={{color: "white"}}>Select a year</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={year}
+                            label="Filter By Year"
+                            onChange={handleChangeYear}
+                            sx={{
+                                minWidth: 140,
+                                // backgroundColor: "#f0f0f0",
+                                color: "white",
+                                "& .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "red",
+                                },
+                                "&:hover .MuiOutlinedInput-notchedOutline": {
+                                    borderColor: "black",
+                                },
+                            }}
+                            MenuProps={{
+                                PapperProps: {
+                                    sx: {
+                                        backgroundColor: "#f5f5f5",
+                                        marginTop: "5px",
+                                        maxHeight: 200,
+                                        "& .MuiMenuItem-root": {
+                                            "&:hover": {
+                                                backgroundColor: "red",
+                                                color: "#fff"
+                                            },
+                                            "&:Mui-selected": {
+                                                backgroundColor: "d0d0d0",
+                                                "&:hover": {
+                                                    backgroundColor: "red",
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            }}
+                        >
+                            {props.years.map((year) => {
+                                return (
+                                    <MenuItem value={year}>{year}</MenuItem>
+                                )
+                            })}
+                        </Select>
+                    </FormControl>
+                </Box>
+            </li>
+        </ul>
+    )
+}
