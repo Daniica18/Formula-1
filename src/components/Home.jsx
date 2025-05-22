@@ -29,7 +29,7 @@ export default function Home() {
             <div className="slider-container">
                 <Slider {...settings}>
                     <div className="slider">
-                        <img src="../public/img/Slider1.jpg" alt="Hit Netfilx Show" />
+                        <img src="../public/img/Slider1.png" alt="Hit Netfilx Show" />
                         <div className="bottom-left">
                             <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
                         </div>
