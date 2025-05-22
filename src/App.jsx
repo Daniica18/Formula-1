@@ -1,12 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Box from "@mui/system/Box";
-import FormControl from '@mui/material/FormControl';
-import TextField from "@mui/material/TextField";
-import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
 import Home from "./components/Home"
+import SearchForm from "./components/SearchForm"
 import Drivers from "./components/Drivers";
 import Teams from "./components/Teams";
 import Races from "./components/Races";
@@ -28,17 +24,27 @@ import CardSix from "./components/CardSix";
 
 export default function App() {
     const [flags, setFlags] = useState([]);
-    const [year, setYears] = useState("");
+    const [years, setYears] = useState([]);
 
     useEffect(() => {
         getFlags();
+        getYears();
     }, []);
 
     const getFlags = async () => {
         const url = `https://raw.githubusercontent.com/Dinuks/country-nationality-list/master/countries.json`;
         const response = await axios.get(url);
         setFlags(response.data);
-        console.log(response.data);
+    };
+
+    const getYears = () => {
+        const curentYear = (new Date()).getFullYear() - 1;
+        const minYear = 2000;
+        const yearArray = [];
+        for (var i = curentYear; i >= minYear; i--) {
+            yearArray.push(i)      
+        }
+        setYears(yearArray)
     };
 
     return (
@@ -56,24 +62,7 @@ export default function App() {
                         <Link to="/races">Races</Link>
                     </li>
                 </ul>
-                <ul>
-                    <li>
-                        <TextField
-                            id="outlined-basic"
-                            value=""
-                            variant="outlined"
-                            label="Search for..."
-                        />
-                    </li>
-                    <li>
-                        <FormControl>
-                            <Box sx={{ minWidth: 120 }}>
-                                <InputLabel id="demo-simple-select-label">Select a year</InputLabel>
-                                <Select sx={{ minWidth: 140 }}></Select>
-                            </Box>
-                        </FormControl>
-                    </li>
-                </ul>
+                <SearchForm years={years} />
             </nav>
 
             <div className="container">
