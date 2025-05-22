@@ -50,7 +50,7 @@ export default function Home() {
             </div>
 
             <br></br>
-            <br></br>
+
 
             <div>
                 {/* CARDS */}
