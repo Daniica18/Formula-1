@@ -17,7 +17,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy"
 import Partners from "./components/Partners"
-import TearmsOfUse from "./components/TermsOfUse"
+import TermsOfUse from "./components/TermsOfUse"
 import BecomeAnAffiliate from "./components/BecomeAnAffiliate"
 import CardFive from "./components/CardFive";
 import CardSix from "./components/CardSix";
@@ -83,7 +83,7 @@ export default function App() {
                         <Route path="/Contact" element={<Contact />} />
                         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                         <Route path="/Partners" element={<Partners />} />
-                        <Route path="/TearmsOfUse" element={<TearmsOfUse />} />
+                        <Route path="/TermsOfUse" element={<TermsOfUse />} />
                         <Route path="/BecomeAnAffiliate" element={<BecomeAnAffiliate />} />
                         <Route path="/drivers" element={<Drivers flags={flags} year={year} text={text} />} />
                         <Route path="/teams" element={<Teams flags={flags} year={year} text={text} />} />
