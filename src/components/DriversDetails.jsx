@@ -58,6 +58,26 @@ export default function DriversDetails(props) {
         }
     };
 
+    const filteredData = Results.filter((el) => {
+
+    //if no input the return the original
+
+    if (props.text === "") {
+
+      return el;
+
+    }
+
+    //return the item which contains the user input
+
+    else {
+
+      return el.raceName.toLowerCase().includes(props.text) || el.Results[0].Constructor.name.toLowerCase().includes(props.text);
+
+    }
+
+  });
+
     const handleClickDetails = () => {
         const linkTo = `/teams`;
         navigate(linkTo);
@@ -112,7 +132,7 @@ export default function DriversDetails(props) {
                             </tr>
                         </thead>
                         <tbody>
-                            {Results.map((result, i) => {
+                            {filteredData.map((result, i) => {
                                 return (
                                     <tr key={result.round}>
                                         <td>{result.round}</td>

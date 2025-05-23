@@ -74,6 +74,19 @@ export default function TeamDetails(props) {
         }
     };
 
+    const filteredData = teamResults.filter((el) => {
+
+    //if no input the return the original
+    if (props.text === "") {
+      return el;
+    }
+    //return the item which contains the user input
+
+    else {
+      return el.raceName.toLowerCase().includes(props.text);
+    }
+  });
+
     const handleClickDetailes = (id) => {
         const linkTo = `/raceDetails/${id}`;
         navigate(linkTo);
@@ -129,7 +142,7 @@ export default function TeamDetails(props) {
 
                     </thead>
                     <tbody>
-                        {teamResults.map((teamResult) => {
+                        {filteredData.map((teamResult) => {
                             return (
                                 <tr key={teamResult.round}>
                                     <td>{teamResult.round}</td>

@@ -24,29 +24,42 @@ export default function Races(props) {
    };
 
    const filteredFlag = (nationality) => {
-        if (nationality === "British" || nationality === "UK") {
-            return "GB";
-        } else if (nationality === "USA" || nationality === "United States") {
-            return "US";
-        } else if (nationality === "Dutch") {
-            return "NL";
-        } else if (nationality === "Korea") {
-            return "KR";
-        } else if (nationality === "UAE") {
-            return "AE";
-        } else if (nationality === "Azerbaijan") {
-            return "AZ";
-        } else if (nationality === "Monegasque") {
-            return "MC";
-        } else if (nationality === "Argentinian ") {
-            return "AR";
-        } else {
-            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            if (flag) {
-                return flag.alpha_2_code;
-            }
-        }
-    };
+      if (nationality === "British" || nationality === "UK") {
+         return "GB";
+      } else if (nationality === "USA" || nationality === "United States") {
+         return "US";
+      } else if (nationality === "Dutch") {
+         return "NL";
+      } else if (nationality === "Korea") {
+         return "KR";
+      } else if (nationality === "UAE") {
+         return "AE";
+      } else if (nationality === "Azerbaijan") {
+         return "AZ";
+      } else if (nationality === "Monegasque") {
+         return "MC";
+      } else if (nationality === "Argentinian ") {
+         return "AR";
+      } else {
+         const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
+         if (flag) {
+            return flag.alpha_2_code;
+         }
+      }
+   };
+
+   const filteredData = races.filter((el) => {
+
+      //if no input the return the original
+      if (props.text === "") {
+         return el;
+      }
+
+      //return the item which contains the user input
+      else {
+         return el.raceName.toLowerCase().includes(props.text) || el.Results[0].Driver.familyName.toLowerCase().includes(props.text) || el.Circuit.circuitName.toLowerCase().includes(props.text);
+      }
+   });
 
    const handleClickDetailes = (id) => {
       console.log(id);
@@ -81,7 +94,7 @@ export default function Races(props) {
                </tr>
             </thead>
             <tbody>
-               {races.map((race) => {
+               {filteredData.map((race) => {
                   return (
                      <tr key={race.round}>
                         <td>{race.round}</td>

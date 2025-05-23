@@ -68,7 +68,7 @@ export default function App() {
                         </li>
                     </ul>
                 </div>
-                <SearchForm years={years} text={text} year={year} setYear={setYear} />
+                <SearchForm years={years} text={text} year={year} setYear={setYear} setText={setText} />
             </nav>
 
             <div className="container">
