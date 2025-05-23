@@ -55,19 +55,19 @@ export default function App() {
             <nav className="main-navigation">
                 <div className="logo-container">
                     <Link to="/"><img src="./public/img/logo.png" className="logo" /></Link>
+                    <ul>
+                        <li>
+                            <Link to="/drivers">Drivers</Link>
+                        </li>
+                        <li>
+                            <Link to="/teams">Teams</Link>
+                        </li>
+                        <li>
+                            <Link to="/races">Races</Link>
+                        </li>
+                    </ul>
                 </div>
-                <ul>
-                    <li>
-                        <Link to="/drivers">Drivers</Link>
-                    </li>
-                    <li>
-                        <Link to="/teams">Teams</Link>
-                    </li>
-                    <li>
-                        <Link to="/races">Races</Link>
-                    </li>
-                </ul>
-                <SearchForm years={years} text={text} year={year} setYear={setYear}/>
+                <SearchForm years={years} text={text} year={year} setYear={setYear} />
             </nav>
 
             <div className="container">
