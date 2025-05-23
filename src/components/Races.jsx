@@ -78,7 +78,7 @@ export default function Races(props) {
    };
 
    return (
-      <div>
+      <div className="detail">
          <h1>Race Calendar</h1>
          <table className="detail_table">
             <thead>

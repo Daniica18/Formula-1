@@ -20,7 +20,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
     };
 
     return (
-        <ul>
+        <ul className="search_nav">
             <li>
                 <TextField
                     id="outlined-basic"
@@ -29,7 +29,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                     variant="outlined"
                     className="text_field"
                     label="Search for..."
-                    sx={{backgroundColor: "#e94545;", color: "white"}}
+                    sx={{backgroundColor: "white;", color: "white", width: 210, height: 50}}
                 />
             </li>
             <li>
@@ -47,7 +47,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                                 //backgroundColor: "#e94545;",
                                 color: "white",
                                 "& .MuiOutlinedInput-notchedOutline": {
-                                    borderColor: "red",
+                                    borderColor: "white",
                                 },
                                 "&:hover .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "black",
@@ -69,6 +69,10 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                                                 "&:hover": {
                                                     backgroundColor: "red",
                                                 },
+                                            },
+                                            "MuiSvgIcon-root": {
+                                                color: "white",
+                                                backgroundColor: "white"
                                             },
                                         },
                                     },

@@ -98,7 +98,7 @@ export default function DriversDetails(props) {
     };
 
     return (
-        <div>
+        <div className="details_div">
             <div>
                 <ul>
                     <li><img src={`/public/img/_${driversDetails.Driver.driverId}.jpg`} alt=""

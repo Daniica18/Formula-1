@@ -4,7 +4,7 @@ export default function Footer() {
     const year = (new Date()).getFullYear();
 
     return (
-        <footer>
+        <footer className="footer_div">
             <div className="footer">
                 <Link to="/Contact">Contact</Link>
                 <Link to="/PrivacyPolicy">Privacy Policy</Link>

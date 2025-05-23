@@ -81,7 +81,7 @@ export default function Drivers(props) {
   }
 
   return (
-    <div>
+    <div className="detail">
           <h1>Drivers Championship</h1>
       <table className="detail_table">
         <thead>

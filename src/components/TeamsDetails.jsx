@@ -102,7 +102,7 @@ export default function TeamDetails(props) {
     }
 
     return (
-        <div>
+        <div className="details_div">
             <div>
                 <ul>
                     <li><img src={`/public/img/${teamDetails.Constructor.constructorId}.png`} alt=""
