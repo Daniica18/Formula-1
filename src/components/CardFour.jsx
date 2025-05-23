@@ -5,7 +5,7 @@ export default function CardFour() {
 
         <h1>THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco</h1>
 
-        <br /><br />
+        <br />
 
         <img src="../public/img/Card4.new.jpg" style={{ width: '1000px' }}></img>
 
@@ -16,7 +16,7 @@ export default function CardFour() {
         <br />
         <p>  That stunning move was the foundation of Verstappen's victory as he raced off at the front, while behind him there was plenty of action and a surprising amount of overtaking on such a tight track  as the rest of the drivers fought for places.
         </p>
-
+        <br /><br />
       </div>
     </>
   )

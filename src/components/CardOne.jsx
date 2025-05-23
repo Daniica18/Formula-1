@@ -3,7 +3,7 @@ export default function CardOne() {
         <>
             <div className="card1">
                 <h1> POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?</h1>
-
+                <br />
                 <p>
                     Red Bull driver Max Verstappen delivered another masterclass to take victory in the Emilia-Romagna Grand Prix and keep the pressure on his McLaren rivals on Sunday. But who else caught the attention of our judges across an action-packed Imola weekend? Check out the latest Power Rankings scores and overall leaderboard below...</p>
                 <br />
