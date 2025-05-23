@@ -49,9 +49,12 @@ export default function App() {
 
     return (
         <Router>
+
             <nav className="main-navigation">
+                <div className="logo-container">
+                    <Link to="/"><img src="./public/img/logo.png" className="logo" /></Link>
+                </div>
                 <ul>
-                    <li><Link to="/"><img src="./public/img/logo.png" className="logo" /></Link></li>
                     <li>
                         <Link to="/drivers">Drivers</Link>
                     </li>

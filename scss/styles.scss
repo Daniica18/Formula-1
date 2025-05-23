@@ -19,6 +19,15 @@ body {
     display: flex;
     justify-content: space-between;
 
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            width: 200px;
+        }
+    }
 
     ul {
         display: flex;
@@ -29,13 +38,11 @@ body {
         a {
             color: #fff;
             padding: 17px 20px;
-            font-size: 20px;
+            font-size: 22px;
             text-decoration: none;
             font-weight: bold;
 
-            .logo {
-                width: 150px;
-            }
+
 
             &:hover {
                 background-color: yellow;
@@ -227,7 +234,7 @@ body {
     .bottom-left {
         position: absolute;
         width: 100%;
-        background-color: rgba(34, 34, 34, 0.8);
+        background-color: rgba(249, 3, 3, 0.8);
         bottom: 0;
         padding: 20px;
     }
@@ -241,6 +248,7 @@ body {
 
     a:hover {
         text-decoration: underline;
+
     }
 
 }
