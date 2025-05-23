@@ -1,9 +1,10 @@
 @use "reset";
 @use"_cards";
+@use "_slider";
 
 
 body {
-    background-image: url("../public/img/Wallpaper.png");
+    background-image: url("../img/Wallpaper.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

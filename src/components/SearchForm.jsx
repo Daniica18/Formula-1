@@ -8,8 +8,8 @@ import InputLabel from '@mui/material/InputLabel';
 import Paper from '@mui/material/Paper';
 import { color, maxHeight } from "@mui/system";
 
-export default function SearchForm({years, year, text, setYear}) {
-
+export default function SearchForm({ years, year, text, setYear }) {
+    console.log("year ", year, years);
 
     const handleChangeText = (event) => {
         setText(event.target.value);
@@ -34,8 +34,8 @@ export default function SearchForm({years, year, text, setYear}) {
             <li>
                 <Box sx={{ minWidth: 120 }}>
                     <FormControl>
-                        <InputLabel id="demo-simple-select-label" sx={{color: "white"}}>Select a year</InputLabel>
-                        <Select
+                        <InputLabel id="demo-simple-select-label" sx={{ color: "white" }}>Select a year</InputLabel>
+                        {years.length > 0 && <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
                             value={year}
@@ -79,7 +79,7 @@ export default function SearchForm({years, year, text, setYear}) {
                                     <MenuItem value={year}>{year}</MenuItem>
                                 )
                             })}
-                        </Select>
+                        </Select>}
                     </FormControl>
                 </Box>
             </li>

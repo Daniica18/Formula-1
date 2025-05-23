@@ -29,7 +29,7 @@ export default function Home() {
             <div className="slider-container">
                 <Slider {...settings}>
                     <div className="slider">
-                        <img src="../public/img/Slider1.png" alt="Hit Netfilx Show" />
+                        <img src="../img/Slider1.png" alt="Hit Netfilx Show" />
                         <div className="bottom-left">
                             <Link to="Slider1">
                                 <h3>Hit Netflix show Drive to Survive picks up prestigious Emmy Award</h3>
@@ -37,7 +37,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../public/img/f1celeb.jpg" alt="Formula 1" />
+                        <img src="../img/f1celeb.jpg" alt="Formula 1" />
                         <div className="bottom-left">
                             <Link to="Slider2">
                                 <h3>McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix</h3>
@@ -45,7 +45,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../public/img/Slider3.png" alt="RACE WEEK" />
+                        <img src="../img/Slider3.png" alt="RACE WEEK" />
                         <div className="bottom-left">
                             <Link to="Slider3">
                                 <h3>IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix</h3>
@@ -64,7 +64,7 @@ export default function Home() {
                     <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
-                            image="../public/img/Card1.jpg"
+                            image="../img/Card1.jpg"
 
                         />
                         <CardContent>
@@ -77,7 +77,7 @@ export default function Home() {
                     <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
-                            image="../public/img/Card2.jpg"
+                            image="../img/Card2.jpg"
 
                         />
                         <CardContent>
@@ -90,7 +90,7 @@ export default function Home() {
                     <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
-                            image="../public/img/Card3.jpg"
+                            image="../img/card3.jpg"
 
                         />
                         <CardContent>
@@ -103,7 +103,7 @@ export default function Home() {
                     <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
-                            image="../public/img/Card4.jpg"
+                            image="../img/Card4.jpg"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
@@ -115,7 +115,7 @@ export default function Home() {
                     <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
-                            image="../public/img/Card5.jpg"
+                            image="../img/Card5.jpg"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
@@ -127,7 +127,7 @@ export default function Home() {
                     <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
                             sx={{ height: 100 }}
-                            image="../public/img/Card6.jpg"
+                            image="../img/Card6.jpg"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: "15px" }}>
