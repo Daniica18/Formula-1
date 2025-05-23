@@ -1,6 +1,8 @@
 @use "reset";
 @use "_cards";
 @use "_slider";
+@use "_footer";
+
 @use "_main_component";
 $footerHeight: 66px;
 
@@ -185,7 +187,7 @@ body {
 
     img {
         width: 100%;
-        height: 400px;
+        height: 70vh;
         object-fit: cover;
         background-size: cover;
     }
