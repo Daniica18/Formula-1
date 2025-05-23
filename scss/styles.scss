@@ -120,12 +120,14 @@ body {
     border-collapse: collapse;
     border-radius: 5px;
     width: 90%;
+    text-align: center;
 
     thead {
 
         th {
             border: black 1px solid;
-            padding: 10px;
+            font-weight: bold;
+            padding: 15px;
             background-color: #cccccc8c;
         }
     }
@@ -133,7 +135,7 @@ body {
     tbody {
         tr {
             border: black 1px solid;
-            padding: 8px;
+            padding: 12px;
 
             td {
                 border: black 1px solid;
@@ -184,6 +186,12 @@ body {
     width: 72%;
     font-size: 20px;
     padding: 15px;
+
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .first_place {

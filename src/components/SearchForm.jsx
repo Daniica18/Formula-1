@@ -5,11 +5,11 @@ import TextField from "@mui/material/TextField";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
+import Paper from '@mui/material/Paper';
 import { color, maxHeight } from "@mui/system";
 
-export default function SearchForm(props) {
-    const [text, setText] = useState("");
-    const [year, setYear] = useState("");
+export default function SearchForm({years, year, text, setYear}) {
+
 
     const handleChangeText = (event) => {
         setText(event.target.value);
@@ -74,7 +74,7 @@ export default function SearchForm(props) {
                                 },
                             }}
                         >
-                            {props.years.map((year) => {
+                            {years.map((year) => {
                                 return (
                                     <MenuItem value={year}>{year}</MenuItem>
                                 )
