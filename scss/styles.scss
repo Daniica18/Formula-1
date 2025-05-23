@@ -77,6 +77,12 @@ body {
 .card {
     box-shadow: 25px 25px, 2em, #a79d9d8c;
     border: 1px, solid, rgb(230, 222, 222);
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
 }
 
 //LOADER
@@ -251,6 +257,9 @@ body {
         color: white;
         font-size: 25px;
 
+        &a:visited {
+            color: red;
+        }
     }
 
     a:hover {
