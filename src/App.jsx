@@ -58,7 +58,7 @@ export default function App() {
 
             <nav className="main-navigation">
                 <div className="logo-container">
-                    <Link to="/"><img src="./public/img/logo.png" className="logo" /></Link>
+                    <Link to="/"><img src="./img/logo.png" className="logo" /></Link>
                     <ul>
                         <li>
                             <Link to="/drivers">Drivers</Link>

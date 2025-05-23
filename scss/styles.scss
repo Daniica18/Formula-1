@@ -1,7 +1,10 @@
 @use "reset";
+@use"_cards";
+@use "_slider";
+
 
 body {
-    background-image: url("../public/img/Wallpaper.png");
+    background-image: url("../img/Wallpaper.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -184,24 +187,10 @@ body {
 
 }
 
-//CARD
-
-.card1,
-.card2,
-.card3,
-.card4,
-.card5,
-.card6 {
-    width: 72%;
-    font-size: 20px;
-    padding: 15px;
-
-}
-
-h1 {
-    font-size: 30px;
-    font-weight: bold;
-}
+// h1 {
+//     font-size: 30px;
+//     font-weight: bold;
+// }
 
 .first_place {
     background-color: yellow;
