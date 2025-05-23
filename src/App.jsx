@@ -51,20 +51,23 @@ export default function App() {
 
     return (
         <Router>
+
             <nav className="main-navigation">
-                <ul>
-                    <li><Link to="/"><img src="./public/img/logo.png" className="logo" /></Link></li>
-                    <li>
-                        <Link to="/drivers">Drivers</Link>
-                    </li>
-                    <li>
-                        <Link to="/teams">Teams</Link>
-                    </li>
-                    <li>
-                        <Link to="/races">Races</Link>
-                    </li>
-                </ul>
-                <SearchForm years={years} text={text} year={year} setYear={setYear}/>
+                <div className="logo-container">
+                    <Link to="/"><img src="./public/img/logo.png" className="logo" /></Link>
+                    <ul>
+                        <li>
+                            <Link to="/drivers">Drivers</Link>
+                        </li>
+                        <li>
+                            <Link to="/teams">Teams</Link>
+                        </li>
+                        <li>
+                            <Link to="/races">Races</Link>
+                        </li>
+                    </ul>
+                </div>
+                <SearchForm years={years} text={text} year={year} setYear={setYear} />
             </nav>
 
             <div className="container">
