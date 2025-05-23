@@ -34,7 +34,7 @@ export default function RacesDetails(props) {
     const filteredFlag = (nationality) => {
         if (nationality === "British" || nationality === "UK") {
             return "GB";
-        } else if (nationality === "USA") {
+        } else if (nationality === "USA" || nationality === "United States") {
             return "US";
         } else if (nationality === "Dutch") {
             return "NL";
@@ -42,7 +42,11 @@ export default function RacesDetails(props) {
             return "KR";
         } else if (nationality === "UAE") {
             return "AE";
-        } else if (nationality === "Argentinian") {
+        } else if (nationality === "Azerbaijan") {
+            return "AZ";
+        } else if (nationality === "Monegasque") {
+            return "MC";
+        } else if (nationality === "Argentinian ") {
             return "AR";
         } else {
             const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);

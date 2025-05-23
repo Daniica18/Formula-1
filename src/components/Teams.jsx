@@ -24,10 +24,9 @@ export default function Teams(props) {
     };
 
     const filteredFlag = (nationality) => {
-        console.log("nationality ", nationality);
         if (nationality === "British" || nationality === "UK") {
             return "GB";
-        } else if (nationality === "USA") {
+        } else if (nationality === "USA" || nationality === "United States") {
             return "US";
         } else if (nationality === "Dutch") {
             return "NL";
@@ -35,9 +34,14 @@ export default function Teams(props) {
             return "KR";
         } else if (nationality === "UAE") {
             return "AE";
+        } else if (nationality === "Azerbaijan") {
+            return "AZ";
+        } else if (nationality === "Monegasque") {
+            return "MC";
+        } else if (nationality === "Argentinian ") {
+            return "AR";
         } else {
             const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            console.log("flag ", flag);
             if (flag) {
                 return flag.alpha_2_code;
             }
@@ -73,7 +77,7 @@ export default function Teams(props) {
             <table className="detail_table">
                 <thead>
                     <tr>
-                        <th colSpan={4}>Constructors Champions Standings</th>
+                        <th colSpan={4}>Constructors Champions Standings - {props.year}</th>
                     </tr>
                 </thead>
                 <tbody>
