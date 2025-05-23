@@ -88,7 +88,7 @@ body {
 }
 
 .card {
-    box-shadow: 25px 25px, 2em, #a79d9d8c;
+    box-shadow: 25px 25px, 2em, red;
     border: 1px, solid, rgb(230, 222, 222);
 
     a {
@@ -105,12 +105,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.details_div {
-    display: flex;
-    justify-content: space-around;
-
 }
 
 .clicable {
@@ -156,7 +150,7 @@ body {
 }
 
 .third_place {
-    background-color: orange;
+    background-color: orangered;
 }
 
 .forth_place {

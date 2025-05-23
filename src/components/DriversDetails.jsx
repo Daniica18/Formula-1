@@ -60,23 +60,16 @@ export default function DriversDetails(props) {
 
     const filteredData = Results.filter((el) => {
 
-    //if no input the return the original
+        //if no input the return the original
+        if (props.text === "") {
+            return el;
+        }
 
-    if (props.text === "") {
-
-      return el;
-
-    }
-
-    //return the item which contains the user input
-
-    else {
-
-      return el.raceName.toLowerCase().includes(props.text) || el.Results[0].Constructor.name.toLowerCase().includes(props.text);
-
-    }
-
-  });
+        //return the item which contains the user input
+        else {
+            return el.raceName.toLowerCase().includes(props.text) || el.Results[0].Constructor.name.toLowerCase().includes(props.text);
+        }
+    });
 
     const handleClickDetails = () => {
         const linkTo = `/teams`;
@@ -99,9 +92,9 @@ export default function DriversDetails(props) {
 
     return (
         <div className="details_div">
-            <div>
+            <div className="details_div_info">
                 <ul>
-                    <li><img src={`/public/img/_${driversDetails.Driver.driverId}.jpg`} alt=""
+                    <li><img src={`/img/_${driversDetails.Driver.driverId}.jpg`} alt="alt_image"
                         style={{ width: '150px', height: 'auto' }} /></li>
                     <li><Flag country={filteredFlag(driversDetails.Driver.nationality)} /></li>
                     <li>{driversDetails.Driver.givenName}</li>
@@ -118,7 +111,7 @@ export default function DriversDetails(props) {
                     </Link></li>
                 </ul>
             </div>
-            <div>
+            <div className="tableThree">
                 <div>
                     <h1>Formula 1 - {props.year} Results</h1>
                     <table className="detail_table">

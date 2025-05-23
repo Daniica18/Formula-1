@@ -134,7 +134,7 @@ export default function RacesDetails(props) {
     }
     return (
         <div className="details_div">
-            <div className="details_div_info tableOne">
+            <div className="details_div_info">
                 <table>
                     <thead>
                         <tr>

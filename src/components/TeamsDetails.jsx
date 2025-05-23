@@ -103,7 +103,7 @@ export default function TeamDetails(props) {
 
     return (
         <div className="details_div">
-            <div>
+            <div className="details_div_info">
                 <ul>
                     <li><img src={`/public/img/${teamDetails.Constructor.constructorId}.png`} alt=""
                         style={{ width: '100px', height: 'auto' }} /></li>
@@ -119,7 +119,7 @@ export default function TeamDetails(props) {
                 </ul>
             </div>
 
-            <div className="detail">
+            <div className="tableThree">
                 <table className="detail_table">
                     <thead>
 
