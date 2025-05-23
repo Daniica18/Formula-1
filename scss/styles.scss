@@ -4,7 +4,7 @@
 
 
 body {
-    background-image: url("../img/Wallpaper.png");
+    //background-image: url("../img/Wallpaper.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -75,7 +75,7 @@ body {
 }
 
 .card {
-    box-shadow: 25px 25px #c0acac8c;
+    box-shadow: 25px 25px, solid, #a79d9d8c;
 }
 
 //LOADER
