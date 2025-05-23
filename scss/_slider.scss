@@ -1,4 +1,4 @@
-.Slider1Component {
+.Slider1Component, .Slider2Component, .Slider3Component {
     font-size: 20px;
     padding: 15px;
     margin: 20px;
@@ -9,8 +9,22 @@
 
     }
 
-    .imageSl {
+    .imageSl, .imageS2, .imageS3 {
         width: 900px;
         height: 400px;
     }
 }
+
+// .Slider2Component {
+//     font-size: 20px;
+//     padding: 15px;
+//     margin: 20px;
+
+//     h1 {
+//         font-weight: bold;
+//     }
+//     .imageS2{
+//         width: 900px;
+//         height: 400px;
+//     }
+// }
