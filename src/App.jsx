@@ -21,6 +21,7 @@ import TearmsOfUse from "./components/TermsOfUse"
 import BecomeAnAffiliate from "./components/BecomeAnAffiliate"
 import CardFive from "./components/CardFive";
 import CardSix from "./components/CardSix";
+import Slider1 from "./components/Slider1";
 
 export default function App() {
     const curentYear = (new Date()).getFullYear() - 1;
@@ -74,6 +75,7 @@ export default function App() {
                 <div className="content_wrap">
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/slider1" element={<Slider1 />} />
                         <Route path="/cardOne" element={<CardOne />} />
                         <Route path="/cardTwo" element={<CardTwo />} />
                         <Route path="/cardThree" element={<CardThree />} />
