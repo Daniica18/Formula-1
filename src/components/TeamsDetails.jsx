@@ -16,11 +16,11 @@ export default function TeamDetails(props) {
 
     useEffect(() => {
         getTeamDetails();
-    }, [])
+    }, [props.year])
 
     const getTeamDetails = async () => {
-        const url = `http://ergast.com/api/f1/2013/constructors/${params.id}/constructorStandings.json`;
-        const url2 = `http://ergast.com/api/f1/2013/constructors/${params.id}/results.json`
+        const url = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/constructorStandings.json`;
+        const url2 = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/results.json`
         const response = await axios.get(url);
         const response2 = await axios.get(url2);
         console.log(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);

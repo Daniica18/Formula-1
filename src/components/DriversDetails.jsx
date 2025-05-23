@@ -16,12 +16,12 @@ export default function DriversDetails(props) {
 
     useEffect(() => {
         getDriversDetails();
-    }, []);
+    }, [props.year]);
 
     const getDriversDetails = async () => {
 
-        const driverUrl = `http://ergast.com/api/f1/2013/drivers/${params.id}/driverStandings.json`;
-        const driverRacesUrl = `http://ergast.com/api/f1/2013/drivers/${params.id}/results.json`;
+        const driverUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/driverStandings.json`;
+        const driverRacesUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/results.json`;
         const response = await axios.get(driverUrl);
         const response2 = await axios.get(driverRacesUrl);
         console.log(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]);

@@ -11,10 +11,10 @@ export default function Races(props) {
 
    useEffect(() => {
       getRaces();
-   }, []);
+   }, [props.year]);
 
    const getRaces = async () => {
-      const url = "http://ergast.com/api/f1/2013/results/1.json";
+      const url = `http://ergast.com/api/f1/${props.year}/results/1.json`;
       const response = await axios.get(url);
       console.log(response);
       console.log(response.data);
@@ -35,6 +35,8 @@ export default function Races(props) {
             return "KR";
         } else if (nationality === "UAE") {
             return "AE";
+        }  else if (nationality === "Argentinian") {
+            return "AR";
         } else {
             const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
             console.log("flag ", flag);

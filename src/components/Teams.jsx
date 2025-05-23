@@ -13,10 +13,10 @@ export default function Teams(props) {
 
     useEffect(() => {
         getTeams();
-    }, []);
+    }, [props.year]);
 
     const getTeams = async () => {
-        const url = "http://ergast.com/api/f1/2013/constructorStandings.json";
+        const url = `http://ergast.com/api/f1/${props.year}/constructorStandings.json`;
         const response = await axios.get(url);
         console.log(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
         setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);

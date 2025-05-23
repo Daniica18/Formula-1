@@ -16,11 +16,11 @@ export default function RacesDetails(props) {
 
     useEffect(() => {
         getRaceDetails();
-    }, []);
+    }, [props.year]);
 
     const getRaceDetails = async () => {
-        const resultsUrl = `http://ergast.com/api/f1/2013/${params.id}/results.json`;
-        const qualifyingUrl = `http://ergast.com/api/f1/2013/${params.id}/qualifying.json`;
+        const resultsUrl = `http://ergast.com/api/f1/${props.year}/${params.id}/results.json`;
+        const qualifyingUrl = `http://ergast.com/api/f1/${props.year}/${params.id}/qualifying.json`;
         const resultsResponse = await axios.get(resultsUrl);
         const qualifyingResponse = await axios.get(qualifyingUrl);
         console.log("Qualifying Response", qualifyingResponse.data.MRData.RaceTable.Races[0]);
@@ -42,6 +42,8 @@ export default function RacesDetails(props) {
             return "KR";
         } else if (nationality === "UAE") {
             return "AE";
+        } else if (nationality === "Argentinian") {
+            return "AR";
         } else {
             const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
             if (flag) {
