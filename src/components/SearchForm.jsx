@@ -8,7 +8,7 @@ import InputLabel from '@mui/material/InputLabel';
 import Paper from '@mui/material/Paper';
 import { color, maxHeight } from "@mui/system";
 
-export default function SearchForm({ years, year, text, setYear }) {
+export default function SearchForm({ years, year, text, setYear, setText }) {
     console.log("year ", year, years);
 
     const handleChangeText = (event) => {
@@ -20,7 +20,7 @@ export default function SearchForm({ years, year, text, setYear }) {
     };
 
     return (
-        <ul>
+        <ul className="search_nav">
             <li>
                 <TextField
                     id="outlined-basic"
@@ -29,6 +29,7 @@ export default function SearchForm({ years, year, text, setYear }) {
                     variant="outlined"
                     className="text_field"
                     label="Search for..."
+                    sx={{backgroundColor: "white;", color: "white", width: 210, height: 50}}
                 />
             </li>
             <li>
@@ -43,10 +44,10 @@ export default function SearchForm({ years, year, text, setYear }) {
                             onChange={handleChangeYear}
                             sx={{
                                 minWidth: 140,
-                                // backgroundColor: "#f0f0f0",
+                                //backgroundColor: "#e94545;",
                                 color: "white",
                                 "& .MuiOutlinedInput-notchedOutline": {
-                                    borderColor: "red",
+                                    borderColor: "white",
                                 },
                                 "&:hover .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "black",
@@ -68,6 +69,10 @@ export default function SearchForm({ years, year, text, setYear }) {
                                                 "&:hover": {
                                                     backgroundColor: "red",
                                                 },
+                                            },
+                                            "MuiSvgIcon-root": {
+                                                color: "white",
+                                                backgroundColor: "white"
                                             },
                                         },
                                     },

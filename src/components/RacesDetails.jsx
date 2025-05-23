@@ -24,11 +24,10 @@ export default function RacesDetails(props) {
         const resultsResponse = await axios.get(resultsUrl);
         const qualifyingResponse = await axios.get(qualifyingUrl);
         console.log("Qualifying Response", qualifyingResponse.data.MRData.RaceTable.Races[0]);
-        console.log("Result Response", resultsResponse.data.MRData.RaceTable.Races[0]); setResultsDetails(resultsResponse.data.MRData.RaceTable.Races[0]);
+        console.log("Result Response", resultsResponse.data.MRData.RaceTable.Races[0]);
+        setResultsDetails(resultsResponse.data.MRData.RaceTable.Races[0]);
         setQualifyingDetails(qualifyingResponse.data.MRData.RaceTable.Races[0]);
         setIsLoading(false);
-        console.log("resultResponse ", resultsDetails);
-        console.log("qualifyingResponse ", qualifyingDetails);
     };
 
     const filteredFlag = (nationality) => {
@@ -57,7 +56,6 @@ export default function RacesDetails(props) {
     };
 
     const addClass = (position) => {
-        console.log("position ", position);
         if (position == 1) {
             return "first_place";
         } else if (position == 2) {
@@ -74,6 +72,50 @@ export default function RacesDetails(props) {
             return "other_place";
         }
     };
+
+    console.log("resultResponse ", resultsDetails);
+    console.log("qualifyingResponse ", qualifyingDetails);
+
+    const filteredResultsDetails = resultsDetails?.Results?.filter((el) => {
+        //if no input the return the original
+        if (props.text === "") {
+            return el;
+        }
+
+        //return the item which contains the user input
+        else {
+            return el.Driver.familyName.toLowerCase().includes(props.text) || el.Constructor.name.toLowerCase().includes(props.text);
+        }
+    });
+
+    const filteredQualifyingResults = qualifyingDetails?.QualifyingResults?.filter((el) => {
+        //if no input the return the original
+        if (props.text === "") {
+            return el;
+        }
+
+        //return the item which contains the user input
+        else {
+            return el.Driver.familyName.toLowerCase().includes(props.text) || el.Constructor.name.toLowerCase().includes(props.text);
+        }
+    });
+
+    // const filterRaceDetails = (results) => {
+    //     results.filter((el) => {
+    //         if (props.text === "") {
+    //             return el;
+    //         }
+            
+    //         else {
+    //             return el.Driver.familyName.toLowerCase().includes(props.text) || el.Constructor.name.toLowerCase().includes(props.text);
+    //         }
+    //     })
+
+    //     //return the item which contains the user input
+    // };
+
+    // console.log("filterRaceDetails ", filterRaceDetails(qualifyingDetails?.QualifyingResults));
+    
 
     const handleClickDriverDetailes = (id) => {
         console.log(id);
@@ -141,8 +183,9 @@ export default function RacesDetails(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        {qualifyingDetails.QualifyingResults.map((qualify) => {
+                        {filteredQualifyingResults.map((qualify) => {
                             const times = [qualify.Q1, qualify.Q2, qualify.Q3].sort();
+                            console.log(qualify);
                             return (
                                 <tr key={qualify.position}>
                                     <td>{qualify.position}</td>
@@ -177,7 +220,7 @@ export default function RacesDetails(props) {
                         </tr>
                     </thead>
                     <tbody>
-                        {resultsDetails.Results.map((result) => {
+                        {filteredResultsDetails.map((result) => {
                             return (
                                 <tr key={result.position}>
                                     <td>{result.position}</td>

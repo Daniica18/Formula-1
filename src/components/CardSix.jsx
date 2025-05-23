@@ -10,7 +10,6 @@ export default function CardSix() {
             <br /><br />
             <p className="first-row">Formula 1 moves swiftly on from Imola to Monte Carlo for the Monaco Grand Prix this weekend, as the latest triple header sequence continues.</p>
 
-            <p>  The event will begin with Free Practice 1 and Free Practice 2 on Friday, May 23, followed by Free Practice 3 and Qualifying on Saturday, May 24, and the Grand Prix itself on Sunday, May 2</p>
         </div>
     )
 }

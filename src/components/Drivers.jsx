@@ -46,6 +46,26 @@ export default function Drivers(props) {
         }
     };
 
+    const filteredData = drivers.filter((el) => {
+
+    //if no input the return the original
+
+    if (props.text === "") {
+
+      return el;
+
+    }
+
+    //return the item which contains the user input
+
+    else {
+
+      return el.Driver.familyName.toLowerCase().includes(props.text) || el.Driver.givenName.toLowerCase().includes(props.text) || el.Constructors[0].name.toLowerCase().includes(props.text);
+
+    }
+
+  });
+
   const handleClickDetails = (id) => {
     const linkTo = `/driverDetails/${id}`;
     navigate(linkTo);
@@ -61,7 +81,7 @@ export default function Drivers(props) {
   }
 
   return (
-    <div>
+    <div className="detail">
           <h1>Drivers Championship</h1>
       <table className="detail_table">
         <thead>
@@ -71,7 +91,7 @@ export default function Drivers(props) {
           </tr>
         </thead>
         <tbody>
-          {drivers.map((driver) => {
+          {filteredData.map((driver) => {
             return (
               <tr key={driver.Driver.driverId}>
                 <td>{driver.position}</td>

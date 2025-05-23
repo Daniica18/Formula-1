@@ -18,7 +18,7 @@ export default function Teams(props) {
     const getTeams = async () => {
         const url = `http://ergast.com/api/f1/${props.year}/constructorStandings.json`;
         const response = await axios.get(url);
-        console.log(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
+        console.log("res ", response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
         setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
         setIsLoading(false);
     };
@@ -49,7 +49,6 @@ export default function Teams(props) {
     };
 
     const addClass = (position) => {
-        console.log("position ", position);
         if (position == 1) {
             return "first_place";
         } else if (position == 2) {
@@ -61,8 +60,28 @@ export default function Teams(props) {
         }
     };
 
+    const filteredData = teams.filter((el) => {
+
+    //if no input the return the original
+
+    if (props.text === "") {
+
+      return el;
+
+    }
+
+    //return the item which contains the user input
+
+    else {
+
+      return el.Constructor.name.toLowerCase().includes(props.text);
+
+    }
+
+  });
+
+
     const handleClickDetails = (id) => {
-        console.log(id);
         const linkTo = `/teamDetails/${id}`
         navigate(linkTo);
     };
@@ -81,7 +100,7 @@ export default function Teams(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {teams.map((team) => {
+                    {filteredData.map((team) => {
                         return (
                             <tr className={addClass(team.position)} key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
