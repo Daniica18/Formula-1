@@ -21,6 +21,10 @@ import TermsOfUse from "./components/TermsOfUse"
 import BecomeAnAffiliate from "./components/BecomeAnAffiliate"
 import CardFive from "./components/CardFive";
 import CardSix from "./components/CardSix";
+import Slider1 from "./components/Slider1";
+import Slider2 from "./components/Slider2";
+import Slider3 from "./components/Slider3";
+
 
 export default function App() {
     const curentYear = (new Date()).getFullYear() - 1;
@@ -54,7 +58,7 @@ export default function App() {
 
             <nav className="main-navigation">
                 <div className="logo-container">
-                    <Link to="/"><img src="./public/img/logo.png" className="logo" /></Link>
+                    <Link to="/"><img src="./img/logo.png" className="logo" /></Link>
                     <ul>
                         <li>
                             <Link to="/drivers">Drivers</Link>
@@ -74,6 +78,9 @@ export default function App() {
                 <div className="content_wrap">
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/slider1" element={<Slider1 />} />
+                        <Route path="/slider2" element={<Slider2/>} />
+                        <Route path="/slider3" element={<Slider3/>} />
                         <Route path="/cardOne" element={<CardOne />} />
                         <Route path="/cardTwo" element={<CardTwo />} />
                         <Route path="/cardThree" element={<CardThree />} />

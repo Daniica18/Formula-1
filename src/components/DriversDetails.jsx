@@ -34,10 +34,9 @@ export default function DriversDetails(props) {
     };
 
     const filteredFlag = (nationality) => {
-        console.log("nationality ", nationality);
         if (nationality === "British" || nationality === "UK") {
             return "GB";
-        } else if (nationality === "USA") {
+        } else if (nationality === "USA" || nationality === "United States") {
             return "US";
         } else if (nationality === "Dutch") {
             return "NL";
@@ -45,9 +44,14 @@ export default function DriversDetails(props) {
             return "KR";
         } else if (nationality === "UAE") {
             return "AE";
+        } else if (nationality === "Azerbaijan") {
+            return "AZ";
+        } else if (nationality === "Monegasque") {
+            return "MC";
+        } else if (nationality === "Argentinian ") {
+            return "AR";
         } else {
             const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            console.log("flag ", flag);
             if (flag) {
                 return flag.alpha_2_code;
             }
@@ -96,7 +100,7 @@ export default function DriversDetails(props) {
             </div>
             <div>
                 <div>
-                    <h1>Formula 1 2013 Results</h1>
+                    <h1>Formula 1 - {props.year} Results</h1>
                     <table className="detail_table">
                         <thead>
                             <tr>
