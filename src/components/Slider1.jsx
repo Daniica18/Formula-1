@@ -9,7 +9,6 @@ export default function Slider1() {
                     The hit Formula 1 documentary series Drive to Survive has picked up another prestigious award, after winning an Emmy on Tuesday.
 
                     The Netflix programme won the “Outstanding Sports Documentary Series – Serialised” category at the Sports Emmy’s for Series 6, which covered the 2023 F1 season.
-                    <br></br>
 
                     READ MORE: More access than ever, ‘brutal’ edits and sub-plots aplenty – How Season 6 of Drive To Survive came to life
 
