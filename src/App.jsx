@@ -17,11 +17,14 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy"
 import Partners from "./components/Partners"
-import TearmsOfUse from "./components/TermsOfUse"
+import TermsOfUse from "./components/TermsOfUse"
 import BecomeAnAffiliate from "./components/BecomeAnAffiliate"
 import CardFive from "./components/CardFive";
 import CardSix from "./components/CardSix";
 import Slider1 from "./components/Slider1";
+import Slider2 from "./components/Slider2";
+import Slider3 from "./components/Slider3";
+
 
 export default function App() {
     const curentYear = (new Date()).getFullYear() - 1;
@@ -76,6 +79,8 @@ export default function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/slider1" element={<Slider1 />} />
+                        <Route path="/slider2" element={<Slider2/>} />
+                        <Route path="/slider3" element={<Slider3/>} />
                         <Route path="/cardOne" element={<CardOne />} />
                         <Route path="/cardTwo" element={<CardTwo />} />
                         <Route path="/cardThree" element={<CardThree />} />
@@ -85,7 +90,7 @@ export default function App() {
                         <Route path="/Contact" element={<Contact />} />
                         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                         <Route path="/Partners" element={<Partners />} />
-                        <Route path="/TearmsOfUse" element={<TearmsOfUse />} />
+                        <Route path="/TermsOfUse" element={<TermsOfUse />} />
                         <Route path="/BecomeAnAffiliate" element={<BecomeAnAffiliate />} />
                         <Route path="/drivers" element={<Drivers flags={flags} year={year} text={text} />} />
                         <Route path="/teams" element={<Teams flags={flags} year={year} text={text} />} />
