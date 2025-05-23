@@ -7,7 +7,7 @@ export default function CardFive() {
 
                 <img src="../public/img/CardFive.jpg" style={{ width: '1050px', height: '450px' }} />
 
-                <p>McLaren have revealed a special ‘Riviera-inspired’ livery enhancement that will run on their Formula 1 cars at the upcoming Monaco and Spanish Grands Prix.</p>
+                <p className="first-row">McLaren have revealed a special ‘Riviera-inspired’ livery enhancement that will run on their Formula 1 cars at the upcoming Monaco and Spanish Grands Prix.</p>
                 <br></br>
                 <p>In collaboration with team partner OKX, the livery change is a nod to McLaren’s iconic M7A race car, while “drawing inspiration from the elegance of the Riviera”.
 
