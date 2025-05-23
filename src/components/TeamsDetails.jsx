@@ -33,7 +33,7 @@ export default function TeamDetails(props) {
     const filteredFlag = (nationality) => {
         if (nationality === "British" || nationality === "UK") {
             return "GB";
-        } else if (nationality === "USA") {
+        } else if (nationality === "USA" || nationality === "United States") {
             return "US";
         } else if (nationality === "Dutch") {
             return "NL";
@@ -41,6 +41,12 @@ export default function TeamDetails(props) {
             return "KR";
         } else if (nationality === "UAE") {
             return "AE";
+        } else if (nationality === "Azerbaijan") {
+            return "AZ";
+        } else if (nationality === "Monegasque") {
+            return "MC";
+        } else if (nationality === "Argentinian ") {
+            return "AR";
         } else {
             const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
             if (flag) {
@@ -105,7 +111,7 @@ export default function TeamDetails(props) {
                     <thead>
 
                         <tr>
-                            <th colSpan={5}>Formula 1 2013 Results</th>
+                            <th colSpan={5}>Formula 1 - {props.year} Results</th>
                         </tr>
                         <tr>
                             <th>Round</th>
@@ -130,7 +136,7 @@ export default function TeamDetails(props) {
                                     <td
                                         onClick={() => handleClickDetailes(teamResult.round)}
                                         className="clicable">
-                                        <Flag country={filteredFlag(teamResult.Circuit.Location.country)} />
+                                        <Flag country={filteredFlag(teamResult.Circuit.Location.country)} /> 
                                         {teamResult.raceName}</td>
                                     <td className={addClass(teamResult.Results[0].position)}>{teamResult.Results[0].position}</td>
                                     <td className={addClass(teamResult.Results[1].position)}>{teamResult.Results[1].position}</td>
