@@ -1,19 +1,18 @@
 export default function PrivacyPolicy() {
   return (
     <>
-      <h1>FAN PRIVACY POLICY</h1>
-      <div>
-        <br />
-        <br />
+      <div className="bottom">
+        <h1 >FAN PRIVACY POLICY</h1>
+
         <p> Last Updated: April 2025 </p>
         <br />
-        <br />
+
         <p>We are Formula One Digital Media Limited (“we”, “us” and/or “our”), a company registered in England and Wales with company number 08915039 and registered office at No.2 St. James’s Market, London, SW1Y 4AH, England.</p>
         <br />
-        <br />
+
         <p>We collect and process your personal data in various situations, including:</p>
         <br />
-        <br />
+
         <p>• when you visit and use our “Digital Products” (meaning the Formula 1 App or website, the F1 TV App or website, the Race Guide App, the F1 Race Programme App, our F1 Fantasy website, our support website at www.support.formula1.com, our corporate website at www.corp.formula1.com, and any other official Formula 1 websites and applications created and operated by us from time to time, and any services available via the same);</p>
         <br />
         <p>• when you take part in activities we operate on site at our races and provide us your data when doing so;</p>
@@ -27,42 +26,40 @@ export default function PrivacyPolicy() {
         <br />
         <p>This privacy policy (the “Privacy Policy”) sets out how we collect and process your personal data. It is important that you read this Privacy Policy together with any other privacy policy, fair processing notice and/or cookie policy we may provide where relevant so that you are fully aware of how and why we are using your data. This Privacy Policy supplements other privacy notices and policies we provide to you and is not intended to override them.</p>
         <br />
-        <br />
+
         <p>We may, from time to time, update this Privacy Policy. Any such changes will be posted on this page, and we will notify you of any significant changes, such as change to our processing activities.</p>
         <br />
-        <br />
+
         <h2>How to Contact Us</h2>
-        <br />
-        <br />
+
         <p>If you have any questions on how we process and use your personal data, you can contact us at general@en.formula1.com.</p>
         <br />
-        <br />
+
         <p>To comply with the General Data Protection Regulation (2016/679), we have also appointed a European representative. If you are based in the EU and prefer to contact them, their details are as follows: Bird & Bird GDPR Representative Services Ireland, Deloitte House, 29 Earlsfort Terrace, Dublin 2, D02 AY28 and EUrepresentative.Formula1@twobirds.com.</p>
         <br />
         <br />
         <h2>Third Party Digital Products</h2>
-        <br />
-        <br />
+
         <p>There are some websites and applications which use the Formula 1 name and/or trade marks, but which are operated by our third party licensees or partners or group companies, For example:</p>
         <br />
-        <br />
+
         <p>• Websites and applications relating to Formula 2, Formula 3, F1 Academy and the Las Vegas Grand Prix, which are operated by our group companies.</p>
         <br />
         <p>• Websites and applications relating to the Official F1 Store, F1 Tickets, F1 Experiences, F1 Authentics, F1 Arcade, F1 Racing Centre, F1 Clash, F1 Manager, F1 Mobile Racing, F1 Esports and F1 SimRacing, which are all operated by our third party licensees (the “Third Party Licensees”).</p>
         <br />
-        <br />
+
         <p>These, together with any other official Formula 1 branded websites and applications created and operated by a third party from time to time are “Third Party Digital Products”. While we may receive personal data from these third parties (see below for more information), we are not the operator of the Third Party Digital Products, nor are we responsible for the privacy policies of those Third Party Digital Products. We encourage you to read all applicable terms, conditions and privacy policies when using those other websites and applications.</p>
         <br />
-        <br />
+
         <h2>What Personal Data Do We Collect?</h2>
         <br />
-        <br />
+
         <p>Personal data, or personal information, means any information about an individual from which that person can be identified. It does not include data where the identity has been irreversibly removed (anonymous data).</p>
         <br />
-        <br />
+
         <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
         <br />
-        <br />
+
         <p>• Profile Data – which includes your username and password, your interests, preferences (other than your communication preferences), feedback, survey responses and your conversations with us where recorded (by chatbot, call or otherwise).</p>
         <br />
         <p>• Identity Data – which includes first name, last name, username or similar identifier, marital status, title, date of birth, age and gender.</p>
@@ -79,13 +76,13 @@ export default function PrivacyPolicy() {
         <br />
         <p>• Usage Data – which includes information about how you use our Digital Products and your visit, including the full Uniform Resource Locators (URL) clickstream to, through and from our Digital Products (including date and time), pages you viewed or searched for, page response times, download errors, length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs), and methods used to browse away from the page and any phone number used to call our customer service number.</p>
         <br />
-        <br />
+
         <p>We also collect, use and share aggregated data such as statistical or demographic data for any purpose. For example, we may aggregate your Usage Data to calculate the percentage of users accessing a specific App feature. Aggregated data could be derived from your personal data but is not considered personal data in law if it is irreversibly anonymised and cannot directly or indirectly reveal your identity. If we combine or connect Aggregated data with your personal data in a way that can identify you, we treat the combined data as personal data which will be used in accordance with this Privacy Policy.</p>
         <br />
-        <br />
+
         <p>We do not knowingly collect any special categories of personal data (“Sensitive Personal Information”) about you such as race, ethnicity, religious or philosophical beliefs, sexual orientation, political opinions, trade union membership, information about your health, and genetic and biometric data.</p>
         <br />
-        <br />
+
 
 
 
