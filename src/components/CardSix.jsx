@@ -9,6 +9,12 @@ export default function CardSix() {
 
             <br /><br />
             <p className="first-row">Formula 1 moves swiftly on from Imola to Monte Carlo for the Monaco Grand Prix this weekend, as the latest triple header sequence continues.</p>
+            <br />
+            <p> Norris heads to Spain next weekend with a spring in his step, having not just reignited his Championship but also regained some valuable confidence.
+                But can Piastri fight back, what car will Red Bull turn up with and have Ferrari turned a corner? We'll find out next weekend!
+                Make sure you are back with us from Thursday onwards, to hear what the drivers have to say ahead of the ninth Grand Prix of the season.</p>
+
+
 
         </div>
     )
