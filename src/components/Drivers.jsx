@@ -22,31 +22,31 @@ export default function Drivers(props) {
   };
 
   const filteredFlag = (nationality) => {
-        if (nationality === "British" || nationality === "UK") {
-            return "GB";
-        } else if (nationality === "USA" || nationality === "United States") {
-            return "US";
-        } else if (nationality === "Dutch") {
-            return "NL";
-        } else if (nationality === "Korea") {
-            return "KR";
-        } else if (nationality === "UAE") {
-            return "AE";
-        } else if (nationality === "Azerbaijan") {
-            return "AZ";
-        } else if (nationality === "Monegasque") {
-            return "MC";
-        } else if (nationality === "Argentinian ") {
-            return "AR";
-        } else {
-            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            if (flag) {
-                return flag.alpha_2_code;
-            }
-        }
-    };
+    if (nationality === "British" || nationality === "UK") {
+      return "GB";
+    } else if (nationality === "USA" || nationality === "United States") {
+      return "US";
+    } else if (nationality === "Dutch") {
+      return "NL";
+    } else if (nationality === "Korea") {
+      return "KR";
+    } else if (nationality === "UAE") {
+      return "AE";
+    } else if (nationality === "Azerbaijan") {
+      return "AZ";
+    } else if (nationality === "Monegasque") {
+      return "MC";
+    } else if (nationality === "Argentinian ") {
+      return "AR";
+    } else {
+      const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
+      if (flag) {
+        return flag.alpha_2_code;
+      }
+    }
+  };
 
-    const filteredData = drivers.filter((el) => {
+  const filteredData = drivers.filter((el) => {
 
     //if no input the return the original
 
@@ -82,7 +82,7 @@ export default function Drivers(props) {
 
   return (
     <div className="detail">
-          <h1>Drivers Championship</h1>
+      <h1>Drivers Championship</h1>
       <table className="detail_table">
         <thead>
           <tr>
@@ -95,18 +95,21 @@ export default function Drivers(props) {
             return (
               <tr key={driver.Driver.driverId}>
                 <td>{driver.position}</td>
-                <td
+                <td width="45%"
                   onClick={() => handleClickDetails(driver.Driver.driverId)}
                   className="clicable"
                 >
-                  <Flag country={filteredFlag(driver.Driver.nationality)} />
-                  {driver.Driver.familyName} {driver.Driver.givenName}
+                  <span>
+                    <Flag className="flag" country={filteredFlag(driver.Driver.nationality)} />
+                    {driver.Driver.familyName} {driver.Driver.givenName}
+                  </span>
                 </td>
-                <td
+                <td width="45%"
                   onClick={() => handleClickTeamDetails(driver.Constructors[0].constructorId)}
                   className="clicable">
-                  {driver.Constructors[0].name}</td>
-                <td>{driver.points}</td>
+                  {driver.Constructors[0].name}
+                </td>
+                <td width="10%">{driver.points}</td>
               </tr>
             )
           })}

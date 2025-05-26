@@ -132,8 +132,12 @@ export default function DriversDetails(props) {
                                         <td
                                             onClick={() => handleClickRaceDetails(result.round)}
                                             className="clicable">
-                                            <Flag country={filteredFlag(result.Circuit.Location.country)} />
-                                            {result.raceName}</td>
+                                            <span>
+                                                <Flag className="flag" country={filteredFlag(result.Circuit.Location.country)} />
+                                                {result.raceName}
+                                            </span>
+
+                                        </td>
                                         <td
                                             onClick={() => handleClickTeamDetails(result.Results[0].Constructor.constructorId)}
                                             className="clicable">
