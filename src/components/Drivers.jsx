@@ -96,7 +96,7 @@ export default function Drivers(props) {
                 <td>{driver.position}</td>
                 <td width="45%"
                   onClick={() => handleClickDetails(driver.Driver.driverId)}
-                  className="clicable"
+                  className="clickable"
                 >
                   <span>
                     <Flag className="flag" country={filteredFlag(driver.Driver.nationality)} />
@@ -105,7 +105,7 @@ export default function Drivers(props) {
                 </td>
                 <td width="45%"
                   onClick={() => handleClickTeamDetails(driver.Constructors[0].constructorId)}
-                  className="clicable">
+                  className="clickable">
                   {driver.Constructors[0].name}
                 </td>
                 <td width="10%">{driver.points}</td>

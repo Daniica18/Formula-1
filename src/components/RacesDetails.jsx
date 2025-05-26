@@ -191,7 +191,7 @@ export default function RacesDetails(props) {
                                     <td>{qualify.position}</td>
                                     <td
                                         onClick={() => handleClickDriverDetailes(qualify.Driver.driverId)}
-                                        className="clicable">
+                                        className="clickable">
                                         <span>
 
                                             <Flag className="flag" country={filteredFlag(qualify.Driver.nationality)} />
@@ -202,7 +202,7 @@ export default function RacesDetails(props) {
                                     </td>
                                     <td
                                         onClick={() => handleClickTeamDetails(qualify.Constructor.constructorId)}
-                                        className="clicable">
+                                        className="clickable">
                                         {qualify.Constructor.name}</td>
                                     <td>{times[0]}</td>
                                 </tr>
@@ -232,7 +232,7 @@ export default function RacesDetails(props) {
                                     <td>{result.position}</td>
                                     <td
                                         onClick={() => handleClickDriverDetailes(result.Driver.driverId)}
-                                        className="clicable">
+                                        className="clickable">
                                         <span>
                                             <Flag className="flag" country={filteredFlag(result.Driver.nationality)} />
                                             {result.Driver.familyName}
@@ -241,7 +241,7 @@ export default function RacesDetails(props) {
                                     </td>
                                     <td
                                         onClick={() => handleClickTeamDetails(result.Constructor.constructorId)}
-                                        className="clicable">
+                                        className="clickable">
                                         {result.Constructor.name}</td>
                                     <td>{result.Time?.time}</td>
                                     <td className={addClass(result.position)}>{result.points}</td>

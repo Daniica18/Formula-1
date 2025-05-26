@@ -131,11 +131,11 @@ export default function TeamDetails(props) {
                             <th>Grand Prix</th>
                             <th
                                 onClick={() => handleClickDriverDetailes(teamResults[0].Results[0].Driver.driverId)}
-                                className="clicable">
+                                className="clickable">
                                 {teamResults[0].Results[0].Driver.familyName}</th>
                             <th
                                 onClick={() => handleClickDriverDetailes(teamResults[0].Results[1].Driver.driverId)}
-                                className="clicable">
+                                className="clickable">
                                 {teamResults[0].Results[1].Driver.familyName}</th>
                             <th>Points</th>
                         </tr>
@@ -148,7 +148,7 @@ export default function TeamDetails(props) {
                                     <td>{teamResult.round}</td>
                                     <td
                                         onClick={() => handleClickDetailes(teamResult.round)}
-                                        className="clicable">
+                                        className="clickable">
                                         <span>
 
                                             <Flag className="flag" country={filteredFlag(teamResult.Circuit.Location.country)} />
