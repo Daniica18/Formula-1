@@ -1,97 +1,95 @@
 export default function CreateAnAccount() {
   return (
     <>
-      <h1>Forme</h1>
-
       <form>
         <fieldset>
-          <legend>Personalne informacije</legend>
+          <legend>Create an account</legend>
 
-          <input type="text" name="ImeKorisnika" id="name" placeholder="Ime" />
+          <input type="text" name="name" id="name" placeholder="Name" />
           <br />
           <br />
 
-          <input type="text" name="PrezimeKorisnika" id="LastName" placeholder="Prezime" />
+          <input type="text" name="lastName" id="lastName" placeholder="Prezime" />
           <br />
           <br />
 
           <label htmlFor="eml">Email: </label>
-          <input type="email" name="Email" id="eml" />
+          <input type="email" name="email" id="eml" />
           <br />
           <br />
 
-          <label htmlFor="pwd">Lozinka: </label>
-          <input type="password" name="Lozinka" id="pwd" />
+          <label htmlFor="username">Username: </label>
+          <input type="text" name="username" id="username" />
           <br />
           <br />
 
-          <label htmlFor="city">Grad (skraćeni naziv): </label>
-          <input type="text" name="grad" id="city" size="10" maxLength="2" />
-        </fieldset>
-        <br />
-        <br />
-
-        <fieldset>
-          <legend>Detalji narudžbine</legend>
-
-          <label htmlFor="qty">Unesite količinu (između 1 i 5): </label>
-          <input type="number" name="kolicina" id="qty" min="1" max="5" />
+          <label htmlFor="pwd">Password: </label>
+          <input type="password" name="password" id="pwd" />
           <br />
           <br />
 
-          <label htmlFor="cars">Automobil: </label>
-          <select name="automobil" id="cars">
+          <label htmlFor="city">City: </label>
+          <input type="text" name="city" id="city" />
+          <br />
+          <br />
+
+          <label htmlFor="phone">Phone number: </label>
+          <input type="text" name="phone" id="phone" />
+          <br />
+          <br />
+
+          <label htmlFor="birthday">Birthday: </label>
+          <input type="date" name="birthday" id="birthday" />
+          <input type="time" name="time" />
+          <br />
+          <br />
+
+          <label htmlFor="qty">Years: </label>
+          <input type="number" name="years" id="qty" min="18" max="70" />
+          <br />
+          <br />
+
+          <label htmlFor="vertical">Vertical: </label>
+          <select name="vertical" id="vertical">
             <option disabled selected>
-              Izaberite...
+              Choose...
             </option>
-            <option>Volvo</option>
-            <option>Fiat</option>
-            <option>Audi</option>
-            <option>Saab</option>
-            <option>Zastava</option>
+            <option>Accessories</option>
+            <option>Art/Photo/Music</option>
+            <option>Automotive</option>
+            <option>Baby</option>
+            <option>Beauty</option>
+            <option>Books/Media</option>
+            <option>Education</option>
+            <option>Gambling</option>
           </select>
           <br />
           <br />
 
-          <label htmlFor="birthday">Rođendan: </label>
-          <input type="date" name="rodjendan" id="birthday" />
-          <input type="time" name="vreme" />
-          <br />
-          <br />
-
-          <p>Izaberi pol:</p>
-          <input type="radio" name="pol" id="male" value="muski" />
+          <p>Gender:</p>
+          <input type="radio" name="gender" id="male" value="male" />
           <label htmlFor="male">Muški</label>
-          <input type="radio" name="pol" id="female" value="zenski" />
-          <label htmlFor="female">Ženski</label>
-          <input type="radio" name="pol" id="other" value="drugo" />
-          <label htmlFor="other">Drugo</label>
+          <input type="radio" name="gender" id="female" value="female" />
+          <label htmlFor="female">Female</label>
+          <input type="radio" name="gender" id="other" value="other" />
+          <label htmlFor="other">Other</label>
           <br />
           <br />
 
-          <p>Izaberite vozilo:</p>
-          <input type="checkbox" name="vozilo1" id="bike" value="bicikl" />
-          <label htmlFor="bike">Bicikl</label>
+          <textarea name="comment" placeholder="Add comment..." cols="20" rows="7"></textarea>
           <br />
           <br />
 
-          <input type="checkbox" name="vozilo2" id="car" value="automobil" />
-          <label htmlFor="car">Automobil</label>
+          <input type="file" multiple />
+
           <br />
           <br />
 
-          <textarea name="komentar" placeholder="Vaš komentar..." cols="30" rows="10"></textarea>
-          <br />
-          <br />
+          <input type="reset" value="Poništi sva polja" />
+          <input type="submit" value="Pošalji" />
         </fieldset>
-
-        <input type="file" multiple />
-        <input type="range" />
         <br />
         <br />
-
-        <input type="reset" value="Poništi sva polja" />
-        <input type="submit" value="Pošalji" />
       </form>
     </>
   );
