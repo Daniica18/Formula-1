@@ -1,7 +1,8 @@
 import { Card, CardContent, Typography, CardMedia } from "@mui/material";
 import { Link } from "react-router";
+import { CardData } from "../CardData";
 
-export default function NewsCard(props) {
+export default function NewsCard() {
 
     return (
         // <div className="card">
@@ -10,16 +11,16 @@ export default function NewsCard(props) {
         //     <p>{props.description}</p>
         // </div>
         <div className="card">
-            <Link to={"/news/" + props.id}>
+            <Link to={"/news/" + CardData.id}>
                 <Card sx={{ maxWidth: 200 }} className='card'>
                     <CardMedia
                         sx={{ height: 100 }}
-                        image={props.CardData.image}
-                        title={props.CardData.title}
+                        image={CardData.image}
+                        title={CardData.title}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: '15px' }}>
-                            {props.CardData.title}
+                            {CardData.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                         </Typography>

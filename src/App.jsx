@@ -20,7 +20,6 @@ import Slider2 from "./components/Slider2";
 import Slider3 from "./components/Slider3";
 import Card from "./components/Card";
 import CardDetails from "./components/CardDetails";
-import CardData from "./CardData";
 
 
 export default function App() {
@@ -29,6 +28,7 @@ export default function App() {
     const [years, setYears] = useState([]);
     const [text, setText] = useState("");
     const [year, setYear] = useState(`${curentYear}`);
+  
 
 
     useEffect(() => {
@@ -75,8 +75,8 @@ export default function App() {
             <div className="container">
                 <div className="content_wrap">
                     <Routes>
-                        <Route path="/" element={<Home CardData={CardData} />} />
-                        <Route path="/news/:id" element={<CardDetails CardData={CardData} />} />
+                        <Route path="/" element={<Home />} />
+                        <Route path="/news/:id" element={<CardDetails />} />
                         <Route path="/slider1" element={<Slider1 />} />
                         <Route path="/slider2" element={<Slider2 />} />
                         <Route path="/slider3" element={<Slider3 />} />

@@ -1,4 +1,4 @@
-const cardData = [
+export const CardData = [
         {
             title: "POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?",
             image: "../img/Card1.jpg",
@@ -64,5 +64,3 @@ POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Im
 Head to the RACE HUB or scroll down for more on how and when you can watch the action, along with the global start times for each session.`
         }
     ];
-
-    export default CardData;

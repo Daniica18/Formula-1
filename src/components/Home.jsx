@@ -9,8 +9,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NewsCard from './Card';
+import { CardData } from "../CardData";
 
-export default function Home(props) {
+export default function Home() {
 
     const settings = {
         dots: true,
@@ -23,7 +24,7 @@ export default function Home(props) {
         pauseOnHover: true,
     };
 
-    console.log(props.CardData);
+    console.log(CardData);
     
 
 
@@ -69,9 +70,9 @@ export default function Home(props) {
                 {/* CARDS */}
                 <div className="cards">
                     <div className="card-container">
-                        {/* {props.CardData.map((card, i) => (
+                        {CardData.map((card, i) => (
                             <NewsCard id={i} card={card} className="card" />
-                        ))} */}
+                        ))}
 
                     </div>
                 </div>
