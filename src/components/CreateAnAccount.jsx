@@ -62,6 +62,10 @@ export default function CreateAnAccount() {
             <option>Books/Media</option>
             <option>Education</option>
             <option>Gambling</option>
+            <option>Medical</option>
+            <option>Pets</option>
+            <option>Sport & Fitness</option>
+            <option>Web services</option>
           </select>
           <br />
           <br />

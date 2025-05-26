@@ -18,7 +18,7 @@ import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Partners from "./components/Partners";
 import TermsOfUse from "./components/TermsOfUse";
-import BecomeAnAffiliate from "./components/CreateAnAccount";
+import CreateAnAccount from "./components/CreateAnAccount";
 import CardFive from "./components/CardFive";
 import CardSix from "./components/CardSix";
 import Slider1 from "./components/Slider1";
@@ -91,7 +91,7 @@ export default function App() {
                         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                         <Route path="/Partners" element={<Partners />} />
                         <Route path="/TermsOfUse" element={<TermsOfUse />} />
-                        <Route path="/BecomeAnAffiliate" element={<BecomeAnAffiliate />} />
+                        <Route path="/CreateAnAccount" element={<CreateAnAccount />} />
                         <Route path="/drivers" element={<Drivers flags={flags} year={year} text={text} />} />
                         <Route path="/teams" element={<Teams flags={flags} year={year} text={text} />} />
                         <Route path="/races" element={<Races flags={flags} year={year} text={text} />} />

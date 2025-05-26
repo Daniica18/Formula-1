@@ -10,7 +10,7 @@ export default function Footer() {
                 <Link to="/PrivacyPolicy">Privacy Policy</Link>
                 <Link to="/Partners">Partners</Link>
                 <Link to="/TermsOfUse">Terms of use</Link>
-                <Link to="/BecomeAnAffiliate">Become an affiliate</Link>
+                <Link to="/CreateAnAccount">Create an account</Link>
             </div>
 
             <div className="footer">
