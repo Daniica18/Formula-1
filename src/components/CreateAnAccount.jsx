@@ -9,7 +9,7 @@ export default function CreateAnAccount() {
           <br />
           <br />
 
-          <input type="text" name="lastName" id="lastName" placeholder="Prezime" />
+          <input type="text" name="lastName" id="lastName" placeholder="Last name" />
           <br />
           <br />
 
@@ -68,7 +68,7 @@ export default function CreateAnAccount() {
 
           <p>Gender:</p>
           <input type="radio" name="gender" id="male" value="male" />
-          <label htmlFor="male">Muški</label>
+          <label htmlFor="male">Male</label>
           <input type="radio" name="gender" id="female" value="female" />
           <label htmlFor="female">Female</label>
           <input type="radio" name="gender" id="other" value="other" />
@@ -85,8 +85,8 @@ export default function CreateAnAccount() {
           <br />
           <br />
 
-          <input type="reset" value="Poništi sva polja" />
-          <input type="submit" value="Pošalji" />
+          <input type="reset" value="Reset all fields" />
+          <input type="submit" value="Send" />
         </fieldset>
         <br />
         <br />
