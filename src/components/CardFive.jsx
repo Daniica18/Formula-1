@@ -15,18 +15,7 @@ export default function CardFive() {
 
             </div>
 
-
-
-
-
-
-
-
         </>
-
-
-
-
 
     )
 }
