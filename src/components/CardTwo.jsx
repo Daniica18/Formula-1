@@ -10,7 +10,6 @@ export default function CardTwo() {
         <br />
 
         <p >  Bar that one astonishing pole for Hamilton in Sprint Qualifying back in China, one-lap pace has been an issue all year for the Scuderia. Leclerc has a best Qualifying result of third, while Hamilton’s best starting slot for a Grand Prix is fifth.
-
           And while they both rose through the field at Imola, repeating that feat at Monaco this weekend will be a much taller order, given the difficulty of overtaking in the Principality.
           <br />
 

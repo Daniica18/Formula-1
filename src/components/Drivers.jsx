@@ -53,7 +53,6 @@ export default function Drivers(props) {
     if (props.text === "") {
 
       return el;
-
     }
 
     //return the item which contains the user input

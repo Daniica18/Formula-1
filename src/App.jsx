@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
+import { BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Home from "./components/Home"
@@ -58,16 +58,16 @@ export default function App() {
 
             <nav className="main-navigation">
                 <div className="logo-container">
-                    <Link to="/"><img src="./img/logo.png" className="logo" /></Link>
+                    <NavLink to="/"><img src="./img/logo.png" className="logo" /></NavLink>
                     <ul>
                         <li>
-                            <Link to="/drivers">Drivers</Link>
+                            <NavLink to="/drivers">Drivers</NavLink>
                         </li>
                         <li>
-                            <Link to="/teams">Teams</Link>
+                            <NavLink to="/teams">Teams</NavLink>
                         </li>
                         <li>
-                            <Link to="/races">Races</Link>
+                            <NavLink to="/races">Races</NavLink>
                         </li>
                     </ul>
                 </div>

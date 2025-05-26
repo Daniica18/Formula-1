@@ -50,7 +50,6 @@ export default function Contact() {
 
         <h2>Media accreditation</h2>
 
-
         <p>Members of the media wishing to obtain accreditation for Grands Prix should consult the official FIA website at www.fia.com</p>
         <br />
 
@@ -88,9 +87,6 @@ export default function Contact() {
 
         <p>For queries about licensing opportunities, whether your activities are an infringement of our rights or to report suspected counterfeit products, please contact Formula 1 by email at brandprotection@f1.com.</p>
         <br />
-
-
-
 
       </div>
     </>
