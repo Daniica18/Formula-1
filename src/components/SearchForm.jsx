@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Paper from '@mui/material/Paper';
 import { color, maxHeight } from "@mui/system";
+import { brown } from "@mui/material/colors";
 
 export default function SearchForm({ years, year, text, setYear, setText }) {
     console.log("year ", year, years);
@@ -29,7 +30,23 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                     variant="outlined"
                     className="text_field"
                     label="Search for..."
-                    sx={{backgroundColor: "white;", color: "white", width: 210, height: 50}}
+                    InputLabelProps={{style:{color: "red", fontWeight: "bold", border: "none", padding: "3px"}}}
+                    sx={{backgroundColor: "white;", width: 210, height: 50,
+                        "& .MuiOutlinedInput-nothcedOutline": {
+                            border: "1px black solid",
+                            borderRadius: "5px"
+                        },
+                        "& .MuiOutlinedInput-root": {
+                            border: "3px black solid",
+                            borderRadius: "5px",
+                            "& .Mui-focused fieldset": {
+                            border: "1px black solid",
+                            borderRadius: "5px"
+                        },
+                        },
+
+                    }
+            }
                 />
             </li>
             <li>
@@ -47,7 +64,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                                 //backgroundColor: "#e94545;",
                                 color: "white",
                                 "& .MuiOutlinedInput-notchedOutline": {
-                                    borderColor: "white",
+                                    borderColor: "red",
                                 },
                                 "&:hover .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "black",

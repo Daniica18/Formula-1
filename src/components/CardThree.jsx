@@ -1,7 +1,7 @@
 export default function CardThree() {
   return (
     <>
-      <div className="card3">
+      <div className="card1">
         <h1>TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design</h1>
         <br />
         <img src="../public/img/formulacard3.jpg" style={{ width: "950px", height: "600px" }} />
