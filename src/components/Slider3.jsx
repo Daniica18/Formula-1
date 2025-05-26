@@ -6,7 +6,7 @@ export default function Slider3() {
                 <br />
                 <br />
 
-                <img src="../public/img/ferr.jpg" className="imageS3" />
+                <img src="../img/ferr.jpg" className="imageS3" />
                 <br />
                 <br />
                 <p>

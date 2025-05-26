@@ -8,7 +8,7 @@ export default function Slider2() {
                 <p> Success came quickly through the likes of Alberto Ascari and John Surtees, and continued – in amongst leaner times – with Niki Lauda in the 1970s and then Michael Schumacher in the 2000s, when Ferrari claimed a then unprecedented five consecutive title doubles, securing their status as the most successful and decorated team in F1 history....Team Principal Fred Vasseur’s leadership starts to gel and strong campaign sees Charles Leclerc and Carlos Sainz take five wins between them. Runners-up in the constructors’ standings, losing out to McLaren at the final round. Lewis Hamilton signed to replace Sainz for 2025.</p>
                 <br />
 
-                <img src="../public/img/formula1celebrating.jpg" className="imageS2" />
+                <img src="../img/formula1celebrating.jpg" className="imageS2" />
 
 
             </div>
