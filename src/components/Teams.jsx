@@ -105,7 +105,7 @@ export default function Teams(props) {
                             <tr className={addClass(team.position)} key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
-                                    className='clicable'>
+                                    className='clickable'>
                                     <span>
                                         <Flag className="flag" country={filteredFlag(team.Constructor.nationality)} />
                                         {team.Constructor.name}

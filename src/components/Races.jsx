@@ -99,7 +99,7 @@ export default function Races(props) {
                      <tr key={race.round}>
                         <td>{race.round}</td>
                         <td onClick={() => handleClickDetailes(race.round)}
-                           className="clicable">
+                           className="clickable">
                            <span>
 
                               <Flag className="flag" country={filteredFlag(race.Circuit.Location.country)} />
@@ -110,7 +110,7 @@ export default function Races(props) {
                         <td>{race.date}</td>
                         <td
                            onClick={() => handleClickDriverDetailes(race.Results[0].Driver.driverId)}
-                           className="clicable">
+                           className="clickable">
                            <span>
                               <Flag country={filteredFlag(race.Results[0].Driver.nationality)} />
                               {race.Results[0].Driver.familyName}

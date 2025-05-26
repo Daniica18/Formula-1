@@ -105,7 +105,7 @@ export default function DriversDetails(props) {
                     <li>Country: {driversDetails.Driver.nationality}</li>
                     <li
                         onClick={() => handleClickDetails()}
-                        className="clicable">Team: {driversDetails.Constructors[0].name} </li>
+                        className="clickable">Team: {driversDetails.Constructors[0].name} </li>
                     <li>Birth: {driversDetails.Driver.dateOfBirth}</li>
                     <li>Biography: <Link to={driversDetails.Driver.url} target="_blank"
                         rel="noopener noreferrer">
@@ -134,7 +134,7 @@ export default function DriversDetails(props) {
                                         <td>{result.round}</td>
                                         <td
                                             onClick={() => handleClickRaceDetails(result.round)}
-                                            className="clicable">
+                                            className="clickable">
                                             <span>
                                                 <Flag className="flag" country={filteredFlag(result.Circuit.Location.country)} />
                                                 {result.raceName}
@@ -143,7 +143,7 @@ export default function DriversDetails(props) {
                                         </td>
                                         <td
                                             onClick={() => handleClickTeamDetails(result.Results[0].Constructor.constructorId)}
-                                            className="clicable">
+                                            className="clickable">
                                             {result.Results[0].Constructor.name}</td>
                                         <td>{result.Results[0].grid}</td>
                                         <td>{result.Results[0].position}</td>
