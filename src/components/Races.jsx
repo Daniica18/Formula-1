@@ -111,8 +111,11 @@ export default function Races(props) {
                         <td
                            onClick={() => handleClickDriverDetailes(race.Results[0].Driver.driverId)}
                            className="clicable">
-                           <Flag country={filteredFlag(race.Results[0].Driver.nationality)} />
-                           {race.Results[0].Driver.familyName}</td>
+                           <span>
+                              <Flag country={filteredFlag(race.Results[0].Driver.nationality)} />
+                              {race.Results[0].Driver.familyName}
+                           </span>
+                        </td>
                      </tr>
                   )
                })}
