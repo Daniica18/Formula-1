@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
         <br />
         <p>We collect this data as a data controller, which means that we determine how and why we process your personal data and are responsible for our processing and that of data processors who act upon our instructions.</p>
         <br />
-        <br />
+
         <p>This privacy policy (the “Privacy Policy”) sets out how we collect and process your personal data. It is important that you read this Privacy Policy together with any other privacy policy, fair processing notice and/or cookie policy we may provide where relevant so that you are fully aware of how and why we are using your data. This Privacy Policy supplements other privacy notices and policies we provide to you and is not intended to override them.</p>
         <br />
 

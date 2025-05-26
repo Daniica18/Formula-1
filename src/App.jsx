@@ -15,10 +15,10 @@ import CardThree from "./components/CardThree";
 import CardFour from "./components/CardFour";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import PrivacyPolicy from "./components/PrivacyPolicy"
-import Partners from "./components/Partners"
-import TermsOfUse from "./components/TermsOfUse"
-import BecomeAnAffiliate from "./components/BecomeAnAffiliate"
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import Partners from "./components/Partners";
+import TermsOfUse from "./components/TermsOfUse";
+import CreateAnAccount from "./components/CreateAnAccount";
 import CardFive from "./components/CardFive";
 import CardSix from "./components/CardSix";
 import Slider1 from "./components/Slider1";
@@ -79,8 +79,8 @@ export default function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/slider1" element={<Slider1 />} />
-                        <Route path="/slider2" element={<Slider2/>} />
-                        <Route path="/slider3" element={<Slider3/>} />
+                        <Route path="/slider2" element={<Slider2 />} />
+                        <Route path="/slider3" element={<Slider3 />} />
                         <Route path="/cardOne" element={<CardOne />} />
                         <Route path="/cardTwo" element={<CardTwo />} />
                         <Route path="/cardThree" element={<CardThree />} />
@@ -91,7 +91,7 @@ export default function App() {
                         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                         <Route path="/Partners" element={<Partners />} />
                         <Route path="/TermsOfUse" element={<TermsOfUse />} />
-                        <Route path="/BecomeAnAffiliate" element={<BecomeAnAffiliate />} />
+                        <Route path="/CreateAnAccount" element={<CreateAnAccount />} />
                         <Route path="/drivers" element={<Drivers flags={flags} year={year} text={text} />} />
                         <Route path="/teams" element={<Teams flags={flags} year={year} text={text} />} />
                         <Route path="/races" element={<Races flags={flags} year={year} text={text} />} />
