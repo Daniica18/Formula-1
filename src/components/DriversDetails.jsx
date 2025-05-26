@@ -94,7 +94,10 @@ export default function DriversDetails(props) {
         <div className="details_div">
             <div className="details_div_info">
                 <ul>
-                    <li><img src={`/img/_${driversDetails.Driver.driverId}.jpg`} onError={console.log("error", Error)} alt="alt_image"
+                    <li><img src={`/img/_${driversDetails.Driver.driverId}.jpg`} onError={(e) => {
+                        e.target.onerrore = null;
+                        e.target.src ="../img/_avatar.jpg"
+                    }} alt="/img/_avatar.jpg"
                         style={{ width: '150px', height: 'auto' }} /></li>
                     <li><Flag country={filteredFlag(driversDetails.Driver.nationality)} /></li>
                     <li>{driversDetails.Driver.givenName}</li>
