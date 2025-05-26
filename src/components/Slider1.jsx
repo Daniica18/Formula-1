@@ -14,7 +14,7 @@ export default function Slider1() {
                 </p>
                 <br />
                 <br></br>
-                <img src="../public/img/Slider1Component.jpg" className="imageSl" />
+                <img src="../img/Slider1Component.jpg" className="imageSl" />
                 <br></br>
                 <br></br>
                 <p>Series 6 covered Max Verstappen's third championship triumph in a dominant year for the Dutchman when he won 19 of the 22 Grands Prix across the season and romped home to the title.</p>
