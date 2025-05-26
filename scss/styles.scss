@@ -77,28 +77,42 @@ body {
 
 //CARDS
 
-.cards {
-    width: 100%;
-    display: inline;
+.card-container {
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     gap: 30px;
     padding-bottom: 15px;
-
-}
-
-.card {
     box-shadow: 25px 25px, 2em, red;
     border: 1px, solid, rgb(230, 222, 222);
 
 
-    a {
-        text-decoration: none;
-        color: #000;
-    }
 
 }
+
+// .cards {
+//     width: 100%;
+//     display: inline;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     gap: 30px;
+//     padding-bottom: 15px;
+
+// }
+
+// .card {
+//     box-shadow: 25px 25px, 2em, red;
+//     border: 1px, solid, rgb(230, 222, 222);
+
+
+//     a {
+//         text-decoration: none;
+//         color: #000;
+//     }
+
+// }
 
 //LOADER
 
