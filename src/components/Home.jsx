@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,35 +8,9 @@ import { Link } from 'react-router';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import NewsCard from './Card';
 
-export default function Home() {
-
-    const cardData = [
-        {
-            title: 'POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?',
-            image: '../img/Card1.jpg',
-        },
-        {
-            title: 'Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco',
-            image: '../img/Card2.jpg',
-        },
-        {
-            title: 'TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design',
-            image: '../img/card3.jpg',
-        },
-        {
-            title: 'THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco',
-            image: '../img/Card4.jpg',
-        },
-        {
-            title: 'McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix',
-            image: '../img/Card5.jpg',
-        },
-        {
-            title: 'What time is the Formula 1 2025 Monaco Grand Prix and how can I watch it?',
-            image: '../img/Card5.jpg',
-        },
-    ];
+export default function Home(props) {
 
     const settings = {
         dots: true,
@@ -49,6 +22,9 @@ export default function Home() {
         slidesToScroll: 1,
         pauseOnHover: true,
     };
+
+
+
 
     return (
         <div>
@@ -65,7 +41,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src=".c./img/f1celeb.jpg" alt="Formula 1" />
+                        <img src="../img/f1celeb.jpg" alt="Formula 1" />
                         <div className="bottom-left">
                             <Link to="Slider2">
                                 <h3>For many, Ferrari and Formula 1 racing have become inseparable.</h3>
@@ -90,21 +66,8 @@ export default function Home() {
                 {/* CARDS */}
                 <div className="cards">
                     <div className="card-container">
-                        {cardData.map((card, i) => (
-                            <Card key={i} sx={{ maxWidth: 200 }} className="card">
-                                <CardMedia
-                                    sx={{ height: 100 }}
-                                    image={card.image}
-                                    title={card.title}
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: '15px' }}>
-                                        {card.title}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                    </Typography>
-                                </CardContent>
-                            </Card>
+                        {props.cardData.map((card, i) => (
+                            <NewsCard id={i} card={card} className="card" />
                         ))}
                         {/* <Card sx={{ maxWidth: 200 }} className='card'>
                         <CardMedia
