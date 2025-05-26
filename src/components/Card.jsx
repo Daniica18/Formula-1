@@ -1,9 +1,7 @@
 import { Card, CardContent, Typography, CardMedia } from "@mui/material";
 import { Link } from "react-router";
 
-
 export default function NewsCard(props) {
-    console.log("propsice", props)
 
     return (
         // <div className="card">
@@ -16,12 +14,12 @@ export default function NewsCard(props) {
                 <Card sx={{ maxWidth: 200 }} className='card'>
                     <CardMedia
                         sx={{ height: 100 }}
-                        image={props.card.image}
-                        title={props.card.title}
+                        image={props.CardData.image}
+                        title={props.CardData.title}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: '15px' }}>
-                            {props.card.title}
+                            {props.CardData.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                         </Typography>

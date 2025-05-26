@@ -23,6 +23,9 @@ export default function Home(props) {
         pauseOnHover: true,
     };
 
+    console.log(props.CardData);
+    
+
 
 
 
@@ -66,9 +69,9 @@ export default function Home(props) {
                 {/* CARDS */}
                 <div className="cards">
                     <div className="card-container">
-                        {props.cardData.map((card, i) => (
+                        {/* {props.CardData.map((card, i) => (
                             <NewsCard id={i} card={card} className="card" />
-                        ))}
+                        ))} */}
 
                     </div>
                 </div>
