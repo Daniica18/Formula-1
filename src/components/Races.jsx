@@ -100,15 +100,22 @@ export default function Races(props) {
                         <td>{race.round}</td>
                         <td onClick={() => handleClickDetailes(race.round)}
                            className="clicable">
-                           <Flag country={filteredFlag(race.Circuit.Location.country)} />
-                           {race.raceName}</td>
+                           <span>
+
+                              <Flag className="flag" country={filteredFlag(race.Circuit.Location.country)} />
+                              {race.raceName}
+                           </span>
+                        </td>
                         <td>{race.Circuit.circuitName}</td>
                         <td>{race.date}</td>
                         <td
                            onClick={() => handleClickDriverDetailes(race.Results[0].Driver.driverId)}
                            className="clicable">
-                           <Flag country={filteredFlag(race.Results[0].Driver.nationality)} />
-                           {race.Results[0].Driver.familyName}</td>
+                           <span>
+                              <Flag country={filteredFlag(race.Results[0].Driver.nationality)} />
+                              {race.Results[0].Driver.familyName}
+                           </span>
+                        </td>
                      </tr>
                   )
                })}

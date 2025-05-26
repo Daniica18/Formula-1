@@ -76,16 +76,16 @@ export default function TeamDetails(props) {
 
     const filteredData = teamResults.filter((el) => {
 
-    //if no input the return the original
-    if (props.text === "") {
-      return el;
-    }
-    //return the item which contains the user input
+        //if no input the return the original
+        if (props.text === "") {
+            return el;
+        }
+        //return the item which contains the user input
 
-    else {
-      return el.raceName.toLowerCase().includes(props.text);
-    }
-  });
+        else {
+            return el.raceName.toLowerCase().includes(props.text);
+        }
+    });
 
     const handleClickDetailes = (id) => {
         const linkTo = `/raceDetails/${id}`;
@@ -149,8 +149,12 @@ export default function TeamDetails(props) {
                                     <td
                                         onClick={() => handleClickDetailes(teamResult.round)}
                                         className="clicable">
-                                        <Flag country={filteredFlag(teamResult.Circuit.Location.country)} /> 
-                                        {teamResult.raceName}</td>
+                                        <span>
+
+                                            <Flag className="flag" country={filteredFlag(teamResult.Circuit.Location.country)} />
+                                            {teamResult.raceName}
+                                        </span>
+                                    </td>
                                     <td className={addClass(teamResult.Results[0].position)}>{teamResult.Results[0].position}</td>
                                     <td className={addClass(teamResult.Results[1].position)}>{teamResult.Results[1].position}</td>
                                     <td>{parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}</td>

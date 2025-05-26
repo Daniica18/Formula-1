@@ -111,6 +111,11 @@ body {
 
 .clicable {
     cursor: pointer;
+
+    span {
+        display: flex;
+        align-items: center;
+    }
 }
 
 //FOOTER
