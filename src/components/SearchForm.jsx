@@ -5,9 +5,7 @@ import TextField from "@mui/material/TextField";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
-import Paper from '@mui/material/Paper';
-import { color, maxHeight } from "@mui/system";
-import { brown } from "@mui/material/colors";
+import { makeStyles } from "@mui/material";
 
 export default function SearchForm({ years, year, text, setYear, setText }) {
     console.log("year ", year, years);
@@ -30,23 +28,25 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                     variant="outlined"
                     className="text_field"
                     label="Search for..."
-                    InputLabelProps={{style:{color: "red", fontWeight: "bold", border: "none", padding: "3px"}}}
-                    sx={{backgroundColor: "white;", width: 210, height: 50,
+                    InputLabelProps={{ style: { color: "red", fontWeight: "bold", padding: "3px" } }}
+                    sx={{
+                        backgroundColor: "white;", width: 210, height: 50, borderRadius: "5px", display: "flex", alignItems: "center",
                         "& .MuiOutlinedInput-nothcedOutline": {
-                            border: "1px black solid",
-                            borderRadius: "5px"
+                            border: "1px red solid",
                         },
                         "& .MuiOutlinedInput-root": {
                             border: "3px black solid",
                             borderRadius: "5px",
-                            "& .Mui-focused fieldset": {
-                            border: "1px black solid",
-                            borderRadius: "5px"
+                            // "& .MuiInputBase-input": {
+                            //     border: "1px white solid",
+                            // }
                         },
+                        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                            border: "none"
                         },
 
                     }
-            }
+                    }
                 />
             </li>
             <li>

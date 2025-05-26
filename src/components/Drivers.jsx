@@ -85,7 +85,7 @@ export default function Drivers(props) {
       <table className="detail_table">
         <thead>
           <tr>
-            <th colSpan={4}>Drivers Chamionship Standing -{props.year}</th>
+            <th colSpan={4}>Drivers Chamionship Standing - {props.year}</th>
 
           </tr>
         </thead>
