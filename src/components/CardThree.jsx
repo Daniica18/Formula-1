@@ -9,13 +9,9 @@ export default function CardThree() {
 
         <br />
 
-
         <p>  Although the exact way the duct is configured internally is not yet widely known, the FIA has checked and confirmed that the design is in full compliance with the regulations and that it has no concerns about it.</p>
         <br />
         <br />
-
-
-
 
       </div>
     </>
