@@ -9,7 +9,7 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 
 export default function DriversDetails(props) {
     const [driversDetails, setDriversDetails] = useState({});
-    const [Results, setResults] = useState([]);
+    const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
     const params = useParams();
     const navigate = useNavigate();
@@ -58,7 +58,7 @@ export default function DriversDetails(props) {
         }
     };
 
-    const filteredData = Results.filter((el) => {
+    const filteredData = results.filter((el) => {
 
         //if no input the return the original
         if (props.text === "") {
