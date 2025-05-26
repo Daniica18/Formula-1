@@ -41,7 +41,7 @@ export default function Home(props) {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src=".c./img/f1celeb.jpg" alt="Formula 1" />
+                        <img src="../img/f1celeb.jpg" alt="Formula 1" />
                         <div className="bottom-left">
                             <Link to="Slider2">
                                 <h3>For many, Ferrari and Formula 1 racing have become inseparable.</h3>

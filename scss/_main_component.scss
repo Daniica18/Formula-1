@@ -32,12 +32,14 @@
 
 .details_div_info {
     border: black 1px solid;
-    border-radius: 9px;
-    background-color: rgba(255, 255, 0, 0.721);
+    border-top-right-radius: 9px; 
+    border-bottom-right-radius: 9px;
+    background-color:rgb(45, 44, 44);
     width: 15%;
     height: auto;
     font-size: 16px;
     text-align: center;
+    color: #fff;
 }
 
 .detail_table {
