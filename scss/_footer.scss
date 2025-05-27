@@ -20,3 +20,27 @@ h2 {
     padding: 0 40px 40px 40px;
     margin: 20px;
 }
+
+form {
+    display: flex;
+    justify-content: center;
+
+    fieldset {
+        background-color: rgb(45, 44, 44);
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        margin: 10px;
+        border: "20px black solid";
+        border-radius: 10px;
+        width: 700px;
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            border-radius: 10px;
+        }
+    }
+}

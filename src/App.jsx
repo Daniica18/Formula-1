@@ -9,12 +9,12 @@ import Races from "./components/Races";
 import DriversDetails from "./components/DriversDetails";
 import TeamsDetails from "./components/TeamsDetails";
 import RacesDetails from "./components/RacesDetails";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import PrivacyPolicy from "./components/PrivacyPolicy";
-import Partners from "./components/Partners";
-import TermsOfUse from "./components/TermsOfUse";
-import CreateAnAccount from "./components/CreateAnAccount";
+import Contact from "./components/Footer/Contact";
+import Footer from "./components/Footer/Footer";
+import PrivacyPolicy from "./components/Footer/PrivacyPolicy";
+import Partners from "./components/Footer/Partners";
+import TermsOfUse from "./components/Footer/TermsOfUse";
+import CreateAnAccount from "./components/Footer/CreateAnAccount";
 import Card from "./components/Card";
 import CardDetails from "./components/CardDetails";
 import SliderInfo from "./components/SliderInfo";
@@ -27,7 +27,7 @@ export default function App() {
     const [years, setYears] = useState([]);
     const [text, setText] = useState("");
     const [year, setYear] = useState(`${curentYear}`);
-  
+
 
 
     useEffect(() => {
@@ -75,12 +75,13 @@ export default function App() {
                 <div className="content_wrap">
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/SliderNews/:id" element={<SliderDetails />} />
+                        <Route path="/sliderNews/:id" element={<SliderDetails />} />
                         <Route path="/news/:id" element={<CardDetails />} />
-                        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-                        <Route path="/Partners" element={<Partners />} />
-                        <Route path="/TermsOfUse" element={<TermsOfUse />} />
-                        <Route path="/CreateAnAccount" element={<CreateAnAccount />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+                        <Route path="/partners" element={<Partners />} />
+                        <Route path="/termsOfUse" element={<TermsOfUse />} />
+                        <Route path="/createAnAccount" element={<CreateAnAccount />} />
                         <Route path="/drivers" element={<Drivers flags={flags} year={year} text={text} />} />
                         <Route path="/teams" element={<Teams flags={flags} year={year} text={text} />} />
                         <Route path="/races" element={<Races flags={flags} year={year} text={text} />} />

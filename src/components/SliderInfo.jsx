@@ -21,7 +21,7 @@ export default function SliderInfo() {
                 <div className="slider" key={slider.id}>
                     <img src={slider.image_slide} alt="Hit Netfilx Show" />
                     <div className="bottom-left">
-                        <Link to={"/SliderNews/" + slider.id}>
+                        <Link to={"/sliderNews/" + slider.id}>
                             <h3>{slider.title}</h3>
                         </Link>
                     </div>
