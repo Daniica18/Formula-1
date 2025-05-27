@@ -1,4 +1,7 @@
 .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h1 {
         font-size: 32px;
@@ -11,20 +14,22 @@
         width: 800px;
         height: 400px;
         margin: 20px 50px;
+        display: flex;
     }
 
-    p{
+    p {
         margin: 20px 50px;
         max-width: 800px;
     }
 
+    .description {
+        line-height: 2em;
+        width: 100%;
+        display: flex;
+    }
 
 
 
 
 
 }
-
-
-
-

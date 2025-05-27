@@ -11,7 +11,7 @@ export default function CardDetails() {
                 {CardData[params.id].title}
             </h1>
             <img src={CardData[params.id].image} alt="" srcset="" />
-            <p>
+            <p className="description">
                 {CardData[params.id].description}
             </p>
         </div>
