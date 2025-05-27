@@ -23,6 +23,15 @@ export default function Drivers(props) {
     setLoading(false);
   };
 
+  const addStyle = (position) => {
+    if (position == 1) {
+      return { backgroundColor: "yellow" };
+    } else if (position == 2) {
+      return { backgroundColor: "silver" };
+    } else if (position == 3) {
+      return { backgroundColor: "orangered" };
+    }
+  };
 
   const filteredData = drivers.filter((el) => {
 
@@ -70,7 +79,7 @@ export default function Drivers(props) {
         <tbody>
           {filteredData.map((driver) => {
             return (
-              <tr key={driver.Driver.driverId}>
+              <tr key={driver.Driver.driverId} style={addStyle(driver.position)}>
                 <td>{driver.position}</td>
                 <td width="45%"
                   onClick={() => handleClickDetails(driver.Driver.driverId)}
