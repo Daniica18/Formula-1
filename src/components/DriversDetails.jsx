@@ -98,7 +98,7 @@ export default function DriversDetails(props) {
                     <li>Biography: <Link to={driversDetails.Driver.url} target="_blank"
                         rel="noopener noreferrer">
                         <OpenInNewRoundedIcon
-                            style={{ color: "black", width: '19px', height: 'auto' }} />
+                            style={{ color: "white", width: '19px', height: 'auto' }} />
                     </Link></li>
                 </ul>
             </div>

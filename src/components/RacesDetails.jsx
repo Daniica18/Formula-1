@@ -164,7 +164,7 @@ export default function RacesDetails(props) {
                                 target="_blank"
                                 rel="noopener noreferrer">
                                 <OpenInNewRoundedIcon
-                                    style={{ color: "black", width: '19px', height: 'auto' }} />
+                                    style={{ color: "white", width: '19px', height: 'auto' }} />
                             </Link></td>
                         </tr>
                     </tbody>
