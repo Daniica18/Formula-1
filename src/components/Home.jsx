@@ -42,7 +42,7 @@ export default function Home() {
                         <img src="../img/f1celeb.jpg" alt="Formula 1" />
                         <div className="bottom-left">
                             <Link to="Slider2">
-                                <h3>For many, Ferrari and Formula 1 racing have become inseparable.</h3>
+                                <h3>F1 NATION: Norris back on top as Racing Bulls deliver a strategy masterclass – it’s our Monaco GP review</h3>
                             </Link>
                         </div>
                     </div>
