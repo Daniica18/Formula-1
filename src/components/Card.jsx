@@ -10,24 +10,24 @@ export default function NewsCard(props) {
         //     <h3>{props.title}</h3>
         //     <p>{props.description}</p>
         // </div>
-        <div className="card">
+        <div className='card-container'>
             {CardData.map((card) => (
-            <Link to={"/news/" + card.id}>
-                <Card sx={{ maxWidth: 200 }} className='card'>
-                    <CardMedia
-                        sx={{ height: 100 }}
-                        image={card.image}
-                        title={card.title}
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: '15px' }}>
-                            {card.title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Link>
+                <Link to={"/news/" + card.id}>
+                    <Card sx={{ maxWidth: 200 }} className='card'>
+                        <CardMedia
+                            sx={{ height: 100 }}
+                            image={card.image}
+                            title={card.title}
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" sx={{ fontSize: '15px' }}>
+                                {card.title}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Link>
             ))}
         </div>
     );

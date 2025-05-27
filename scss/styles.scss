@@ -1,9 +1,9 @@
 @use "reset";
-@use "_cards";
+
 @use "_slider";
 @use "_footer";
-
 @use "_main_component";
+
 $footerHeight: 66px;
 
 body {
@@ -78,34 +78,29 @@ body {
 //CARDS
 
 .card-container {
-    display: flex;
     width: 100%;
+    display: inline;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 30px;
-    padding-bottom: 15px;
-    box-shadow: 25px 25px, 2em, red;
-    border: 1px, solid, rgb(230, 222, 222);
-
-
+    padding-bottom: 0 50px;
 
 }
 
-// .cards {
-//     width: 100%;
-//     display: inline;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center;
-//     gap: 30px;
-//     padding-bottom: 15px;
+.card {
+    box-shadow: 25px 25px, 2em, red;
+    border: 1px, solid, rgb(230, 222, 222);
+    width: 180px;
+    max-height: 250px;
 
-// }
+    &:hover {
+        color: red;
+        width: 200px;
+        box-shadow: 0 0 10px 1px rgb(250, 27, 15);
+    }
 
-// .card {
-//     box-shadow: 25px 25px, 2em, red;
-//     border: 1px, solid, rgb(230, 222, 222);
-
+}
 
 //     a {
 //         text-decoration: none;

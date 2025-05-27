@@ -63,8 +63,8 @@ export default function Home() {
             <div>
                 {/* CARDS */}
                 <div className="cards">
-                    <div className="card-container">
-                            <NewsCard />
+                    <div>
+                        <NewsCard />
                     </div>
                 </div>
             </div>
