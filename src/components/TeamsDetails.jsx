@@ -92,7 +92,7 @@ export default function TeamDetails(props) {
                     <li>History: <Link to={teamDetails.Constructor.url} target="_blank"
                         rel="noopener noreferrer">
                         <OpenInNewRoundedIcon
-                            style={{ color: "black", width: '19px', height: 'auto' }} />
+                            style={{ color: "white", width: '19px', height: 'auto' }} />
                     </Link></li>
                 </ul>
             </div>
