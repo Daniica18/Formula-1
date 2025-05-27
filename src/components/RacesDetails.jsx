@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router"
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
 
 export default function RacesDetails(props) {
     const [resultsDetails, setResultsDetails] = useState([]);
@@ -138,7 +139,7 @@ export default function RacesDetails(props) {
                 <table>
                     <thead>
                         <tr>
-                            <th colSpan={2}><Flag country={filteredFlag(resultsDetails.Circuit.Location.country)} size={124} /></th>
+                            <th colSpan={2}><Flag country={filteredFlagCountry(props.flags, resultsDetails.Circuit.Location.country)} size={124} /></th>
                         </tr>
                         <tr>
                             <th colSpan={2}>{resultsDetails.Circuit.circuitName}</th>
@@ -194,7 +195,7 @@ export default function RacesDetails(props) {
                                         className="clickable">
                                         <span>
 
-                                            <Flag className="flag" country={filteredFlag(qualify.Driver.nationality)} />
+                                            <Flag className="flag" country={filteredFlagNationality(props.flags, qualify.Driver.nationality)} />
                                             {qualify.Driver.familyName}
 
                                         </span>
@@ -234,7 +235,7 @@ export default function RacesDetails(props) {
                                         onClick={() => handleClickDriverDetailes(result.Driver.driverId)}
                                         className="clickable">
                                         <span>
-                                            <Flag className="flag" country={filteredFlag(result.Driver.nationality)} />
+                                            <Flag className="flag" country={filteredFlagNationality(props.flags, result.Driver.nationality)} />
                                             {result.Driver.familyName}
                                         </span>
 
