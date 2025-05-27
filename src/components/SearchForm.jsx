@@ -7,8 +7,16 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import { makeStyles } from "@mui/material";
 
-export default function SearchForm({ years, year, text, setYear, setText }) {
+export default function SearchForm({ years, year, text, setYear, setText, show }) {
     console.log("year ", year, years);
+
+    const showSearch = () => {
+        if (show === false) {
+            return { visibility: "hidden" };
+        } else {
+            return { visibility: "visible" };
+        }
+    };
 
     const handleChangeText = (event) => {
         setText(event.target.value);
@@ -19,7 +27,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
     };
 
     return (
-        <ul className="search_nav">
+        <ul className="search_nav" style={showSearch()}>
             <li>
                 <TextField
                     id="outlined-basic"

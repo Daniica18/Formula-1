@@ -27,6 +27,7 @@ export default function RacesDetails(props) {
         console.log("Result Response", resultsResponse.data.MRData.RaceTable.Races[0]);
         setResultsDetails(resultsResponse.data.MRData.RaceTable.Races[0]);
         setQualifyingDetails(qualifyingResponse.data.MRData.RaceTable.Races[0]);
+        props.setShow(true);
         setIsLoading(false);
     };
 

@@ -30,6 +30,7 @@ export default function DriversDetails(props) {
 
         setResults(response2.data.MRData.RaceTable.Races)
         console.log("response2", response2.data.MRData.RaceTable.Races);
+        props.setShow(true);
         setLoading(false);
     };
 
