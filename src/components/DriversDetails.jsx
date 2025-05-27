@@ -6,6 +6,8 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
+
 
 export default function DriversDetails(props) {
     const [driversDetails, setDriversDetails] = useState({});
@@ -33,30 +35,7 @@ export default function DriversDetails(props) {
         setLoading(false);
     };
 
-    const filteredFlag = (nationality) => {
-        if (nationality === "British" || nationality === "UK") {
-            return "GB";
-        } else if (nationality === "USA" || nationality === "United States") {
-            return "US";
-        } else if (nationality === "Dutch") {
-            return "NL";
-        } else if (nationality === "Korea") {
-            return "KR";
-        } else if (nationality === "UAE") {
-            return "AE";
-        } else if (nationality === "Azerbaijan") {
-            return "AZ";
-        } else if (nationality === "Monegasque") {
-            return "MC";
-        } else if (nationality === "Argentinian ") {
-            return "AR";
-        } else {
-            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            if (flag) {
-                return flag.alpha_2_code;
-            }
-        }
-    };
+
 
     const filteredData = results.filter((el) => {
 
@@ -96,10 +75,10 @@ export default function DriversDetails(props) {
                 <ul>
                     <li><img src={`/img/_${driversDetails.Driver.driverId}.jpg`} onError={(e) => {
                         e.target.onerrore = null;
-                        e.target.src ="../img/_avatar.jpg"
+                        e.target.src = "../img/_avatar.jpg"
                     }} alt="/img/_avatar.jpg"
                         style={{ width: '150px', height: 'auto' }} /></li>
-                    <li><Flag country={filteredFlag(driversDetails.Driver.nationality)} /></li>
+                    <li><Flag country={filteredFlagNationality(props.flags, driversDetails.Driver.nationality)} /></li>
                     <li>{driversDetails.Driver.givenName}</li>
                     <li>{driversDetails.Driver.familyName}</li>
                     <li>Country: {driversDetails.Driver.nationality}</li>
@@ -136,7 +115,7 @@ export default function DriversDetails(props) {
                                             onClick={() => handleClickRaceDetails(result.round)}
                                             className="clickable">
                                             <span>
-                                                <Flag className="flag" country={filteredFlag(result.Circuit.Location.country)} />
+                                                <Flag className="flag" country={filteredFlagCountry(props.flags, result.Circuit.Location.country)} />
                                                 {result.raceName}
                                             </span>
 

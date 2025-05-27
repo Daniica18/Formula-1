@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import { filteredFlagNationality } from "../FilteredFlag";
 
 export default function Teams(props) {
     const [teams, setTeams] = useState([]);
@@ -23,30 +24,6 @@ export default function Teams(props) {
         setIsLoading(false);
     };
 
-    const filteredFlag = (nationality) => {
-        if (nationality === "British" || nationality === "UK") {
-            return "GB";
-        } else if (nationality === "USA" || nationality === "United States") {
-            return "US";
-        } else if (nationality === "Dutch") {
-            return "NL";
-        } else if (nationality === "Korea") {
-            return "KR";
-        } else if (nationality === "UAE") {
-            return "AE";
-        } else if (nationality === "Azerbaijan") {
-            return "AZ";
-        } else if (nationality === "Monegasque") {
-            return "MC";
-        } else if (nationality === "Argentinian ") {
-            return "AR";
-        } else {
-            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            if (flag) {
-                return flag.alpha_2_code;
-            }
-        }
-    };
 
     const addClass = (position) => {
         if (position == 1) {
@@ -107,7 +84,7 @@ export default function Teams(props) {
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
                                     className='clickable'>
                                     <span>
-                                        <Flag className="flag" country={filteredFlag(team.Constructor.nationality)} />
+                                        <Flag className="flag" country={filteredFlagNationality(props.flags, team.Constructor.nationality)} />
                                         {team.Constructor.name}
                                     </span>
                                 </td>
