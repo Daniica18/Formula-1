@@ -52,10 +52,10 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
             <li>
                 <Box sx={{ minWidth: 120 }}>
                     <FormControl>
-                        <InputLabel id="demo-simple-select-label" sx={{ color: "white" }}>Select a year</InputLabel>
+                        <InputLabel id="simple-select-label" sx={{ color: "white" }}>Select a year</InputLabel>
                         {years.length > 0 && <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
+                            labelId="simple-select-label"
+                            id="simple-select"
                             value={year}
                             label="Filter By Year"
                             onChange={handleChangeYear}
