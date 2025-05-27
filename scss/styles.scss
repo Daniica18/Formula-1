@@ -2,6 +2,7 @@
 @use "_slider";
 @use "_footer";
 @use "_main_component";
+@use "_card-content";
 
 
 $footerHeight: 66px;
@@ -108,6 +109,14 @@ body {
     gap: 30px;
     padding-bottom: 0 50px;
     margin-bottom: 15px;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .card {
@@ -120,6 +129,8 @@ body {
         color: red;
         width: 200px;
         box-shadow: 0 0 10px 1px rgb(250, 27, 15);
+        transition: 0.3s ease-in;
+        transition: 0.3s ease-out;
     }
 
 }

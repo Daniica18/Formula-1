@@ -6,6 +6,9 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
+import { red, yellow } from "@mui/material/colors";
+
 
 export default function DriversDetails(props) {
     const [driversDetails, setDriversDetails] = useState({});
@@ -34,28 +37,13 @@ export default function DriversDetails(props) {
         setLoading(false);
     };
 
-    const filteredFlag = (nationality) => {
-        if (nationality === "British" || nationality === "UK") {
-            return "GB";
-        } else if (nationality === "USA" || nationality === "United States") {
-            return "US";
-        } else if (nationality === "Dutch") {
-            return "NL";
-        } else if (nationality === "Korea") {
-            return "KR";
-        } else if (nationality === "UAE") {
-            return "AE";
-        } else if (nationality === "Azerbaijan") {
-            return "AZ";
-        } else if (nationality === "Monegasque") {
-            return "MC";
-        } else if (nationality === "Argentinian ") {
-            return "AR";
-        } else {
-            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            if (flag) {
-                return flag.alpha_2_code;
-            }
+    const addStyle = (position) => {
+        if (position == 1) {
+            return { backgroundColor: "yellow" };
+        } else if (position == 2) {
+            return { backgroundColor: "silver" };
+        } else if (position == 3) {
+            return { backgroundColor: "orangered" };
         }
     };
 
@@ -97,10 +85,10 @@ export default function DriversDetails(props) {
                 <ul>
                     <li><img src={`/img/_${driversDetails.Driver.driverId}.jpg`} onError={(e) => {
                         e.target.onerrore = null;
-                        e.target.src ="../img/_avatar.jpg"
+                        e.target.src = "../img/_avatar.jpg"
                     }} alt="/img/_avatar.jpg"
                         style={{ width: '150px', height: 'auto' }} /></li>
-                    <li><Flag country={filteredFlag(driversDetails.Driver.nationality)} /></li>
+                    <li><Flag country={filteredFlagNationality(props.flags, driversDetails.Driver.nationality)} /></li>
                     <li>{driversDetails.Driver.givenName}</li>
                     <li>{driversDetails.Driver.familyName}</li>
                     <li>Country: {driversDetails.Driver.nationality}</li>
@@ -111,7 +99,7 @@ export default function DriversDetails(props) {
                     <li>Biography: <Link to={driversDetails.Driver.url} target="_blank"
                         rel="noopener noreferrer">
                         <OpenInNewRoundedIcon
-                            style={{ color: "black", width: '19px', height: 'auto' }} />
+                            style={{ color: "white", width: '19px', height: 'auto' }} />
                     </Link></li>
                 </ul>
             </div>
@@ -137,7 +125,7 @@ export default function DriversDetails(props) {
                                             onClick={() => handleClickRaceDetails(result.round)}
                                             className="clickable">
                                             <span>
-                                                <Flag className="flag" country={filteredFlag(result.Circuit.Location.country)} />
+                                                <Flag className="flag" country={filteredFlagCountry(props.flags, result.Circuit.Location.country)} />
                                                 {result.raceName}
                                             </span>
 
@@ -147,7 +135,7 @@ export default function DriversDetails(props) {
                                             className="clickable">
                                             {result.Results[0].Constructor.name}</td>
                                         <td>{result.Results[0].grid}</td>
-                                        <td>{result.Results[0].position}</td>
+                                        <td style={addStyle(result.Results[0].position)}>{result.Results[0].position}</td>
                                     </tr>
                                 )
                             })}

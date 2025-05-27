@@ -3,6 +3,7 @@ import { useNavigate } from "react-router"
 import Loader from "./Loader";
 import axios from "axios";
 import Flag from 'react-flagkit';
+import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
 
 export default function Races(props) {
    const [races, setRaces] = useState([]);
@@ -24,30 +25,7 @@ export default function Races(props) {
       setIsLoading(false);
    };
 
-   const filteredFlag = (nationality) => {
-      if (nationality === "British" || nationality === "UK") {
-         return "GB";
-      } else if (nationality === "USA" || nationality === "United States") {
-         return "US";
-      } else if (nationality === "Dutch") {
-         return "NL";
-      } else if (nationality === "Korea") {
-         return "KR";
-      } else if (nationality === "UAE") {
-         return "AE";
-      } else if (nationality === "Azerbaijan") {
-         return "AZ";
-      } else if (nationality === "Monegasque") {
-         return "MC";
-      } else if (nationality === "Argentinian ") {
-         return "AR";
-      } else {
-         const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-         if (flag) {
-            return flag.alpha_2_code;
-         }
-      }
-   };
+
 
    const filteredData = races.filter((el) => {
 
@@ -103,7 +81,7 @@ export default function Races(props) {
                            className="clickable">
                            <span>
 
-                              <Flag className="flag" country={filteredFlag(race.Circuit.Location.country)} />
+                              <Flag className="flag" country={filteredFlagCountry(props.flags, race.Circuit.Location.country)} />
                               {race.raceName}
                            </span>
                         </td>
@@ -113,7 +91,7 @@ export default function Races(props) {
                            onClick={() => handleClickDriverDetailes(race.Results[0].Driver.driverId)}
                            className="clickable">
                            <span>
-                              <Flag country={filteredFlag(race.Results[0].Driver.nationality)} />
+                              <Flag country={filteredFlagNationality(props.flags, race.Results[0].Driver.nationality)} />
                               {race.Results[0].Driver.familyName}
                            </span>
                         </td>

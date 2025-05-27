@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
+import { filteredFlagNationality } from "../FilteredFlag";
 
 export default function Drivers(props) {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const newFlags = props.flags;
 
   useEffect(() => {
     getDrivers();
@@ -22,28 +24,13 @@ export default function Drivers(props) {
     setLoading(false);
   };
 
-  const filteredFlag = (nationality) => {
-    if (nationality === "British" || nationality === "UK") {
-      return "GB";
-    } else if (nationality === "USA" || nationality === "United States") {
-      return "US";
-    } else if (nationality === "Dutch") {
-      return "NL";
-    } else if (nationality === "Korea") {
-      return "KR";
-    } else if (nationality === "UAE") {
-      return "AE";
-    } else if (nationality === "Azerbaijan") {
-      return "AZ";
-    } else if (nationality === "Monegasque") {
-      return "MC";
-    } else if (nationality === "Argentinian ") {
-      return "AR";
-    } else {
-      const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-      if (flag) {
-        return flag.alpha_2_code;
-      }
+  const addStyle = (position) => {
+    if (position == 1) {
+      return { backgroundColor: "yellow" };
+    } else if (position == 2) {
+      return { backgroundColor: "silver" };
+    } else if (position == 3) {
+      return { backgroundColor: "orangered" };
     }
   };
 
@@ -79,7 +66,7 @@ export default function Drivers(props) {
   if (loading) {
     return <Loader />;
   }
-
+  // 
   return (
     <div className="detail">
       <h1>Drivers Championship</h1>
@@ -93,14 +80,15 @@ export default function Drivers(props) {
         <tbody>
           {filteredData.map((driver) => {
             return (
-              <tr key={driver.Driver.driverId}>
+              <tr key={driver.Driver.driverId} style={addStyle(driver.position)}>
                 <td>{driver.position}</td>
                 <td width="45%"
                   onClick={() => handleClickDetails(driver.Driver.driverId)}
                   className="clickable"
                 >
                   <span>
-                    <Flag className="flag" country={filteredFlag(driver.Driver.nationality)} />
+
+                    <Flag className="flag" country={filteredFlagNationality(props.flags, driver.Driver.nationality)} />
                     {driver.Driver.familyName} {driver.Driver.givenName}
                   </span>
                 </td>

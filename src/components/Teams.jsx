@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+import { filteredFlagNationality } from "../FilteredFlag";
 
 export default function Teams(props) {
     const [teams, setTeams] = useState([]);
@@ -24,40 +25,13 @@ export default function Teams(props) {
         setIsLoading(false);
     };
 
-    const filteredFlag = (nationality) => {
-        if (nationality === "British" || nationality === "UK") {
-            return "GB";
-        } else if (nationality === "USA" || nationality === "United States") {
-            return "US";
-        } else if (nationality === "Dutch") {
-            return "NL";
-        } else if (nationality === "Korea") {
-            return "KR";
-        } else if (nationality === "UAE") {
-            return "AE";
-        } else if (nationality === "Azerbaijan") {
-            return "AZ";
-        } else if (nationality === "Monegasque") {
-            return "MC";
-        } else if (nationality === "Argentinian ") {
-            return "AR";
-        } else {
-            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            if (flag) {
-                return flag.alpha_2_code;
-            }
-        }
-    };
-
-    const addClass = (position) => {
+    const addStyle = (position) => {
         if (position == 1) {
-            return "first_place";
+            return { backgroundColor: "yellow" };
         } else if (position == 2) {
-            return "second_place";
+            return { backgroundColor: "silver" };
         } else if (position == 3) {
-            return "third_place";
-        } else {
-            return "";
+            return { backgroundColor: "orangered" };
         }
     };
 
@@ -103,12 +77,12 @@ export default function Teams(props) {
                 <tbody>
                     {filteredData.map((team) => {
                         return (
-                            <tr className={addClass(team.position)} key={team.Constructor.constructorId}>
+                            <tr style={addStyle(team.position)} key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
                                     className='clickable'>
                                     <span>
-                                        <Flag className="flag" country={filteredFlag(team.Constructor.nationality)} />
+                                        <Flag className="flag" country={filteredFlagNationality(props.flags, team.Constructor.nationality)} />
                                         {team.Constructor.name}
                                     </span>
                                 </td>
@@ -117,7 +91,7 @@ export default function Teams(props) {
                                     <OpenInNewRoundedIcon
                                         style={{ color: "black", width: '19px', height: 'auto' }} />
                                 </Link></td>
-                                <td className={addClass(team.position)}>{team.points}</td>
+                                <td>{team.points}</td>
                             </tr>
                         )
                     })}
