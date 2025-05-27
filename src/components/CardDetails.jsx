@@ -4,7 +4,6 @@ import { CardData } from "../CardData";
 export default function CardDetails() {
     const params = useParams();
 
-    console.log("propsice", CardData, params)
 
     return (
         <div>
