@@ -68,5 +68,5 @@ The event will begin with Free Practice 1 and Free Practice 2 on Friday, May 23,
 POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?
 
 Head to the RACE HUB or scroll down for more on how and when you can watch the action, along with the global start times for each session.`
-        }
+        },
     ];
