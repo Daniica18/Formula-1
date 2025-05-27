@@ -21,7 +21,6 @@ export default function Teams(props) {
         const response = await axios.get(url);
         console.log("res ", response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
         setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
-        props.setShow(true);
         setIsLoading(false);
     };
 
@@ -57,7 +56,7 @@ export default function Teams(props) {
 
 
     const handleClickDetails = (id) => {
-        const linkTo = `/teamDetails/${id}`
+        const linkTo = `/teams/${id}`
         navigate(linkTo);
     };
 

@@ -3,10 +3,12 @@ import { useLocation, Link } from "react-router";
 export default function Breadcrumbs() {
     const location = useLocation("");
     const pathnames = location.pathname.split("/").filter((x) => x);
-    const breadcrumbPath = "";
+    const breadcrumbPath = "/";
+
+    if(location.pathname === "/") return null
 
     return(
-        <ul className="breadcrumNav">
+        <ul className="breadcrumNav" >
             <li>
                 <Link to="/" >Home</Link>
             </li>
@@ -16,7 +18,7 @@ export default function Breadcrumbs() {
                 const title = value.toUpperCase().replace(/_/g, " ");
 
                 return (
-                    <li>
+                    <li key={i}>
                         {last ? (
                             <span>{title}</span>
                         ) : (

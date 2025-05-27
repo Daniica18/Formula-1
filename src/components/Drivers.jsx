@@ -9,7 +9,6 @@ export default function Drivers(props) {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const newFlags = props.flags;
 
   useEffect(() => {
     getDrivers();
@@ -20,7 +19,6 @@ export default function Drivers(props) {
     const response = await axios.get(url);
     console.log(response);
     setDrivers(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
-    props.setShow(true);
     setLoading(false);
   };
 
@@ -54,12 +52,12 @@ export default function Drivers(props) {
   });
 
   const handleClickDetails = (id) => {
-    const linkTo = `/driverDetails/${id}`;
+    const linkTo = `/drivers/${id}`;
     navigate(linkTo);
   };
 
   const handleClickTeamDetails = (id) => {
-    const linkTo = `/teamDetails/${id}`;
+    const linkTo = `/teams/${id}`;
     navigate(linkTo);
   }
 

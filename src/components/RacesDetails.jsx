@@ -28,7 +28,6 @@ export default function RacesDetails(props) {
         console.log("Result Response", resultsResponse.data.MRData.RaceTable.Races[0]);
         setResultsDetails(resultsResponse.data.MRData.RaceTable.Races[0]);
         setQualifyingDetails(qualifyingResponse.data.MRData.RaceTable.Races[0]);
-        props.setShow(true);
         setIsLoading(false);
     };
 
@@ -121,12 +120,12 @@ export default function RacesDetails(props) {
 
     const handleClickDriverDetailes = (id) => {
         console.log(id);
-        const linkTo = `/driverDetails/${id}`;
+        const linkTo = `/drivers/${id}`;
         navigate(linkTo);
     };
 
     const handleClickTeamDetails = (id) => {
-        const linkTo = `/teamDetails/${id}`;
+        const linkTo = `/teams/${id}`;
         navigate(linkTo);
     };
 

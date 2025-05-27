@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { useParams } from "react-router";
-import { Link } from "react-router";
+import { useLocation, Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
@@ -16,6 +16,9 @@ export default function DriversDetails(props) {
     const [loading, setLoading] = useState(true);
     const params = useParams();
     const navigate = useNavigate();
+    const location = useLocation("");
+    console.log("path", location.pathname);
+    
 
     useEffect(() => {
         getDriversDetails();
@@ -33,7 +36,6 @@ export default function DriversDetails(props) {
 
         setResults(response2.data.MRData.RaceTable.Races)
         console.log("response2", response2.data.MRData.RaceTable.Races);
-        props.setShow(true);
         setLoading(false);
     };
 
@@ -66,12 +68,12 @@ export default function DriversDetails(props) {
     };
 
     const handleClickTeamDetails = (id) => {
-        const linkTo = `/teamDetails/${id}`;
+        const linkTo = `/teams/${id}`;
         navigate(linkTo);
     };
 
     const handleClickRaceDetails = (id) => {
-        const linkTo = `/raceDetails/${id}`;
+        const linkTo = `/races/${id}`;
         navigate(linkTo);
     };
 

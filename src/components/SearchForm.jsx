@@ -5,16 +5,26 @@ import TextField from "@mui/material/TextField";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
+import { useLocation } from "react-router";
+import { useParams } from "react-router";
 import { makeStyles } from "@mui/material";
 
-export default function SearchForm({ years, year, text, setYear, setText, show }) {
+export default function SearchForm({ years, year, text, setYear, setText }) {
     console.log("year ", year, years);
+    const location = useLocation("");
+    const params = useParams();
 
     const showSearch = () => {
-        if (show === false) {
-            return { visibility: "hidden" };
-        } else {
+        if (location.pathname === "/drivers" ||
+            location.pathname === "/teams" ||
+            location.pathname === "/races" ||
+            location.pathname === `/drivers/:${params.id}` ||
+            location.pathname === `/teams/:${params.id}` ||
+            location.pathname === `/races/:${params.id}` 
+        ) {
             return { visibility: "visible" };
+        } else {
+            return { visibility: "hidden" };
         }
     };
 
