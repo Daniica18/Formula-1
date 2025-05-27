@@ -2,7 +2,7 @@ export const SliderData = [
     {
         id: 0,
         title: `F1 NATION: Norris back on top as Racing Bulls deliver a strategy masterclass – it’s our Monaco GP review`,
-        image_slide: `../img/Slider1.png`,
+        image_slide: `../img/Slider1.jpg`,
         image_article: `../img/Slider1Component.jpg`,
         paragrafOne: `Lando Norris converted pole to victory as he won in Monaco for the first time in his career, with home hero Charles Leclerc second and championship leader Oscar Piastri third. That reignited the intra-team battle at McLaren, with the Australian now just three points ahead of his team mate in the title race.
         After the race, two-time Le Mans podium finisher and F1TV analyst, Alex Brundle, and Fox Sports Mexico journalist, Diego Mejia, joined Tom Clarkson in the Monte Carlo paddock to discuss an eventful Monaco Grand Prix in this week's F1 Nation podcast.
