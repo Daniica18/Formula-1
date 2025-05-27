@@ -2,7 +2,7 @@ import { Card, CardContent, Typography, CardMedia } from "@mui/material";
 import { Link } from "react-router";
 import { CardData } from "../CardData";
 
-export default function NewsCard(props) {
+export default function NewsCard() {
 
     return (
         // <div className="card">
@@ -12,7 +12,7 @@ export default function NewsCard(props) {
         // </div>
         <div className="card">
             {CardData.map((card) => (
-            <Link to={"/news/" + card.id}>
+            <Link to={"/news/" + card.id} key={card.id}>
                 <Card sx={{ maxWidth: 200 }} className='card'>
                     <CardMedia
                         sx={{ height: 100 }}
