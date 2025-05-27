@@ -6,7 +6,7 @@ export default function CardDetails() {
 
 
     return (
-        <div>
+        <div className="card-content">
             <h1>
                 {CardData[params.id].title}
             </h1>
