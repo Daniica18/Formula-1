@@ -11,8 +11,8 @@ export default function NewsCard(props) {
         //     <p>{props.description}</p>
         // </div>
         <div className="card">
-            <Link to={"/news/" + CardData.id}>
             {CardData.map((card) => (
+            <Link to={"/news/" + card.id}>
                 <Card sx={{ maxWidth: 200 }} className='card'>
                     <CardMedia
                         sx={{ height: 100 }}
@@ -27,8 +27,8 @@ export default function NewsCard(props) {
                         </Typography>
                     </CardContent>
                 </Card>
-            ))}
             </Link>
+            ))}
         </div>
     );
 }

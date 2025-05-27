@@ -24,12 +24,6 @@ export default function Home() {
         pauseOnHover: true,
     };
 
-    console.log("CardData", CardData);
-    
-
-
-
-
     return (
         <div>
             {/* SLIDER */}

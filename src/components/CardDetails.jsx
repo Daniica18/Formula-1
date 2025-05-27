@@ -1,19 +1,19 @@
 import { useParams } from "react-router";
 import { CardData } from "../CardData";
 
-export default function CardDetails(props) {
+export default function CardDetails() {
     const params = useParams();
 
-    console.log("propsice", props, params)
+    console.log("propsice", CardData, params)
 
     return (
         <div>
             <h1>
-                {props.cardData[params.id].title}
+                {CardData[params.id].title}
             </h1>
-            <img src={props.cardData[params.id].image} alt="" srcset="" />
+            <img src={CardData[params.id].image} alt="" srcset="" />
             <p>
-                {props.cardData[params.id].description}
+                {CardData[params.id].description}
             </p>
         </div>
     );
