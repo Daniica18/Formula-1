@@ -24,7 +24,7 @@ export default function Home() {
         pauseOnHover: true,
     };
 
-    console.log(CardData);
+    console.log("CardData", CardData);
     
 
 
@@ -70,10 +70,7 @@ export default function Home() {
                 {/* CARDS */}
                 <div className="cards">
                     <div className="card-container">
-                        {CardData.map((card, i) => (
-                            <NewsCard id={i} card={card} className="card" />
-                        ))}
-
+                            <NewsCard />
                     </div>
                 </div>
             </div>
