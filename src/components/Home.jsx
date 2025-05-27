@@ -39,10 +39,10 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="slider">
-                        <img src="../img/f1celeb.jpg" alt="Formula 1" />
+                        <img src="../img/Slider2.jpg" alt="Formula 1" />
                         <div className="bottom-left">
                             <Link to="Slider2">
-                                <h3>For many, Ferrari and Formula 1 racing have become inseparable.</h3>
+                                <h3>F1 NATION: Norris back on top as Racing Bulls deliver a strategy masterclass – it’s our Monaco GP review</h3>
                             </Link>
                         </div>
                     </div>
@@ -63,8 +63,8 @@ export default function Home() {
             <div>
                 {/* CARDS */}
                 <div className="cards">
-                    <div className="card-container">
-                            <NewsCard />
+                    <div>
+                        <NewsCard />
                     </div>
                 </div>
             </div>

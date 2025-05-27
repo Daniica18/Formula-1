@@ -2,10 +2,15 @@ export default function Slider2() {
     return (
         <>
             <div className="Slider2Component">
-                <h1>For many, Ferrari and Formula 1 racing have become inseparable. The only team to have competed in every season since the world championship began, the Prancing Horse has grown from the humble dream of founder Enzo Ferrari to become one of the most iconic and recognised brands in the world.</h1>
+                <h1>F1 NATION: Norris back on top as Racing Bulls deliver a strategy masterclass – it’s our Monaco GP review</h1>
                 <br />
 
-                <p> Success came quickly through the likes of Alberto Ascari and John Surtees, and continued – in amongst leaner times – with Niki Lauda in the 1970s and then Michael Schumacher in the 2000s, when Ferrari claimed a then unprecedented five consecutive title doubles, securing their status as the most successful and decorated team in F1 history....Team Principal Fred Vasseur’s leadership starts to gel and strong campaign sees Charles Leclerc and Carlos Sainz take five wins between them. Runners-up in the constructors’ standings, losing out to McLaren at the final round. Lewis Hamilton signed to replace Sainz for 2025.</p>
+                <p> Lando Norris converted pole to victory as he won in Monaco for the first time in his career, with home hero Charles Leclerc second and championship leader Oscar Piastri third. That reignited the intra-team battle at McLaren, with the Australian now just three points ahead of his team mate in the title race.
+                    After the race, two-time Le Mans podium finisher and F1TV analyst, Alex Brundle, and Fox Sports Mexico journalist, Diego Mejia, joined Tom Clarkson in the Monte Carlo paddock to discuss an eventful Monaco Grand Prix in this week's F1 Nation podcast.</p>
+                <br></br>
+                <p>They discuss the turnaround in form for Norris, who has struggled at times in Qualifying and yet delivered on the most important Saturday of the year. But what happened to the unflappable Piastri - why could he suddenly not hook a lap up in Qualifying?
+                    MONACO LOWDOWN: All the key moments as Norris realises a dream, Racing Bulls shine and famous faces enjoy the show
+                    Leclerc delivered on home soil for the second year running as Ferrari enjoyed an upturn in form, somewhat against the odds with the Monegasque sure that he would struggle to even make the top 10 here prior to the weekend.</p>
                 <br />
 
                 <img src="../img/formula1celebrating.jpg" className="imageS2" />

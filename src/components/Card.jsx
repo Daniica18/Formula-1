@@ -10,7 +10,7 @@ export default function NewsCard() {
         //     <h3>{props.title}</h3>
         //     <p>{props.description}</p>
         // </div>
-        <div className="card">
+        <div className='card-container'>
             {CardData.map((card) => (
             <Link to={"/news/" + card.id} key={card.id}>
                 <Card sx={{ maxWidth: 200 }} className='card'>
