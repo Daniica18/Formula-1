@@ -1,5 +1,4 @@
 @use "reset";
-
 @use "_slider";
 @use "_footer";
 @use "_main_component";
@@ -85,7 +84,7 @@ body {
     justify-content: center;
     gap: 30px;
     padding-bottom: 0 50px;
-
+    margin-bottom: 20px;
 }
 
 .card {
