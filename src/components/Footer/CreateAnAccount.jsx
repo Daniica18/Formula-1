@@ -3,7 +3,7 @@ export default function CreateAnAccount() {
     <>
       <form>
         <fieldset>
-          <legend>Create an account</legend>
+          <h2>Create an account</h2>
 
           <input type="text" name="name" id="name" placeholder="Name" />
           <br />
@@ -40,12 +40,6 @@ export default function CreateAnAccount() {
 
           <label htmlFor="birthday">Birthday: </label>
           <input type="date" name="birthday" id="birthday" />
-          <input type="time" name="time" />
-          <br />
-          <br />
-
-          <label htmlFor="qty">Years: </label>
-          <input type="number" name="years" id="qty" min="18" max="70" />
           <br />
           <br />
 
@@ -55,17 +49,11 @@ export default function CreateAnAccount() {
               Choose...
             </option>
             <option>Accessories</option>
-            <option>Art/Photo/Music</option>
             <option>Automotive</option>
-            <option>Baby</option>
-            <option>Beauty</option>
             <option>Books/Media</option>
             <option>Education</option>
             <option>Gambling</option>
-            <option>Medical</option>
-            <option>Pets</option>
             <option>Sport & Fitness</option>
-            <option>Web services</option>
           </select>
           <br />
           <br />
@@ -80,7 +68,7 @@ export default function CreateAnAccount() {
           <br />
           <br />
 
-          <textarea name="comment" placeholder="Add comment..." cols="20" rows="7"></textarea>
+          <textarea name="comment" placeholder="Tell us about yourself..." cols="20" rows="7"></textarea>
           <br />
           <br />
 
