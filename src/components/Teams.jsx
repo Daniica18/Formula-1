@@ -24,16 +24,13 @@ export default function Teams(props) {
         setIsLoading(false);
     };
 
-
-    const addClass = (position) => {
+    const addStyle = (position) => {
         if (position == 1) {
-            return "first_place";
+            return { backgroundColor: "yellow" };
         } else if (position == 2) {
-            return "second_place";
+            return { backgroundColor: "silver" };
         } else if (position == 3) {
-            return "third_place";
-        } else {
-            return "";
+            return { backgroundColor: "orangered" };
         }
     };
 
@@ -79,7 +76,7 @@ export default function Teams(props) {
                 <tbody>
                     {filteredData.map((team) => {
                         return (
-                            <tr className={addClass(team.position)} key={team.Constructor.constructorId}>
+                            <tr style={addStyle(team.position)} key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
                                     className='clickable'>
@@ -93,7 +90,7 @@ export default function Teams(props) {
                                     <OpenInNewRoundedIcon
                                         style={{ color: "black", width: '19px', height: 'auto' }} />
                                 </Link></td>
-                                <td className={addClass(team.position)}>{team.points}</td>
+                                <td>{team.points}</td>
                             </tr>
                         )
                     })}

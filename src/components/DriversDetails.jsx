@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
+import { red, yellow } from "@mui/material/colors";
 
 
 export default function DriversDetails(props) {
@@ -35,7 +36,15 @@ export default function DriversDetails(props) {
         setLoading(false);
     };
 
-
+    const addStyle = (position) => {
+        if (position == 1) {
+            return { backgroundColor: "yellow" };
+        } else if (position == 2) {
+            return { backgroundColor: "silver" };
+        } else if (position == 3) {
+            return { backgroundColor: "orangered" };
+        }
+    };
 
     const filteredData = results.filter((el) => {
 
@@ -125,7 +134,7 @@ export default function DriversDetails(props) {
                                             className="clickable">
                                             {result.Results[0].Constructor.name}</td>
                                         <td>{result.Results[0].grid}</td>
-                                        <td>{result.Results[0].position}</td>
+                                        <td style={addStyle(result.Results[0].position)}>{result.Results[0].position}</td>
                                     </tr>
                                 )
                             })}
