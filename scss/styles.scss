@@ -68,6 +68,28 @@ body {
     }
 }
 
+.breadcrumNav {
+    background-color: rgb(233, 230, 230);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 12px;
+
+    a{
+        color: black;
+        padding: 16px 20px;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:active {
+                background-color: red;
+                border: none;
+                border-radius: 5px;
+            }
+    }
+}
+
 .search_nav {
     padding: 0 10px;
 

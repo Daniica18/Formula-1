@@ -21,6 +21,7 @@ export default function Races(props) {
       console.log(response.data);
       console.log(response.data.MRData.RaceTable.Races);
       setRaces(response.data.MRData.RaceTable.Races);
+      props.setShow(true);
       setIsLoading(false);
    };
 
@@ -41,13 +42,13 @@ export default function Races(props) {
 
    const handleClickDetailes = (id) => {
       console.log(id);
-      const linkTo = `/raceDetails/${id}`;
+      const linkTo = `/races/details/${id}`;
       navigate(linkTo);
    };
 
    const handleClickDriverDetailes = (id) => {
       console.log(id);
-      const linkTo = `/driverDetails/${id}`;
+      const linkTo = `/drivers/details/${id}`;
       navigate(linkTo);
    };
 

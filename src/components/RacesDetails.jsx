@@ -28,6 +28,7 @@ export default function RacesDetails(props) {
         console.log("Result Response", resultsResponse.data.MRData.RaceTable.Races[0]);
         setResultsDetails(resultsResponse.data.MRData.RaceTable.Races[0]);
         setQualifyingDetails(qualifyingResponse.data.MRData.RaceTable.Races[0]);
+        props.setShow(true);
         setIsLoading(false);
     };
 
@@ -164,7 +165,7 @@ export default function RacesDetails(props) {
                                 target="_blank"
                                 rel="noopener noreferrer">
                                 <OpenInNewRoundedIcon
-                                    style={{ color: "black", width: '19px', height: 'auto' }} />
+                                    style={{ color: "white", width: '19px', height: 'auto' }} />
                             </Link></td>
                         </tr>
                     </tbody>

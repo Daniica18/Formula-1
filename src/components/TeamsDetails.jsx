@@ -28,6 +28,7 @@ export default function TeamDetails(props) {
         setTeamDetails(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
         console.log("response2", response2.data.MRData.RaceTable.Races);
         setTeamResults(response2.data.MRData.RaceTable.Races)
+        props.setShow(true);
         setIsLoading(false);
     };
 
@@ -92,7 +93,7 @@ export default function TeamDetails(props) {
                     <li>History: <Link to={teamDetails.Constructor.url} target="_blank"
                         rel="noopener noreferrer">
                         <OpenInNewRoundedIcon
-                            style={{ color: "black", width: '19px', height: 'auto' }} />
+                            style={{ color: "white", width: '19px', height: 'auto' }} />
                     </Link></li>
                 </ul>
             </div>

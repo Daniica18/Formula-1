@@ -19,6 +19,7 @@ import Card from "./components/Card";
 import CardDetails from "./components/CardDetails";
 import SliderInfo from "./components/SliderInfo";
 import SliderDetails from "./components/SliderDetails";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
     const [years, setYears] = useState([]);
     const [text, setText] = useState("");
     const [year, setYear] = useState(`${curentYear}`);
-
+    const [show, setShow] = useState(false);
 
 
     useEffect(() => {
@@ -68,7 +69,10 @@ export default function App() {
                         </li>
                     </ul>
                 </div>
-                <SearchForm years={years} text={text} year={year} setYear={setYear} setText={setText} />
+                <SearchForm years={years} text={text} year={year} setYear={setYear} setText={setText} show={show} />
+            </nav>
+            <nav>
+                <Breadcrumbs />
             </nav>
 
             <div className="container">
@@ -82,12 +86,12 @@ export default function App() {
                         <Route path="/partners" element={<Partners />} />
                         <Route path="/termsOfUse" element={<TermsOfUse />} />
                         <Route path="/createAnAccount" element={<CreateAnAccount />} />
-                        <Route path="/drivers" element={<Drivers flags={flags} year={year} text={text} />} />
-                        <Route path="/teams" element={<Teams flags={flags} year={year} text={text} />} />
-                        <Route path="/races" element={<Races flags={flags} year={year} text={text} />} />
-                        <Route path="/driverDetails/:id" element={<DriversDetails flags={flags} year={year} text={text} />} />
-                        <Route path="/teamDetails/:id" element={<TeamsDetails flags={flags} year={year} text={text} />} />
-                        <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} year={year} text={text} />} />
+                        <Route path="/drivers" element={<Drivers flags={flags} year={year} text={text} show={show} setShow={setShow} />} />
+                        <Route path="/teams" element={<Teams flags={flags} year={year} text={text} show={show} setShow={setShow}  />} />
+                        <Route path="/races" element={<Races flags={flags} year={year} text={text} show={show} setShow={setShow}  />} />
+                        <Route path="/driverDetails/:id" element={<DriversDetails flags={flags} year={year} text={text} show={show} setShow={setShow}  />} />
+                        <Route path="/teamDetails/:id" element={<TeamsDetails flags={flags} year={year} text={text} show={show} setShow={setShow}  />} />
+                        <Route path="/raceDetails/:id" element={<RacesDetails flags={flags} year={year} text={text} show={show} setShow={setShow}  />} />
                     </Routes>
                 </div>
             </div>

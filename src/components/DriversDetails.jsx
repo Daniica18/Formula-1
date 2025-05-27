@@ -33,6 +33,7 @@ export default function DriversDetails(props) {
 
         setResults(response2.data.MRData.RaceTable.Races)
         console.log("response2", response2.data.MRData.RaceTable.Races);
+        props.setShow(true);
         setLoading(false);
     };
 
@@ -98,7 +99,7 @@ export default function DriversDetails(props) {
                     <li>Biography: <Link to={driversDetails.Driver.url} target="_blank"
                         rel="noopener noreferrer">
                         <OpenInNewRoundedIcon
-                            style={{ color: "black", width: '19px', height: 'auto' }} />
+                            style={{ color: "white", width: '19px', height: 'auto' }} />
                     </Link></li>
                 </ul>
             </div>

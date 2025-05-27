@@ -21,6 +21,7 @@ export default function Teams(props) {
         const response = await axios.get(url);
         console.log("res ", response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
         setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
+        props.setShow(true);
         setIsLoading(false);
     };
 
