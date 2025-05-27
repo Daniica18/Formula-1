@@ -79,23 +79,13 @@ body {
 
 .card-container {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
-    padding-bottom: 50px;
-    margin-bottom: 20px;
-}
-
-.card-container {
-    width: 100%;
     display: inline;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 30px;
     padding-bottom: 0 50px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .card {
@@ -111,7 +101,6 @@ body {
     }
 
 }
-
 
 //LOADER
 
