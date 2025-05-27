@@ -15,11 +15,10 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import Partners from "./components/Partners";
 import TermsOfUse from "./components/TermsOfUse";
 import CreateAnAccount from "./components/CreateAnAccount";
-import Slider1 from "./components/Slider1";
-import Slider2 from "./components/Slider2";
-import Slider3 from "./components/Slider3";
 import Card from "./components/Card";
 import CardDetails from "./components/CardDetails";
+import SliderInfo from "./components/SliderInfo";
+import SliderDetails from "./components/SliderDetails";
 
 
 export default function App() {
@@ -76,10 +75,8 @@ export default function App() {
                 <div className="content_wrap">
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/SliderNews/:id" element={<SliderDetails />} />
                         <Route path="/news/:id" element={<CardDetails />} />
-                        <Route path="/slider1" element={<Slider1 />} />
-                        <Route path="/slider2" element={<Slider2 />} />
-                        <Route path="/slider3" element={<Slider3 />} />
                         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
                         <Route path="/Partners" element={<Partners />} />
                         <Route path="/TermsOfUse" element={<TermsOfUse />} />

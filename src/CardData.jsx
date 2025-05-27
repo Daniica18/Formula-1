@@ -1,6 +1,6 @@
 export const CardData = [
         {
-            id: 1,
+            id: 0,
             title: "POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?",
             image: "../img/Card1.jpg",
             description: `Red Bull driver Max Verstappen delivered another masterclass to take victory in the Emilia-Romagna Grand Prix and keep the pressure on his McLaren rivals on Sunday. But who else caught the attention of our judges across an action-packed Imola weekend? Check out the latest Power Rankings scores and overall leaderboard below...
@@ -12,14 +12,14 @@ Our experts’ scores are then averaged out to produce a race score – with tho
         },
 
         {
-            id: 2,
+            id: 1,
             title: "Vasseur admits Ferrari are not fast enough as he highlights Qualifying concerns ahead of Monaco",
             image: "../img/Card2.jpg",
             description: `For many, Ferrari and Formula 1 racing have become inseparable. The only team to have competed in every season since the world championship began, the Prancing Horse has grown from the humble dream of founder Enzo Ferrari to become one of the most iconic and recognised brands in the world.
            Success came quickly through the likes of Alberto Ascari and John Surtees, and continued – in amongst leaner times – with Niki Lauda in the 1970s and then Michael Schumacher in the 2000s, when Ferrari claimed a then unprecedented five consecutive title doubles, securing their status as the most successful and decorated team in F1 history....Team Principal Fred Vasseur’s leadership starts to gel and strong campaign sees Charles Leclerc and Carlos Sainz take five wins between them. Runners-up in the constructors’ standings, losing out to McLaren at the final round. Lewis Hamilton signed to replace Sainz for 2025.`
         },
         {
-            id: 3,
+            id: 2,
             title: "TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design",
             image: "../img/card3.jpg",
             description: `There has been a lot of intrigue recently about how an ingenious McLaren rear brake duct design is helping the MCL39 have better tyre temperature control than the others. At circuits which induce particularly high rear tyre temperatures, it has helped amplify McLaren’s advantage.
@@ -28,14 +28,14 @@ Although the exact way the duct is configured internally is not yet widely known
         },
 
         {
-            id: 4,
+            id: 3,
             title: "THIS WEEK IN F1: 10 quiz questions on the Emilia Romagna Grand Prix and F1 history at Monaco",
             image: "../img/Card4.jpg",
             description: `McLaren may well have the fastest overall package this year, but Max Verstappen proved on Sunday that he's in no mood to concede anything to his papaya rivals, pulling off one of the all-time great overtaking moves on pole-sitter Oscar Piastri into Tamburello to take the lead on Lap 1.
 That stunning move was the foundation of Verstappen's victory as he raced off at the front, while behind him there was plenty of action – and a surprising amount of overtaking on such a tight track – as the rest of the drivers fought for places.`
         },
         {
-            id: 5,
+            id: 4,
             title: "McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix",
             image: "../img/Card5.jpg",
             description: `McLaren have revealed a special ‘Riviera-inspired’ livery enhancement that will run on their Formula 1 cars at the upcoming Monaco and Spanish Grands Prix.
@@ -58,7 +58,7 @@ Before that, they ran a one-off ‘Triple Crown’ papaya, white and black liver
         },
 
         {
-            id: 6,
+            id: 5,
             title: "What time is the Formula 1 2025 Monaco Grand Prix and how can I watch it?",
             image: "../img/Card6.jpg",
             description: `Formula 1 moves swiftly on from Imola to Monte Carlo for the Monaco Grand Prix this weekend, as the latest triple header sequence continues.
