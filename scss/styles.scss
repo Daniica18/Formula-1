@@ -87,6 +87,14 @@ body {
     gap: 30px;
     padding-bottom: 0 50px;
     margin-bottom: 15px;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .card {
