@@ -32,49 +32,6 @@ export default function RacesDetails(props) {
         setIsLoading(false);
     };
 
-    const filteredFlag = (nationality) => {
-        if (nationality === "British" || nationality === "UK") {
-            return "GB";
-        } else if (nationality === "USA" || nationality === "United States") {
-            return "US";
-        } else if (nationality === "Dutch") {
-            return "NL";
-        } else if (nationality === "Korea") {
-            return "KR";
-        } else if (nationality === "UAE") {
-            return "AE";
-        } else if (nationality === "Azerbaijan") {
-            return "AZ";
-        } else if (nationality === "Monegasque") {
-            return "MC";
-        } else if (nationality === "Argentinian ") {
-            return "AR";
-        } else {
-            const flag = props.flags.find(f => f.nationality === nationality || f.en_short_name === nationality);
-            if (flag) {
-                return flag.alpha_2_code;
-            }
-        }
-    };
-
-    const addClass = (position) => {
-        if (position == 1) {
-            return "first_place";
-        } else if (position == 2) {
-            return "second_place";
-        } else if (position == 3) {
-            return "third_place";
-        } else if (position == 4) {
-            return "forth_place";
-        } else if (position == 5) {
-            return "fifth_place";
-        } else if (position > 5 && position < 11) {
-            return "fisrt_ten_place";
-        } else {
-            return "other_place";
-        }
-    };
-
     console.log("resultResponse ", resultsDetails);
     console.log("qualifyingResponse ", qualifyingDetails);
 
@@ -83,7 +40,6 @@ export default function RacesDetails(props) {
         if (props.text === "") {
             return el;
         }
-
         //return the item which contains the user input
         else {
             return el.Driver.familyName.toLowerCase().includes(props.text) || el.Constructor.name.toLowerCase().includes(props.text);
@@ -102,23 +58,6 @@ export default function RacesDetails(props) {
         }
     });
 
-    // const filterRaceDetails = (results) => {
-    //     results.filter((el) => {
-    //         if (props.text === "") {
-    //             return el;
-    //         }
-
-    //         else {
-    //             return el.Driver.familyName.toLowerCase().includes(props.text) || el.Constructor.name.toLowerCase().includes(props.text);
-    //         }
-    //     })
-
-    //     //return the item which contains the user input
-    // };
-
-    // console.log("filterRaceDetails ", filterRaceDetails(qualifyingDetails?.QualifyingResults));
-
-
     const handleClickDriverDetailes = (id) => {
         console.log(id);
         const linkTo = `/drivers/${id}`;
@@ -130,10 +69,10 @@ export default function RacesDetails(props) {
         navigate(linkTo);
     };
 
-
     if (isLoading) {
         return (<Loader />)
     }
+    
     return (
         <div className="details_div">
             <div className="details_div_info">
