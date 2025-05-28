@@ -5,6 +5,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import { useLocation, matchPath } from "react-router";
+import { display, flex } from "@mui/system";
 
 export default function SearchForm({ years, year, text, setYear, setText }) {
     console.log("year ", year, years);
@@ -20,7 +21,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
         ) {
             return { visibility: "visible" };
         } else {
-            return { visibility: "hidden" };
+            return { display: "none" };
         }
     };
 
@@ -45,7 +46,10 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                     InputLabelProps={{
                         style: {
                             color: "black",
-                            padding: "3px"
+                            padding: "5px",
+                            bgcolor: "white",
+                            display: "flex",
+                            alignItems: "center"
                         }
                     }}
                     sx={{
@@ -84,16 +88,20 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                                 minWidth: 140,
                                 color: "white",
                                 "& .MuiOutlinedInput-notchedOutline": {
-                                    borderColor: "white", // radi
+                                    borderColor: "white",
                                 },
                                 "&:hover .MuiOutlinedInput-notchedOutline": {
-                                    borderColor: "red", // radi
-                                },
-                                "& .MuiOutlinedInput-root.Mui-focused": {
-                                    borderColor: "none",
+                                    borderColor: "red",
                                 },
                                 "& .MuiSvgIcon-root": {
-                                    color: "white", // radi
+                                    color: "white",
+                                },
+                                "&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+                                {
+                                    borderColor: "white",
+                                },
+                                "&.MuiInputLabel-shrink:active": {
+                                    color: "black"
                                 },
                             }}
                             MenuProps={{

@@ -28,8 +28,49 @@
         display: flex;
     }
 
+}
 
+@media (max-width: 800px) {
+    .card-content {
 
+    h1 {
+        font-size: 25px;
+        margin: 0, 18px;
+        padding: 16px;
+    }
 
+    img {
+        width: 500px;
+        height: 300px;
+        margin: 20px 50px;
+    }
 
+    .description {
+        line-height: 2em;
+        width: 100%;
+    }
+
+}
+}
+
+@media (max-width: 500px) {
+    .card-content {
+
+    h1 {
+        font-size: 20px;
+        margin: 0, 15px;
+        padding: 12px;
+    }
+
+    img {
+        width: 300px;
+        height: 150px;
+    }
+
+    .description {
+        line-height: 2em;
+        width: 100%;
+    }
+
+}
 }

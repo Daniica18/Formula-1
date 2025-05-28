@@ -30,7 +30,7 @@ export default function Footer() {
                 <Link to="/CreateAnAccount">Create an account</Link>
             </div>
 
-            <div className="footer">
+            <div className="signature">
                 <p>	Group 3 &copy; , {year}</p>
             </div>
         </footer>

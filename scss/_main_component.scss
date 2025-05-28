@@ -28,6 +28,7 @@
     display: flex;
     justify-content: space-around;
     padding-bottom: 50px;
+    flex-wrap: wrap;
 }
 
 .details_div_info {
@@ -37,11 +38,17 @@
     background-color:rgb(45, 44, 44);
     display: flex;
     justify-content: space-around;
+    overflow: hidden;
     width: 15%;
     height: auto;
     font-size: 16px;
     text-align: center;
     color: #fff;
+    min-width: 200px;
+
+    li{
+        padding: 5px;
+    }
 
     table {
         width: 300px;
@@ -69,6 +76,7 @@
     width: 90%;
     text-align: center;
     padding: 9px;
+    min-width: 200px;
 
     thead {
         tr &:first-child {
@@ -95,7 +103,6 @@
                 padding: 9px;
                 font-size: 20px;
                 font-weight: 600;
-
             }
 
             &:nth-child(odd) {
@@ -118,3 +125,74 @@
         }
     }
 }
+
+@media only screen and (max-width: 780px) {
+
+    .details_div_info {
+        width: 100%;
+        background-color: rgb(152, 149, 149);
+        color: black;
+        border: none;
+    }
+
+    .detail_table {
+    border-radius: 5px;
+    max-width: 1000px;
+    width: 90%;
+    padding: 9px;
+    min-width: 150px;
+
+    thead {
+        th {
+            padding: 12px;
+            font-size: 15px;
+        }
+    }
+
+    tbody {
+        tr {
+
+            td {
+                border: rgb(177, 177, 177) 3px solid;
+                padding: 9px;
+                font-size: 15px;
+                font-weight: 600;
+            }
+        }
+    }
+}}
+
+@media only screen and (max-width: 400px) {
+
+    .details_div_info {
+        width: 100%;
+        background-color: rgb(152, 149, 149);
+        color: black;
+        border: none;
+    }
+
+    .detail_table {
+    max-width: 1000px;
+    width: 90%;
+    padding: 9px;
+    min-width: 100px;
+
+    thead {
+        th {
+            padding: 10px;
+            font-size: 11px;
+        }
+    }
+
+    tbody {
+        tr {
+
+            td {
+                border: rgb(177, 177, 177) 3px solid;
+                padding: 9px;
+                font-size: 11px;
+                font-weight: 400;
+            }
+        }
+    }
+}}

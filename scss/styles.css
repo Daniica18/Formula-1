@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-  min-height: calc(100vh - 84px - $footerHeight);
+  min-height: calc(100vh - 134px - $footerHeight);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,6 +32,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .main-navigation .logo-container {
@@ -45,10 +47,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .main-navigation .logo-container .logo {
   width: 200px;
+  padding: 10px 0;
 }
 
 .main-navigation ul {
@@ -62,9 +67,15 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.main-navigation ul a {
+.main-navigation ul li {
+  padding: 15px 0;
+}
+
+.main-navigation ul li a {
   color: #fff;
   padding: 17px 20px;
   font-size: 22px;
@@ -72,24 +83,29 @@ body {
   font-weight: bold;
 }
 
-.main-navigation ul a:hover {
+.main-navigation ul li a:hover {
   background-color: red;
   color: white;
   font-weight: 600;
   border-radius: 5px;
 }
 
-.main-navigation ul a.active {
+.main-navigation ul li a.active {
   background-color: grey;
   border: none;
 }
 
 .search_nav {
   padding: 0 10px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .search_nav li {
-  padding: 0 10px;
+  padding: 10px;
 }
 
 .card-container {
@@ -108,6 +124,8 @@ body {
   gap: 30px;
   padding-bottom: 0 50px;
   margin-bottom: 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .card-container a {
@@ -165,33 +183,6 @@ body {
 
 .footer_div {
   height: 66px;
-}
-
-.footer {
-  background-color: black;
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  color: white;
-  padding: 9px 0;
-  height: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 20px;
-  margin-top: auto;
-}
-
-.footer a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer p {
-  font-size: 16px;
 }
 
 .first_place {
@@ -261,5 +252,11 @@ body {
 
 .slider a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 750px) {
+  .main-navigation {
+    background-color: red;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

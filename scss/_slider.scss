@@ -9,9 +9,29 @@
 
     }
 
-    .imageSl, .imageS2, .imageS3 {
-        width: 900px;
+    .imageSl {
+        max-width: 900px;
         height: 400px;
     }
 }
 
+
+@media (max-width: 900px) {
+
+    .SliderComponent {
+        .imageSl {
+            width: 500px;
+            height: 300px;
+        }
+    }   
+}
+
+@media (max-width: 500px) {
+
+    .SliderComponent {
+        .imageSl {
+            width: 300px;
+            height: 150px;
+        }
+    }
+}
