@@ -2,6 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NewsCard from './Card';
 import SliderInfo from './SliderInfo';
+import {  Link } from "react-router";
 
 export default function Home() {
 
