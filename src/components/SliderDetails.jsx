@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { SliderData } from "../SliderData";
+import { SliderData } from "../helper/SliderData";
 
 export default function SliderDetails() {
     const params = useParams();

@@ -6,7 +6,8 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router"
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
+import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
+import { Rang } from "../helper/Rang";
 
 export default function RacesDetails(props) {
     const [resultsDetails, setResultsDetails] = useState([]);
@@ -245,7 +246,7 @@ export default function RacesDetails(props) {
                                         className="clickable">
                                         {result.Constructor.name}</td>
                                     <td>{result.Time?.time}</td>
-                                    <td className={addClass(result.position)}>{result.points}</td>
+                                    <td className={Rang(result.position)}>{result.points}</td>
                                 </tr>
                             )
                         })}

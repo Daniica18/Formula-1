@@ -3,7 +3,7 @@ import { useNavigate } from "react-router"
 import Loader from "./Loader";
 import axios from "axios";
 import Flag from 'react-flagkit';
-import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
+import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
 
 export default function Races(props) {
    const [races, setRaces] = useState([]);
@@ -103,3 +103,6 @@ export default function Races(props) {
    );
 
 }
+
+
+

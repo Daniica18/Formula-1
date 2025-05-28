@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import Slider from "react-slick";
-import { SliderData } from "../SliderData";
+import { SliderData } from "../helper/SliderData";
 
 export default function SliderInfo() {
 

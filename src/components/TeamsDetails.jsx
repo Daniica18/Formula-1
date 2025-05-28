@@ -6,7 +6,8 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
+import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
+import { Rang } from "../helper/Rang";
 
 export default function TeamDetails(props) {
     const [teamDetails, setTeamDetails] = useState({});
@@ -133,8 +134,8 @@ export default function TeamDetails(props) {
                                             {teamResult.raceName}
                                         </span>
                                     </td>
-                                    <td className={addClass(teamResult.Results[0].position)}>{teamResult.Results[0].position}</td>
-                                    <td className={addClass(teamResult.Results[1].position)}>{teamResult.Results[1].position}</td>
+                                    <td className={Rang(teamResult.Results[0].position)}>{teamResult.Results[0].position}</td>
+                                    <td className={Rang(teamResult.Results[1].position)}>{teamResult.Results[1].position}</td>
                                     <td>{parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}</td>
                                 </tr>
 

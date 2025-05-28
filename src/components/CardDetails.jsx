@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { CardData } from "../CardData";
+import { CardData } from "../helper/CardData";
 
 export default function CardDetails() {
     const params = useParams();
