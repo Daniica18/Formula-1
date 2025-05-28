@@ -85,6 +85,7 @@ body {
 
     li {
         padding: 10px;
+        margin-right: 20px;
     }
 }
 
@@ -115,6 +116,7 @@ body {
     border: 1px, solid, rgb(230, 222, 222);
     width: 180px;
     max-height: 250px;
+    min-width: 150;
 
     &:hover {
         color: red;
@@ -223,5 +225,11 @@ body {
 @media (max-width: 750px) {
     .main-navigation {
         background-color: red;
+
+        a {
+            padding: 10px;
+            font-size: 18px;
+            padding: 12px 15px;
+        }
     }
 }
