@@ -1,0 +1,45 @@
+$live-bg: #000000;
+$live-text: #fff;
+$live-link: red;
+
+.live-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background-color: $live-bg;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.live {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scroll-right 25s linear infinite;
+    transform: translateX(-50%);
+}
+
+.live-content {
+    padding-left: 60px;
+    color: $live-text;
+}
+
+.live-link {
+    color: $live-link;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

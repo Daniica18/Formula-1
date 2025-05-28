@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
-import { filteredFlagNationality } from "../FilteredFlag";
+import { filteredFlagNationality } from "../helper/FilteredFlag";
+import { getMedals } from "../helper/Medals";
 
 export default function Drivers(props) {
   const [drivers, setDrivers] = useState([]);
@@ -20,16 +21,6 @@ export default function Drivers(props) {
     console.log(response);
     setDrivers(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
     setLoading(false);
-  };
-
-  const addStyle = (position) => {
-    if (position == 1) {
-      return { backgroundColor: "yellow" };
-    } else if (position == 2) {
-      return { backgroundColor: "silver" };
-    } else if (position == 3) {
-      return { backgroundColor: "orangered" };
-    }
   };
 
   const filteredData = drivers.filter((el) => {
@@ -78,7 +69,7 @@ export default function Drivers(props) {
         <tbody>
           {filteredData.map((driver) => {
             return (
-              <tr key={driver.Driver.driverId} style={addStyle(driver.position)}>
+              <tr key={driver.Driver.driverId} style={getMedals(driver.position)}>
                 <td>{driver.position}</td>
                 <td width="45%"
                   onClick={() => handleClickDetails(driver.Driver.driverId)}

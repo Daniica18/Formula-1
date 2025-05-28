@@ -5,7 +5,8 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { filteredFlagNationality } from "../FilteredFlag";
+import { filteredFlagNationality } from "../helper/FilteredFlag";
+import { getMedals } from "../helper/Medals";
 
 export default function Teams(props) {
     const [teams, setTeams] = useState([]);
@@ -76,7 +77,7 @@ export default function Teams(props) {
                 <tbody>
                     {filteredData.map((team) => {
                         return (
-                            <tr style={addStyle(team.position)} key={team.Constructor.constructorId}>
+                            <tr style={getMedals(team.position)} key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
                                     className='clickable'>

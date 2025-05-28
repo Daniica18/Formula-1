@@ -6,8 +6,9 @@ import { useLocation, Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { filteredFlagNationality, filteredFlagCountry } from "../FilteredFlag";
+import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
 import { red, yellow } from "@mui/material/colors";
+import { getMedals } from "../helper/Medals";
 
 
 export default function DriversDetails(props) {
@@ -18,7 +19,7 @@ export default function DriversDetails(props) {
     const navigate = useNavigate();
     const location = useLocation("");
     console.log("path", location.pathname);
-    
+
 
     useEffect(() => {
         getDriversDetails();
@@ -137,7 +138,7 @@ export default function DriversDetails(props) {
                                             className="clickable">
                                             {result.Results[0].Constructor.name}</td>
                                         <td>{result.Results[0].grid}</td>
-                                        <td style={addStyle(result.Results[0].position)}>{result.Results[0].position}</td>
+                                        <td style={getMedals(result.Results[0].position)}>{result.Results[0].position}</td>
                                     </tr>
                                 )
                             })}
