@@ -25,32 +25,14 @@ export default function Teams(props) {
         setIsLoading(false);
     };
 
-    const addStyle = (position) => {
-        if (position == 1) {
-            return { backgroundColor: "yellow" };
-        } else if (position == 2) {
-            return { backgroundColor: "silver" };
-        } else if (position == 3) {
-            return { backgroundColor: "orangered" };
-        }
-    };
-
     const filteredData = teams.filter((el) => {
-
         //if no input the return the original
-
         if (props.text === "") {
-
             return el;
-
         }
-
         //return the item which contains the user input
-
         else {
-
             return el.Constructor.name.toLowerCase().includes(props.text);
-
         }
 
     });
@@ -77,19 +59,27 @@ export default function Teams(props) {
                 <tbody>
                     {filteredData.map((team) => {
                         return (
-                            <tr style={getMedals(team.position)} key={team.Constructor.constructorId}>
+                            <tr style={getMedals(team.position)}
+                                key={team.Constructor.constructorId}>
                                 <td>{team.position}</td>
                                 <td onClick={() => handleClickDetails(team.Constructor.constructorId)}
                                     className='clickable'>
                                     <span>
-                                        <Flag className="flag" country={filteredFlagNationality(props.flags, team.Constructor.nationality)} />
+                                        <Flag className="flag"
+                                            country={filteredFlagNationality(props.flags, team.Constructor.nationality)} />
                                         {team.Constructor.name}
                                     </span>
                                 </td>
-                                <td>Details: <Link to={team.Constructor.url} target="_blank"
+                                <td>Details: <Link
+                                    to={team.Constructor.url}
+                                    target="_blank"
                                     rel="noopener noreferrer">
                                     <OpenInNewRoundedIcon
-                                        style={{ color: "black", width: '19px', height: 'auto' }} />
+                                        style={{
+                                            color: "black",
+                                            width: '19px',
+                                            height: 'auto'
+                                        }} />
                                 </Link></td>
                                 <td>{team.points}</td>
                             </tr>
