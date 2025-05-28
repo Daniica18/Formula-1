@@ -85,8 +85,8 @@ export default function TeamDetails(props) {
             <div className="details_div_info">
                 <ul>
                     <li><img src={`/public/img/${teamDetails.Constructor.constructorId}.png`} alt=""
-                        style={{ width: '100px', height: 'auto' }} /></li>
-                    <li><Flag country={filteredFlagNationality(props.flags, teamDetails.Constructor.nationality)} /></li>
+                        style={{ width: '150px', height: 'auto', padding: '30px' }} /></li>
+                    <li><Flag country={filteredFlagNationality(props.flags, teamDetails.Constructor.nationality)} size={124} /></li>
                     <li>Country: {teamDetails.Constructor.nationality}</li>
                     <li>Position: {teamDetails.position}</li>
                     <li>Points: {teamDetails.points}</li>

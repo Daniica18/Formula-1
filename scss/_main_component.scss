@@ -35,11 +35,30 @@
     border-top-right-radius: 9px; 
     border-bottom-right-radius: 9px;
     background-color:rgb(45, 44, 44);
+    display: flex;
+    justify-content: space-around;
     width: 15%;
     height: auto;
     font-size: 16px;
     text-align: center;
     color: #fff;
+
+    table {
+        width: 300px;
+        height: 350px;
+        thead {
+            font-size: 25px;
+            th {
+                padding: 15px 0;
+                &:nth-child(2) {
+                    padding: 0 10px 30px 10;
+                }
+            }
+        }
+        tbody {
+            font-size: 17px;
+        }
+    }
 }
 
 .detail_table {

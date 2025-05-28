@@ -90,10 +90,12 @@ export default function DriversDetails(props) {
                         e.target.onerrore = null;
                         e.target.src = "../img/_avatar.jpg"
                     }} alt="/img/_avatar.jpg"
-                        style={{ width: '150px', height: 'auto' }} /></li>
-                    <li><Flag country={filteredFlagNationality(props.flags, driversDetails.Driver.nationality)} /></li>
-                    <li>{driversDetails.Driver.givenName}</li>
-                    <li>{driversDetails.Driver.familyName}</li>
+                        style={{ width: '150px', height: 'auto', padding: `30px` }} /></li>
+                    <li><Flag
+                        style={{ width: '50px', height: 'auto', paddingBottom: '20px' }}
+                        country={filteredFlagNationality(props.flags, driversDetails.Driver.nationality)} /></li>
+                    <li style={{ fontSize: '30px' }}>{driversDetails.Driver.givenName}</li>
+                    <li style={{ paddingBottom: '20px', fontSize: '30px' }}>{driversDetails.Driver.familyName}</li>
                     <li>Country: {driversDetails.Driver.nationality}</li>
                     <li
                         onClick={() => handleClickDetails()}
