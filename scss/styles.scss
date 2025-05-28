@@ -18,7 +18,7 @@ body {
 
 //NAVIGACIJA
 .container {
-    min-height: calc(100vh - 84px - $footerHeight);
+    min-height: calc(100vh - 134px - $footerHeight);
     display: flex;
     flex-direction: column;
 }
@@ -27,15 +27,18 @@ body {
     background-color: black;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     .logo-container {
         padding: 25px;
         display: flex;
         justify-content: left;
         align-items: center;
+        flex-wrap: wrap;
 
         .logo {
             width: 200px;
+            padding: 10px 0;
         }
     }
 
@@ -44,6 +47,10 @@ body {
         list-style: none;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
+
+        li {
+            padding: 15px 0;
 
         a {
             color: #fff;
@@ -66,15 +73,18 @@ body {
                 border: none;
             }
         }
+        }
     }
 }
 
 
 .search_nav {
     padding: 0 10px;
+    display: inline-flex;
+    flex-wrap: wrap;
 
     li {
-        padding: 0 10px;
+        padding: 10px;
     }
 }
 
@@ -89,6 +99,7 @@ body {
     gap: 30px;
     padding-bottom: 0 50px;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 
     a {
         text-decoration: none;

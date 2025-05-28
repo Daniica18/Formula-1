@@ -5,7 +5,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import { useLocation, matchPath } from "react-router";
-import { flex } from "@mui/system";
+import { display, flex } from "@mui/system";
 
 export default function SearchForm({ years, year, text, setYear, setText }) {
     console.log("year ", year, years);
@@ -21,7 +21,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
         ) {
             return { visibility: "visible" };
         } else {
-            return { visibility: "hidden" };
+            return { display: "none" };
         }
     };
 
