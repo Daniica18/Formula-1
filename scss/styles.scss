@@ -208,3 +208,9 @@ body {
     }
 
 }
+
+@media (max-width: 750px) {
+    .main-navigation {
+        background-color: red;
+    }
+}
