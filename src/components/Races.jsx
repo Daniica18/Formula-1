@@ -24,18 +24,16 @@ export default function Races(props) {
       setIsLoading(false);
    };
 
-
-
    const filteredData = races.filter((el) => {
-
       //if no input the return the original
       if (props.text === "") {
          return el;
       }
-
       //return the item which contains the user input
       else {
-         return el.raceName.toLowerCase().includes(props.text) || el.Results[0].Driver.familyName.toLowerCase().includes(props.text) || el.Circuit.circuitName.toLowerCase().includes(props.text);
+         return el.raceName.toLowerCase().includes(props.text) ||
+            el.Results[0].Driver.familyName.toLowerCase().includes(props.text) ||
+            el.Circuit.circuitName.toLowerCase().includes(props.text);
       }
    });
 
@@ -80,7 +78,8 @@ export default function Races(props) {
                            className="clickable">
                            <span>
 
-                              <Flag className="flag" country={filteredFlagCountry(props.flags, race.Circuit.Location.country)} />
+                              <Flag className="flag"
+                                 country={filteredFlagCountry(props.flags, race.Circuit.Location.country)} />
                               {race.raceName}
                            </span>
                         </td>

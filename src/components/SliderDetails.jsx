@@ -1,22 +1,22 @@
 import { useParams } from "react-router";
-import { SliderData } from "../helper/SliderData";
+import { sliderData } from "../helper/SliderData";
 
 export default function SliderDetails() {
     const params = useParams();
+    const slide = sliderData[params.id];
 
     return (
         <>
-
             <div className="SliderComponent">
-                <h1>{SliderData[params.id].title}</h1>
+                <h1>{slide.title}</h1>
                 <br></br>
-                <p>{SliderData[params.id].paragrafOne}</p>
+                <p>{slide.paragrafOne}</p>
                 <br />
                 <br></br>
-                <img src={SliderData[params.id].image_article} className="imageSl" />
+                <img src={slide.image_article} className="imageSl" />
                 <br></br>
                 <br></br>
-                <p>{SliderData[params.id].paragrafTwo}</p>
+                <p>{slide.paragrafTwo}</p>
                 <br></br>
                 <br />
             </div >

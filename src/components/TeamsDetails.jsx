@@ -32,35 +32,12 @@ export default function TeamDetails(props) {
         setIsLoading(false);
     };
 
-
-
-    const addClass = (position) => {
-        console.log("position ", position);
-        if (position == 1) {
-            return "first_place";
-        } else if (position == 2) {
-            return "second_place";
-        } else if (position == 3) {
-            return "third_place";
-        } else if (position == 4) {
-            return "forth_place";
-        } else if (position == 5) {
-            return "fifth_place";
-        } else if (position > 5 && position < 11) {
-            return "fisrt_ten_place";
-        } else {
-            return "other_place";
-        }
-    };
-
     const filteredData = teamResults.filter((el) => {
-
         //if no input the return the original
         if (props.text === "") {
             return el;
         }
         //return the item which contains the user input
-
         else {
             return el.raceName.toLowerCase().includes(props.text);
         }
@@ -78,22 +55,36 @@ export default function TeamDetails(props) {
 
     if (isLoading) {
         return (<Loader />)
-    }
+    };
 
     return (
         <div className="details_div">
             <div className="details_div_info">
                 <ul>
-                    <li><img src={`/public/img/${teamDetails.Constructor.constructorId}.png`} alt=""
-                        style={{ width: '150px', height: 'auto', padding: '30px' }} /></li>
-                    <li><Flag country={filteredFlagNationality(props.flags, teamDetails.Constructor.nationality)} size={124} /></li>
+                    <li><img src={`/public/img/${teamDetails.Constructor.constructorId}.png`}
+                        alt="team_logo"
+                        style={{
+                            width: '150px',
+                            height: 'auto',
+                            padding: '30px'
+                        }} /></li>
+                    <li><Flag
+                        country={filteredFlagNationality(props.flags, teamDetails.Constructor.nationality)}
+                        size={124} />
+                    </li>
                     <li>Country: {teamDetails.Constructor.nationality}</li>
                     <li>Position: {teamDetails.position}</li>
                     <li>Points: {teamDetails.points}</li>
-                    <li>History: <Link to={teamDetails.Constructor.url} target="_blank"
+                    <li>History: <Link
+                        to={teamDetails.Constructor.url}
+                        target="_blank"
                         rel="noopener noreferrer">
                         <OpenInNewRoundedIcon
-                            style={{ color: "white", width: '19px', height: 'auto' }} />
+                            style={{
+                                color: "white",
+                                width: '19px',
+                                height: 'auto'
+                            }} />
                     </Link></li>
                 </ul>
             </div>
@@ -130,15 +121,21 @@ export default function TeamDetails(props) {
                                         className="clickable">
                                         <span>
 
-                                            <Flag className="flag" country={filteredFlagCountry(props.flags, teamResult.Circuit.Location.country)} />
+                                            <Flag className="flag"
+                                                country={filteredFlagCountry(props.flags, teamResult.Circuit.Location.country)} />
                                             {teamResult.raceName}
                                         </span>
                                     </td>
-                                    <td className={Rang(teamResult.Results[0].position)}>{teamResult.Results[0].position}</td>
-                                    <td className={Rang(teamResult.Results[1].position)}>{teamResult.Results[1].position}</td>
-                                    <td>{parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}</td>
+                                    <td className={Rang(teamResult.Results[0].position)}>
+                                        {teamResult.Results[0].position}
+                                    </td>
+                                    <td className={Rang(teamResult.Results[1].position)}>
+                                        {teamResult.Results[1].position}
+                                    </td>
+                                    <td>
+                                        {parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}
+                                    </td>
                                 </tr>
-
                             )
                         })}
                     </tbody>

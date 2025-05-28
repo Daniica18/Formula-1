@@ -5,20 +5,18 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import { useLocation, matchPath } from "react-router";
-import { useParams } from "react-router";
 
 export default function SearchForm({ years, year, text, setYear, setText }) {
     console.log("year ", year, years);
     const location = useLocation("");
-    const params = useParams();
 
     const showSearch = () => {
-        if (matchPath("/drivers" , location.pathname) ||
+        if (matchPath("/drivers", location.pathname) ||
             matchPath("/teams", location.pathname) ||
             matchPath("/races", location.pathname) ||
             matchPath(`/drivers/:id`, location.pathname) ||
             matchPath(`/teams/:id`, location.pathname) ||
-            matchPath(`/races/:id`, location.pathname) 
+            matchPath(`/races/:id`, location.pathname)
         ) {
             return { visibility: "visible" };
         } else {
@@ -44,9 +42,19 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                     variant="outlined"
                     className="text_field"
                     label="Search for..."
-                    InputLabelProps={{ style: { color: "black", padding: "3px" } }}
+                    InputLabelProps={{
+                        style: {
+                            color: "black",
+                            padding: "3px"
+                        }
+                    }}
                     sx={{
-                        backgroundColor: "white;", width: 210, height: 50, borderRadius: "5px", display: "flex", alignItems: "center",
+                        backgroundColor: "white;",
+                        width: 210,
+                        height: 50,
+                        borderRadius: "5px",
+                        display: "flex",
+                        alignItems: "center",
                         "& .MuiOutlinedInput-nothcedOutline": {
                             border: "1px red solid",
                         },
@@ -81,7 +89,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                                 "&:hover .MuiOutlinedInput-notchedOutline": {
                                     borderColor: "red", // radi
                                 },
-                                "&:select .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                                "& .MuiOutlinedInput-root.Mui-focused": {
                                     borderColor: "none",
                                 },
                                 "& .MuiSvgIcon-root": {
@@ -91,20 +99,8 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                             MenuProps={{
                                 PapperProps: {
                                     sx: {
-                                        backgroundColor: "#f5f5f5",
-                                        marginTop: "5px",
-                                        maxHeight: 200,
+                                        borderRadius: '5px',
                                         "& .MuiMenuItem-root": {
-                                            "&:hover": {
-                                                bgcolor: "red",
-                                                color: "#fff"
-                                            },
-                                            "&:Mui-selected": {
-                                                backgroundColor: "d0d0d0",
-                                                "&:hover": {
-                                                    backgroundColor: "red",
-                                                },
-                                            },
                                             "MuiSvgIcon-root": {
                                                 color: "white",
                                                 backgroundColor: "white"
@@ -117,14 +113,26 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                             {years.map((year) => {
                                 return (
                                     <MenuItem value={year}
-                                    sx={{
-                                        "& .MuiMenuItem-root": {
-                                    backgroundColor: "red",
-                                    "&: hover": {
-                                        backgroundColor: "red",
-                                    }
-                                },
-                                    }}>{year}</MenuItem>
+                                        sx={{
+                                            "&:hover": {
+                                                color: "white",
+                                                bgcolor: "black",
+                                            },
+                                            "&:selected": {
+                                                color: "white",
+                                                bgcolor: "black",
+                                            },
+                                            "& .Mui-selected": {
+                                                color: "white",
+                                                bgcolor: "black",
+                                            },
+                                            "& .MuiMenuItem-root": {
+                                                backgroundColor: "red",
+                                                "&:active": {
+                                                    backgroundColor: "red",
+                                                }
+                                            },
+                                        }}>{year}</MenuItem>
                                 )
                             })}
                         </Select>}

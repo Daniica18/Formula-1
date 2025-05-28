@@ -42,7 +42,8 @@ export default function RacesDetails(props) {
         }
         //return the item which contains the user input
         else {
-            return el.Driver.familyName.toLowerCase().includes(props.text) || el.Constructor.name.toLowerCase().includes(props.text);
+            return el.Driver.familyName.toLowerCase().includes(props.text) ||
+                el.Constructor.name.toLowerCase().includes(props.text);
         }
     });
 
@@ -54,7 +55,8 @@ export default function RacesDetails(props) {
 
         //return the item which contains the user input
         else {
-            return el.Driver.familyName.toLowerCase().includes(props.text) || el.Constructor.name.toLowerCase().includes(props.text);
+            return el.Driver.familyName.toLowerCase().includes(props.text) ||
+                el.Constructor.name.toLowerCase().includes(props.text);
         }
     });
 
@@ -72,14 +74,17 @@ export default function RacesDetails(props) {
     if (isLoading) {
         return (<Loader />)
     }
-    
+
     return (
         <div className="details_div">
             <div className="details_div_info">
                 <table>
                     <thead>
                         <tr>
-                            <th colSpan={2}><Flag country={filteredFlagCountry(props.flags, resultsDetails.Circuit.Location.country)} size={124} /></th>
+                            <th colSpan={2}>
+                                <Flag country={filteredFlagCountry(props.flags, resultsDetails.Circuit.Location.country)}
+                                    size={124} />
+                            </th>
                         </tr>
                         <tr>
                             <th colSpan={2}>{resultsDetails.Circuit.circuitName}</th>
@@ -100,11 +105,16 @@ export default function RacesDetails(props) {
                         </tr>
                         <tr>
                             <th>Full Report: </th>
-                            <td><Link to={resultsDetails.url}
+                            <td><Link
+                                to={resultsDetails.url}
                                 target="_blank"
                                 rel="noopener noreferrer">
                                 <OpenInNewRoundedIcon
-                                    style={{ color: "white", width: '19px', height: 'auto' }} />
+                                    style={{
+                                        color: "white",
+                                        width: '19px',
+                                        height: 'auto'
+                                    }} />
                             </Link></td>
                         </tr>
                     </tbody>
@@ -134,10 +144,9 @@ export default function RacesDetails(props) {
                                         onClick={() => handleClickDriverDetailes(qualify.Driver.driverId)}
                                         className="clickable">
                                         <span>
-
-                                            <Flag className="flag" country={filteredFlagNationality(props.flags, qualify.Driver.nationality)} />
+                                            <Flag className="flag"
+                                                country={filteredFlagNationality(props.flags, qualify.Driver.nationality)} />
                                             {qualify.Driver.familyName}
-
                                         </span>
 
                                     </td>
@@ -175,7 +184,8 @@ export default function RacesDetails(props) {
                                         onClick={() => handleClickDriverDetailes(result.Driver.driverId)}
                                         className="clickable">
                                         <span>
-                                            <Flag className="flag" country={filteredFlagNationality(props.flags, result.Driver.nationality)} />
+                                            <Flag className="flag"
+                                                country={filteredFlagNationality(props.flags, result.Driver.nationality)} />
                                             {result.Driver.familyName}
                                         </span>
 

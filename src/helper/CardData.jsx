@@ -1,4 +1,4 @@
-export const CardData = [
+export const cardData = [
     {
         id: 0,
         title: "POWER RANKINGS: Who impressed our judges during an incident-packed weekend at Imola?",

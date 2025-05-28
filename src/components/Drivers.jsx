@@ -24,22 +24,16 @@ export default function Drivers(props) {
   };
 
   const filteredData = drivers.filter((el) => {
-
     //if no input the return the original
-
     if (props.text === "") {
-
       return el;
     }
-
     //return the item which contains the user input
-
     else {
-
-      return el.Driver.familyName.toLowerCase().includes(props.text) || el.Driver.givenName.toLowerCase().includes(props.text) || el.Constructors[0].name.toLowerCase().includes(props.text);
-
+      return el.Driver.familyName.toLowerCase().includes(props.text) ||
+        el.Driver.givenName.toLowerCase().includes(props.text) ||
+        el.Constructors[0].name.toLowerCase().includes(props.text);
     }
-
   });
 
   const handleClickDetails = (id) => {
@@ -55,7 +49,7 @@ export default function Drivers(props) {
   if (loading) {
     return <Loader />;
   }
-  // 
+
   return (
     <div className="detail">
       <h1>Drivers Championship</h1>
@@ -76,8 +70,8 @@ export default function Drivers(props) {
                   className="clickable"
                 >
                   <span>
-
-                    <Flag className="flag" country={filteredFlagNationality(props.flags, driver.Driver.nationality)} />
+                    <Flag className="flag"
+                      country={filteredFlagNationality(props.flags, driver.Driver.nationality)} />
                     {driver.Driver.familyName} {driver.Driver.givenName}
                   </span>
                 </td>

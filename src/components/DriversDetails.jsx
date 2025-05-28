@@ -7,7 +7,6 @@ import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
-import { red, yellow } from "@mui/material/colors";
 import { getMedals } from "../helper/Medals";
 
 
@@ -19,6 +18,7 @@ export default function DriversDetails(props) {
     const navigate = useNavigate();
     const location = useLocation("");
     console.log("path", location.pathname);
+
 
 
     useEffect(() => {
@@ -40,26 +40,15 @@ export default function DriversDetails(props) {
         setLoading(false);
     };
 
-    const addStyle = (position) => {
-        if (position == 1) {
-            return { backgroundColor: "yellow" };
-        } else if (position == 2) {
-            return { backgroundColor: "silver" };
-        } else if (position == 3) {
-            return { backgroundColor: "orangered" };
-        }
-    };
-
     const filteredData = results.filter((el) => {
-
         //if no input the return the original
         if (props.text === "") {
             return el;
         }
-
         //return the item which contains the user input
         else {
-            return el.raceName.toLowerCase().includes(props.text) || el.Results[0].Constructor.name.toLowerCase().includes(props.text);
+            return el.raceName.toLowerCase().includes(props.text) ||
+                el.Results[0].Constructor.name.toLowerCase().includes(props.text);
         }
     });
 
@@ -86,16 +75,28 @@ export default function DriversDetails(props) {
         <div className="details_div">
             <div className="details_div_info">
                 <ul>
-                    <li><img src={`/img/_${driversDetails.Driver.driverId}.jpg`} onError={(e) => {
-                        e.target.onerrore = null;
-                        e.target.src = "../img/_avatar.jpg"
-                    }} alt="/img/_avatar.jpg"
-                        style={{ width: '150px', height: 'auto', padding: `30px` }} /></li>
+                    <li><img src={`/img/_${driversDetails.Driver.driverId}.jpg`}
+                        onError={(e) => {
+                            e.target.onerrore = null;
+                            e.target.src = "../img/_avatar.jpg"
+                        }} alt="/img/_avatar.jpg"
+                        style={{
+                            width: '150px',
+                            height: 'auto',
+                            padding: `30px`
+                        }} /></li>
                     <li><Flag
-                        style={{ width: '50px', height: 'auto', paddingBottom: '20px' }}
+                        style={{
+                            width: '50px',
+                            height: 'auto',
+                            paddingBottom: '20px'
+                        }}
                         country={filteredFlagNationality(props.flags, driversDetails.Driver.nationality)} /></li>
                     <li style={{ fontSize: '30px' }}>{driversDetails.Driver.givenName}</li>
-                    <li style={{ paddingBottom: '20px', fontSize: '30px' }}>{driversDetails.Driver.familyName}</li>
+                    <li style={{
+                        paddingBottom: '20px',
+                        fontSize: '30px'
+                    }}>{driversDetails.Driver.familyName}</li>
                     <li>Country: {driversDetails.Driver.nationality}</li>
                     <li
                         onClick={() => handleClickDetails()}
@@ -104,7 +105,11 @@ export default function DriversDetails(props) {
                     <li>Biography: <Link to={driversDetails.Driver.url} target="_blank"
                         rel="noopener noreferrer">
                         <OpenInNewRoundedIcon
-                            style={{ color: "white", width: '19px', height: 'auto' }} />
+                            style={{
+                                color: "white",
+                                width: '19px',
+                                height: 'auto'
+                            }} />
                     </Link></li>
                 </ul>
             </div>
@@ -130,7 +135,8 @@ export default function DriversDetails(props) {
                                             onClick={() => handleClickRaceDetails(result.round)}
                                             className="clickable">
                                             <span>
-                                                <Flag className="flag" country={filteredFlagCountry(props.flags, result.Circuit.Location.country)} />
+                                                <Flag className="flag"
+                                                    country={filteredFlagCountry(props.flags, result.Circuit.Location.country)} />
                                                 {result.raceName}
                                             </span>
 

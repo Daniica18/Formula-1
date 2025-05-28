@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import Slider from "react-slick";
-import { SliderData } from "../helper/SliderData";
+import { sliderData } from "../helper/SliderData";
 
 export default function SliderInfo() {
 
@@ -17,7 +17,7 @@ export default function SliderInfo() {
 
     return (
         <Slider {...settings}>
-            {SliderData.map((slider) => (
+            {sliderData.map((slider) => (
                 <div className="slider" key={slider.id}>
                     <img src={slider.image_slide} alt="Hit Netfilx Show" />
                     <div className="bottom-left">

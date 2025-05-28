@@ -1,4 +1,4 @@
-export const SliderData = [
+export const sliderData = [
     {
         id: 0,
         title: `F1 NATION: Norris back on top as Racing Bulls deliver a strategy masterclass – it’s our Monaco GP review`,
