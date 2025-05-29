@@ -99,7 +99,6 @@ h2 {
     font-weight: bold;
     padding: 20px;
 
-
 }
 
 .bottom {
@@ -108,6 +107,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 25px;
 
     p {
         margin: 20px 50px;
@@ -135,25 +135,55 @@ h2 {
 }
 
 form {
-    display: flex;
-    justify-content: center;
 
     fieldset {
-        background-color: rgb(45, 44, 44);
-        color: white;
-        font-weight: bold;
-        padding: 10px;
-        margin: 10px;
-        border: "20px black solid";
-        border-radius: 10px;
-        width: 700px;
+        display: flex;
+        justify-content: center;
 
-        h2 {
-            text-align: center;
-        }
-
-        input {
+        .fieldset {
+            background-color: rgb(45, 44, 44);
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px;
+            border: "20px black solid";
             border-radius: 10px;
+            width: 700px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border: 2px solid rgb(248, 49, 49);
+            box-shadow: 0 0 10px 1px red;
+
+            h2 {
+                text-align: center;
+            }
+
+            label {
+                padding: 10px;
+            }
+
+            input,
+            select {
+                border-radius: 10px;
+                padding: 5px;
+                width: 300px;
+            }
+
+            input,
+            textarea {
+                width: 310px;
+            }
+
+            .radioCheck {
+                display: flex;
+                flex-direction: row;
+
+                input {
+                    width: 25px;
+                    height: 40px;
+                }
+            }
         }
     }
 }
@@ -184,14 +214,10 @@ form {
     .footer_div {
         .marketing {
 
-            .appPhoto {
-                img {}
-
-                p {
-                    width: 60px;
-                    font-size: 8px;
-                    padding: 0 5px;
-                }
+            p {
+                width: 60px;
+                font-size: 8px;
+                padding: 0 5px;
             }
         }
     }
