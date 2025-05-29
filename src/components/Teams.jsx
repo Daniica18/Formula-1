@@ -5,8 +5,9 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { filteredFlagNationality } from "../helper/FilteredFlag";
+import { filteredFlagNationality } from "../helper/filteredFlag";
 import { getMedals } from "../helper/Medals";
+import ErrorPage from "./ErrorPage";
 
 export default function Teams(props) {
     const [teams, setTeams] = useState([]);
@@ -18,11 +19,17 @@ export default function Teams(props) {
     }, [props.year]);
 
     const getTeams = async () => {
-        const url = `http://ergast.com/api/f1/${props.year}/constructorStandings.json`;
-        const response = await axios.get(url);
-        console.log("res ", response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
-        setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
-        setIsLoading(false);
+        try {
+            const url = `http://ergast.com/api/f1/${props.year}/constructorStandings.json`;
+            const response = await axios.get(url);
+            console.log("res ", response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
+            setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
+            setIsLoading(false);
+        } catch (error) {
+            setError(error);
+            console.log("error", error);
+            setLoading(false);
+        }
     };
 
     const filteredData = teams.filter((el) => {

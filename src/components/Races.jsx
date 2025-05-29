@@ -3,11 +3,13 @@ import { useNavigate } from "react-router"
 import Loader from "./Loader";
 import axios from "axios";
 import Flag from 'react-flagkit';
-import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
+import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
+import ErrorPage from "./ErrorPage";
 
 export default function Races(props) {
    const [races, setRaces] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
+   const [error, setError] = useState(false);
    const navigate = useNavigate();
 
    useEffect(() => {
@@ -15,13 +17,19 @@ export default function Races(props) {
    }, [props.year]);
 
    const getRaces = async () => {
-      const url = `http://ergast.com/api/f1/${props.year}/results/1.json`;
-      const response = await axios.get(url);
-      console.log(response);
-      console.log(response.data);
-      console.log(response.data.MRData.RaceTable.Races);
-      setRaces(response.data.MRData.RaceTable.Races);
-      setIsLoading(false);
+      try {
+         const url = `http://ergast.com/api/f1/${props.year}/results/1.json`;
+         const response = await axios.get(url);
+         console.log(response);
+         console.log(response.data);
+         console.log(response.data.MRData.RaceTable.Races);
+         setRaces(response.data.MRData.RaceTable.Races);
+         setIsLoading(false);
+      } catch (error) {
+         setError(error);
+         console.log("error", error);
+         setLoading(false);
+      }
    };
 
    const filteredData = races.filter((el) => {
@@ -52,6 +60,13 @@ export default function Races(props) {
    if (isLoading) {
       return (<Loader />)
    };
+
+   if (error) {
+      return (
+         <ErrorPage />
+      )
+   };
+
 
    return (
       <div className="detail">
