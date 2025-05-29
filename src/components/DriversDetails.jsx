@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 //import { useLocation, Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
+import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
 import { getMedals } from "../helper/Medals";
 
 

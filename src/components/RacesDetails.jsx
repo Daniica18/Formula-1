@@ -195,7 +195,7 @@ export default function RacesDetails(props) {
                                         className="clickable">
                                         {result.Constructor.name}</td>
                                     <td>{result.Time?.time}</td>
-                                    <td className={Rang(result.position)}>{result.points}</td>
+                                    <td className={getRang(result.position)}>{result.points}</td>
                                 </tr>
                             )
                         })}
