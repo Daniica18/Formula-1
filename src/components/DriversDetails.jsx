@@ -7,12 +7,14 @@ import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
 import { getMedals } from "../helper/Medals";
+import ErrorPage from "./ErrorPage";
 
 
 export default function DriversDetails(props) {
     const [driversDetails, setDriversDetails] = useState({});
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
     const params = useParams();
     const navigate = useNavigate();
     console.log("path", location.pathname);
@@ -20,22 +22,30 @@ export default function DriversDetails(props) {
 
 
     useEffect(() => {
+        setLoading(true);
         getDriversDetails();
     }, [props.year]);
 
     const getDriversDetails = async () => {
+        try {
+            const driverUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/driverStandings.json`;
+            const driverRacesUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/results.json`;
+            const resultsResponse = await axios.get(driverUrl);
+            const driverStandingsResponse = await axios.get(driverRacesUrl);
+            console.log(resultsResponse.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]);
 
-        const driverUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/driverStandings.json`;
-        const driverRacesUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/results.json`;
-        const resultsResponse = await axios.get(driverUrl);
-        const driverStandingsResponse = await axios.get(driverRacesUrl);
-        console.log(resultsResponse.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]);
+            setDriversDetails(resultsResponse.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0])
 
-        setDriversDetails(resultsResponse.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0])
+            setResults(driverStandingsResponse.data.MRData.RaceTable.Races)
+            console.log("response2", driverStandingsResponse.data.MRData.RaceTable.Races);
+            setLoading(false);
 
-        setResults(driverStandingsResponse.data.MRData.RaceTable.Races)
-        console.log("response2", driverStandingsResponse.data.MRData.RaceTable.Races);
-        setLoading(false);
+        } catch (error) {
+            setError(error);
+            console.log("error", error);
+            setLoading(false);
+        }
+
     };
 
     const filteredData = results.filter((el) => {
@@ -67,6 +77,12 @@ export default function DriversDetails(props) {
 
     if (loading) {
         return <Loader />;
+    };
+
+    if (error) {
+        return (
+            <ErrorPage />
+        )
     };
 
     return (

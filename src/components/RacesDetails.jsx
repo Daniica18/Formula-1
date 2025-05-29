@@ -8,6 +8,7 @@ import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
 import { getRang } from "../helper/getRang";
+import ErrorPage from "./ErrorPage";
 
 export default function RacesDetails(props) {
     const [resultsDetails, setResultsDetails] = useState([]);
@@ -21,15 +22,22 @@ export default function RacesDetails(props) {
     }, [props.year]);
 
     const getRaceDetails = async () => {
-        const resultsUrl = `http://ergast.com/api/f1/${props.year}/${params.id}/results.json`;
-        const qualifyingUrl = `http://ergast.com/api/f1/${props.year}/${params.id}/qualifying.json`;
-        const resultsResponse = await axios.get(resultsUrl);
-        const qualifyingResponse = await axios.get(qualifyingUrl);
-        console.log("Qualifying Response", qualifyingResponse.data.MRData.RaceTable.Races[0]);
-        console.log("Result Response", resultsResponse.data.MRData.RaceTable.Races[0]);
-        setResultsDetails(resultsResponse.data.MRData.RaceTable.Races[0]);
-        setQualifyingDetails(qualifyingResponse.data.MRData.RaceTable.Races[0]);
-        setIsLoading(false);
+
+        try {
+            const resultsUrl = `http://ergast.com/api/f1/${props.year}/${params.id}/results.json`;
+            const qualifyingUrl = `http://ergast.com/api/f1/${props.year}/${params.id}/qualifying.json`;
+            const resultsResponse = await axios.get(resultsUrl);
+            const qualifyingResponse = await axios.get(qualifyingUrl);
+            console.log("Qualifying Response", qualifyingResponse.data.MRData.RaceTable.Races[0]);
+            console.log("Result Response", resultsResponse.data.MRData.RaceTable.Races[0]);
+            setResultsDetails(resultsResponse.data.MRData.RaceTable.Races[0]);
+            setQualifyingDetails(qualifyingResponse.data.MRData.RaceTable.Races[0]);
+            setIsLoading(false);
+        } catch (error) {
+            setError(error);
+            console.log("error", error);
+            setLoading(false);
+        }
     };
 
     console.log("resultResponse ", resultsDetails);
