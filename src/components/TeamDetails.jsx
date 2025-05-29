@@ -126,10 +126,10 @@ export default function TeamDetails(props) {
                                             {teamResult.raceName}
                                         </span>
                                     </td>
-                                    <td className={Rang(teamResult.Results[0].position)}>
+                                    <td className={getRang(teamResult.Results[0].position)}>
                                         {teamResult.Results[0].position}
                                     </td>
-                                    <td className={Rang(teamResult.Results[1].position)}>
+                                    <td className={getRang(teamResult.Results[1].position)}>
                                         {teamResult.Results[1].position}
                                     </td>
                                     <td>
