@@ -7,7 +7,7 @@ import Drivers from "./components/Drivers";
 import Teams from "./components/Teams";
 import Races from "./components/Races";
 import DriversDetails from "./components/DriversDetails";
-import TeamsDetails from "./components/TeamsDetails";
+import TeamDetails from "./components/TeamsDetails";
 import RacesDetails from "./components/RacesDetails";
 import Contact from "./components/Footer/Contact";
 import Footer from "./components/Footer/Footer";

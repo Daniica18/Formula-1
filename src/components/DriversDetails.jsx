@@ -154,8 +154,6 @@ export default function DriversDetails(props) {
                     </table>
                 </div>
 
-
-
             </div>
         </div>
     )
