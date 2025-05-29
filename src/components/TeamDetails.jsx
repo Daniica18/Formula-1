@@ -6,13 +6,15 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
-import { Rang } from "../helper/Rang";
+import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
+import { getRang } from "../helper/getRang";
+import ErrorPage from "./ErrorPage";
 
 export default function TeamDetails(props) {
     const [teamDetails, setTeamDetails] = useState({});
     const [teamResults, setTeamResults] = useState([])
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
     const params = useParams();
     const navigate = useNavigate();
 
@@ -21,15 +23,21 @@ export default function TeamDetails(props) {
     }, [props.year])
 
     const getTeamDetails = async () => {
-        const url = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/constructorStandings.json`;
-        const url2 = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/results.json`
-        const response = await axios.get(url);
-        const response2 = await axios.get(url2);
-        console.log(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
-        setTeamDetails(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
-        console.log("response2", response2.data.MRData.RaceTable.Races);
-        setTeamResults(response2.data.MRData.RaceTable.Races)
-        setIsLoading(false);
+        try {
+            const url = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/constructorStandings.json`;
+            const url2 = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/results.json`
+            const teamResponse = await axios.get(url);
+            const teamStandingResponse = await axios.get(url2);
+            console.log(teamResponse.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
+            console.log("response2", teamStandingResponse.data.MRData.RaceTable.Races);
+            setTeamDetails(teamResponse.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
+            setTeamResults(teamStandingResponse.data.MRData.RaceTable.Races)
+            setIsLoading(false);
+        } catch (error) {
+            setError(error);
+            console.log("error", error);
+            setLoading(false);
+        }
     };
 
     const filteredData = teamResults.filter((el) => {
@@ -56,6 +64,13 @@ export default function TeamDetails(props) {
     if (isLoading) {
         return (<Loader />)
     };
+
+    if (error) {
+        return (
+            <ErrorPage />
+        )
+    };
+
 
     return (
         <div className="details_div">
@@ -126,10 +141,10 @@ export default function TeamDetails(props) {
                                             {teamResult.raceName}
                                         </span>
                                     </td>
-                                    <td className={Rang(teamResult.Results[0].position)}>
+                                    <td className={getRang(teamResult.Results[0].position)}>
                                         {teamResult.Results[0].position}
                                     </td>
-                                    <td className={Rang(teamResult.Results[1].position)}>
+                                    <td className={getRang(teamResult.Results[1].position)}>
                                         {teamResult.Results[1].position}
                                     </td>
                                     <td>

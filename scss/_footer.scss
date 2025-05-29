@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    
+
     .marketing {
         display: flex;
         flex-wrap: wrap;
@@ -14,27 +14,38 @@
         justify-content: space-between;
         align-items: center;
         color: black;
-    
+
         .appPhoto {
             display: flex;
             flex-wrap: wrap;
-    
+            gap: 4px;
+
             img {
                 width: 100px;
                 height: 30px;
             }
-    
+
             p {
                 width: 120px;
                 font-size: 14px;
                 padding: 0 10px;
             }
         }
-    
+
         .appLink {
             display: flex;
             flex-wrap: wrap;
             padding: 5px 10px;
+
+
+            a {
+                padding: 0 5px;
+                color: black;
+
+                &:hover {
+                    color: red;
+                }
+            }
         }
     }
 
@@ -127,7 +138,7 @@ form {
                     width: 70px;
                     height: 25px;
                 }
-        
+
                 p {
                     width: 90px;
                     font-size: 12px;
@@ -135,7 +146,7 @@ form {
                 }
             }
         }
-    }   
+    }
 }
 
 @media (max-width: 400px) {
@@ -144,9 +155,8 @@ form {
         .marketing {
 
             .appPhoto {
-                img {
-                }
-        
+                img {}
+
                 p {
                     width: 60px;
                     font-size: 8px;
@@ -154,5 +164,5 @@ form {
                 }
             }
         }
-    }   
+    }
 }
