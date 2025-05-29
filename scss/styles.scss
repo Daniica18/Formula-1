@@ -5,6 +5,7 @@
 @use "_card-content";
 @use "_bread_crumbs";
 @use "_live.scss";
+@use "_errorPage";
 
 $footerHeight: 66px;
 
@@ -52,27 +53,27 @@ body {
         li {
             padding: 15px 0;
 
-        a {
-            color: #fff;
-            padding: 17px 20px;
-            font-size: 22px;
-            text-decoration: none;
-            font-weight: bold;
+            a {
+                color: #fff;
+                padding: 17px 20px;
+                font-size: 22px;
+                text-decoration: none;
+                font-weight: bold;
 
 
 
-            &:hover {
-                background-color: red;
-                color: white;
-                font-weight: 600;
-                border-radius: 5px;
+                &:hover {
+                    background-color: red;
+                    color: white;
+                    font-weight: 600;
+                    border-radius: 5px;
+                }
+
+                &.active {
+                    background-color: grey;
+                    border: none;
+                }
             }
-
-            &.active {
-                background-color: grey;
-                border: none;
-            }
-        }
         }
     }
 }
