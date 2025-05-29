@@ -1,4 +1,4 @@
-export function Rang(position) {
+export function getRang(position) {
     if (position == 1) {
         return "first_place";
     } else if (position == 2) {
