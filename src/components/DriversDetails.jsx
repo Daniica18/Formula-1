@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { Link, useParams } from "react-router";
-//import { useLocation, Link } from "react-router";
+import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
