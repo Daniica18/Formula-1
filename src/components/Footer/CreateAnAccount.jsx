@@ -3,85 +3,66 @@ export default function CreateAnAccount() {
     <>
       <form>
         <fieldset>
-          <h2>Create an account</h2>
+          <div className="fieldset">
 
-          <input type="text" name="name" id="name" placeholder="Name" />
-          <br />
-          <br />
+            <h2>Create an account</h2>
 
-          <input type="text" name="lastName" id="lastName" placeholder="Last name" />
-          <br />
-          <br />
+            <label htmlFor="name">Name: </label>
+            <input type="text" name="name" id="name" placeholder="Name" />
 
-          <label htmlFor="eml">Email: </label>
-          <input type="email" name="email" id="eml" />
-          <br />
-          <br />
+            <label htmlFor="lastName">Last Name: </label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last name" />
 
-          <label htmlFor="username">Username: </label>
-          <input type="text" name="username" id="username" />
-          <br />
-          <br />
+            <label htmlFor="eml">Email: </label>
+            <input type="email" name="email" id="eml" />
 
-          <label htmlFor="pwd">Password: </label>
-          <input type="password" name="password" id="pwd" />
-          <br />
-          <br />
+            <label htmlFor="username">Username: </label>
+            <input type="text" name="username" id="username" />
 
-          <label htmlFor="city">City: </label>
-          <input type="text" name="city" id="city" />
-          <br />
-          <br />
+            <label htmlFor="pwd">Password: </label>
+            <input type="password" name="password" id="pwd" />
 
-          <label htmlFor="phone">Phone number: </label>
-          <input type="text" name="phone" id="phone" />
-          <br />
-          <br />
+            <label htmlFor="city">City: </label>
+            <input type="text" name="city" id="city" />
 
-          <label htmlFor="birthday">Birthday: </label>
-          <input type="date" name="birthday" id="birthday" />
-          <br />
-          <br />
+            <label htmlFor="phone">Phone number: </label>
+            <input type="text" name="phone" id="phone" />
 
-          <label htmlFor="vertical">Vertical: </label>
-          <select name="vertical" id="vertical">
-            <option disabled selected>
-              Choose...
-            </option>
-            <option>Accessories</option>
-            <option>Automotive</option>
-            <option>Books/Media</option>
-            <option>Education</option>
-            <option>Gambling</option>
-            <option>Sport & Fitness</option>
-          </select>
-          <br />
-          <br />
+            <label htmlFor="birthday">Birthday: </label>
+            <input type="date" name="birthday" id="birthday" />
 
-          <p>Gender:</p>
-          <input type="radio" name="gender" id="male" value="male" />
-          <label htmlFor="male">Male</label>
-          <input type="radio" name="gender" id="female" value="female" />
-          <label htmlFor="female">Female</label>
-          <input type="radio" name="gender" id="other" value="other" />
-          <label htmlFor="other">Other</label>
-          <br />
-          <br />
+            <label htmlFor="vertical">Vertical: </label>
+            <select name="vertical" id="vertical">
+              <option disabled selected>
+                Choose...
+              </option>
+              <option>Accessories</option>
+              <option>Automotive</option>
+              <option>Books/Media</option>
+              <option>Education</option>
+              <option>Gambling</option>
+              <option>Sport & Fitness</option>
+            </select>
 
-          <textarea name="comment" placeholder="Tell us about yourself..." cols="20" rows="7"></textarea>
-          <br />
-          <br />
 
-          <input type="file" multiple />
+            <p>Gender:</p>
+            <div className="radioCheck">
+              <input type="radio" name="gender" id="male" value="male" />
+              <label htmlFor="male">Male</label>
+              <input type="radio" name="gender" id="female" value="female" />
+              <label htmlFor="female">Female</label>
+              <input type="radio" name="gender" id="other" value="other" />
+              <label htmlFor="other">Other</label>
+            </div>
 
-          <br />
-          <br />
+            <textarea name="comment" placeholder="Tell us about yourself..." cols="10" rows="5"></textarea>
 
-          <input type="reset" value="Reset all fields" />
-          <input type="submit" value="Send" />
+            <input type="file" multiple />
+
+            <input type="reset" value="Reset all fields" />
+            <input type="submit" value="Send" />
+          </div>
         </fieldset>
-        <br />
-        <br />
       </form>
     </>
   );
