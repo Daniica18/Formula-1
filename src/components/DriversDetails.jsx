@@ -16,7 +16,6 @@ export default function DriversDetails(props) {
     const [loading, setLoading] = useState(true);
     const params = useParams();
     const navigate = useNavigate();
-    //const location = useLocation("");
     console.log("path", location.pathname);
 
 
