@@ -7,7 +7,7 @@
 @use "_live.scss";
 @use "_errorPage";
 
-$footerHeight: 66px;
+$footerHeight: 96px;
 
 body {
     background-image: url("../img/Background.png");
@@ -29,6 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 100%;
 
     .logo-container {
         padding: 25px;
@@ -225,12 +226,27 @@ body {
 
 @media (max-width: 750px) {
     .main-navigation {
-        background-color: red;
 
         a {
             padding: 10px;
             font-size: 18px;
             padding: 12px 15px;
+        }
+    }
+}
+
+@media (max-width:400px) {
+    .main-navigation {
+        .logo-container {
+            a {}
+            ul {
+                li {
+                    a {
+                        border-bottom: "3px white solid";
+                        background-color: "white";
+                    }
+                }
+            }
         }
     }
 }

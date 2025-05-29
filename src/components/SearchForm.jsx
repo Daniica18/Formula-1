@@ -5,7 +5,6 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import { useLocation, matchPath } from "react-router";
-import { display, flex } from "@mui/system";
 
 export default function SearchForm({ years, year, text, setYear, setText }) {
     console.log("year ", year, years);
@@ -45,7 +44,7 @@ export default function SearchForm({ years, year, text, setYear, setText }) {
                     label="Search for..."
                     InputLabelProps={{
                         style: {
-                            color: "black",
+                            color: "grey",
                             padding: "5px",
                             bgcolor: "white",
                             display: "flex",
