@@ -77,7 +77,10 @@ export default function TeamDetails(props) {
             <div className="details_div_info">
                 <ul>
                     <li><img src={`/public/img/${teamDetails.Constructor.constructorId}.png`}
-                        alt="team_logo"
+                        onError={(e) => {
+                            e.target.onerrore = null;
+                            e.target.src = "../img/logo.png"
+                        }} alt="./img/logo.png"
                         style={{
                             width: '150px',
                             height: 'auto',
@@ -141,14 +144,15 @@ export default function TeamDetails(props) {
                                             {teamResult.raceName}
                                         </span>
                                     </td>
-                                    <td className={getRang(teamResult.Results[0].position)}>
-                                        {teamResult.Results[0].position}
+                                    <td className={getRang(teamResult.Results[0]?.position != undefined ? teamResult.Results[0].position : "0")}>
+                                        {teamResult.Results[0]?.position != undefined ? teamResult.Results[0].position : 0}
                                     </td>
-                                    <td className={getRang(teamResult.Results[1].position)}>
-                                        {teamResult.Results[1].position}
+                                    <td className={getRang(teamResult.Results[1]?.position != undefined ? teamResult.Results[1].position : "0")}>
+                                        {teamResult.Results[1]?.position != undefined ? teamResult.Results[1].position : 0}
                                     </td>
                                     <td>
-                                        {parseInt(teamResult.Results[0].points) + parseInt(teamResult.Results[1].points)}
+                                        {parseInt(teamResult.Results[0]?.points ? teamResult.Results[0]?.points : 0) +
+                                            parseInt(teamResult.Results[1]?.points ? teamResult.Results[1]?.points : 0)}
                                     </td>
                                 </tr>
                             )
