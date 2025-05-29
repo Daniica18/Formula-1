@@ -12,14 +12,26 @@ export default function Footer() {
             <div className="marketing">
                 <div className="appPhoto">
                     <p>DOWNLOAD THE OFFICIAL F1 APP</p>
-                    <img src="./img/GooglePlay.jpg" alt="" />
-                    <img src="./img/AppStore.jpg" alt="" />
+                    <Link to='https://play.google.com/store/apps/details?id=com.softpauer.f1timingapp2014.basic&hl=en_GB'>
+                        <img src="./img/GooglePlay.jpg" alt="" />
+                    </Link>
+                    <Link to='https://apps.apple.com/gb/app/formula-1/id835022598'>
+                        <img src="./img/AppStore.jpg" alt="" />
+                    </Link>
                 </div>
                 <div className="appLink">
-                    <FacebookIcon />
-                    <InstagramIcon />
-                    <XIcon />
-                    <YouTubeIcon />
+                    <Link to='https://www.facebook.com/Formula1'>
+                        <FacebookIcon />
+                    </Link>
+                    <Link to='https://x.com/f1'>
+                        <XIcon />
+                    </Link>
+                    <Link to='https://www.instagram.com/f1/'>
+                        <InstagramIcon />
+                    </Link>
+                    <Link to='https://www.youtube.com/F1'>
+                        <YouTubeIcon />
+                    </Link>
                 </div>
             </div>
             <div className="footer">
@@ -33,6 +45,6 @@ export default function Footer() {
             <div className="signature">
                 <p>	Group 3 &copy; , {year}</p>
             </div>
-        </footer>
+        </footer >
     )
 }

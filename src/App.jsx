@@ -7,7 +7,7 @@ import Drivers from "./components/Drivers";
 import Teams from "./components/Teams";
 import Races from "./components/Races";
 import DriversDetails from "./components/DriversDetails";
-import TeamsDetails from "./components/TeamsDetails";
+import TeamDetails from "./components/TeamDetails";
 import RacesDetails from "./components/RacesDetails";
 import Contact from "./components/Footer/Contact";
 import Footer from "./components/Footer/Footer";
@@ -89,7 +89,7 @@ export default function App() {
                         <Route path="/teams" element={<Teams flags={flags} year={year} text={text}  />} />
                         <Route path="/races" element={<Races flags={flags} year={year} text={text}  />} />
                         <Route path="/drivers/:id" element={<DriversDetails flags={flags} year={year} text={text}  />} />
-                        <Route path="/teams/:id" element={<TeamsDetails flags={flags} year={year} text={text}  />} />
+                        <Route path="/teams/:id" element={<TeamDetails flags={flags} year={year} text={text}  />} />
                         <Route path="/races/:id" element={<RacesDetails flags={flags} year={year} text={text}  />} />
                     </Routes>
                 </div>
