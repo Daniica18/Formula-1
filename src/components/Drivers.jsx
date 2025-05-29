@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
-import { filteredFlagNationality } from "../helper/FilteredFlag";
+import { filteredFlagNationality } from "../helper/filteredFlag";
 import { getMedals } from "../helper/Medals";
+import ErrorPage from "./ErrorPage";
 
 export default function Drivers(props) {
   const [drivers, setDrivers] = useState([]);
@@ -16,11 +17,17 @@ export default function Drivers(props) {
   }, [props.year]);
 
   const getDrivers = async () => {
-    const url = `http://ergast.com/api/f1/${props.year}/driverStandings.json`;
-    const response = await axios.get(url);
-    console.log(response);
-    setDrivers(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
-    setLoading(false);
+    try {
+      const url = `http://ergast.com/api/f1/${props.year}/driverStandings.json`;
+      const response = await axios.get(url);
+      console.log(response);
+      setDrivers(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+      console.log("error", error);
+      setLoading(false);
+    }
   };
 
   const filteredData = drivers.filter((el) => {
