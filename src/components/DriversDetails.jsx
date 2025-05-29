@@ -29,14 +29,14 @@ export default function DriversDetails(props) {
 
         const driverUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/driverStandings.json`;
         const driverRacesUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/results.json`;
-        const response = await axios.get(driverUrl);
-        const response2 = await axios.get(driverRacesUrl);
-        console.log(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]);
+        const resultsResponse = await axios.get(driverUrl);
+        const driverStandingsResponse = await axios.get(driverRacesUrl);
+        console.log(resultsResponse.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]);
 
-        setDriversDetails(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0])
+        setDriversDetails(resultsResponse.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0])
 
-        setResults(response2.data.MRData.RaceTable.Races)
-        console.log("response2", response2.data.MRData.RaceTable.Races);
+        setResults(driverStandingsResponse.data.MRData.RaceTable.Races)
+        console.log("response2", driverStandingsResponse.data.MRData.RaceTable.Races);
         setLoading(false);
     };
 

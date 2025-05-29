@@ -23,12 +23,12 @@ export default function TeamDetails(props) {
     const getTeamDetails = async () => {
         const url = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/constructorStandings.json`;
         const url2 = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/results.json`
-        const response = await axios.get(url);
-        const response2 = await axios.get(url2);
-        console.log(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
-        setTeamDetails(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
-        console.log("response2", response2.data.MRData.RaceTable.Races);
-        setTeamResults(response2.data.MRData.RaceTable.Races)
+        const teamResponse = await axios.get(url);
+        const teamStandingResponse = await axios.get(url2);
+        console.log(teamResponse.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
+        console.log("response2", teamStandingResponse.data.MRData.RaceTable.Races);
+        setTeamDetails(teamResponse.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
+        setTeamResults(teamStandingResponse.data.MRData.RaceTable.Races)
         setIsLoading(false);
     };
 
