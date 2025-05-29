@@ -8,11 +8,13 @@ import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
 import { getRang } from "../helper/getRang";
+import ErrorPage from "./ErrorPage";
 
 export default function TeamDetails(props) {
     const [teamDetails, setTeamDetails] = useState({});
     const [teamResults, setTeamResults] = useState([])
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
     const params = useParams();
     const navigate = useNavigate();
 
@@ -62,6 +64,13 @@ export default function TeamDetails(props) {
     if (isLoading) {
         return (<Loader />)
     };
+
+    if (error) {
+        return (
+            <ErrorPage />
+        )
+    };
+
 
     return (
         <div className="details_div">

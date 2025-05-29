@@ -10,6 +10,7 @@ import ErrorPage from "./ErrorPage";
 export default function Drivers(props) {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -56,6 +57,11 @@ export default function Drivers(props) {
   if (loading) {
     return <Loader />;
   }
+  if (error) {
+    return (
+      <ErrorPage />
+    )
+  };
 
   return (
     <div className="detail">

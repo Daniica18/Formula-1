@@ -14,6 +14,7 @@ export default function RacesDetails(props) {
     const [resultsDetails, setResultsDetails] = useState([]);
     const [qualifyingDetails, setQualifyingDetails] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
     const params = useParams();
     const navigate = useNavigate();
 
@@ -82,6 +83,13 @@ export default function RacesDetails(props) {
     if (isLoading) {
         return (<Loader />)
     }
+
+    if (error) {
+        return (
+            <ErrorPage />
+        )
+    };
+
 
     return (
         <div className="details_div">

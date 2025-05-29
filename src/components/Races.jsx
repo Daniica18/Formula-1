@@ -9,6 +9,7 @@ import ErrorPage from "./ErrorPage";
 export default function Races(props) {
    const [races, setRaces] = useState([]);
    const [isLoading, setIsLoading] = useState(true);
+   const [error, setError] = useState(false);
    const navigate = useNavigate();
 
    useEffect(() => {
@@ -59,6 +60,13 @@ export default function Races(props) {
    if (isLoading) {
       return (<Loader />)
    };
+
+   if (error) {
+      return (
+         <ErrorPage />
+      )
+   };
+
 
    return (
       <div className="detail">
