@@ -6,8 +6,8 @@ import { Link } from "react-router";
 import { useNavigate } from "react-router";
 import Flag from 'react-flagkit';
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-import { filteredFlagNationality, filteredFlagCountry } from "../helper/FilteredFlag";
-import { Rang } from "../helper/Rang";
+import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
+import { Rang } from "../helper/getRang";
 
 export default function TeamDetails(props) {
     const [teamDetails, setTeamDetails] = useState({});
