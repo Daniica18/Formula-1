@@ -45,6 +45,26 @@ export default function Home() {
                             LIVE STREAM
                         </Link>
                     </span>
+                    <span className="live-content">
+                        🏁🏁🏁 Watch all F1 sessions live with F1 TV. Live Formula 1 Race: Watch now on&nbsp;
+                        <Link to="https://www.formula1.com/en-rs/subscribe-to-f1-tv?from=us&to=rs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="live-link"
+                        >
+                            LIVE STREAM
+                        </Link>
+                    </span>
+                    <span className="live-content">
+                        🏁🏁🏁 Watch all F1 sessions live with F1 TV. Live Formula 1 Race: Watch now on&nbsp;
+                        <Link to="https://www.formula1.com/en-rs/subscribe-to-f1-tv?from=us&to=rs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="live-link"
+                        >
+                            LIVE STREAM
+                        </Link>
+                    </span>
 
                 </div>
             </div>
