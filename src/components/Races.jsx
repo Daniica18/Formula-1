@@ -24,7 +24,7 @@ export default function Races(props) {
          setIsLoading(false);
       } catch (error) {
          setError(error);
-         setLoading(false);
+         setIsLoading(false);
       }
    };
 

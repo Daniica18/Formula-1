@@ -33,7 +33,7 @@ export default function TeamDetails(props) {
             setIsLoading(false);
         } catch (error) {
             setError(error);
-            setLoading(false);
+            setIsLoading(false);
         }
     };
 

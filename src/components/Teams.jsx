@@ -27,7 +27,7 @@ export default function Teams(props) {
             setIsLoading(false);
         } catch (error) {
             setError(error);
-            setLoading(false);
+            setIsLoading(false);
         }
     };
 
