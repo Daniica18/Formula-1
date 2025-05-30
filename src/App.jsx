@@ -50,7 +50,7 @@ export default function App() {
     };
 
     return (
-        <Router>
+        <Router basename="/Formula-1">
 
             <nav className="main-navigation">
                 <div className="logo-container">
@@ -85,11 +85,11 @@ export default function App() {
                         <Route path="/termsOfUse" element={<TermsOfUse />} />
                         <Route path="/createAnAccount" element={<CreateAnAccount />} />
                         <Route path="/drivers" element={<Drivers flags={flags} year={year} text={text} />} />
-                        <Route path="/teams" element={<Teams flags={flags} year={year} text={text}  />} />
-                        <Route path="/races" element={<Races flags={flags} year={year} text={text}  />} />
-                        <Route path="/drivers/:id" element={<DriversDetails flags={flags} year={year} text={text}  />} />
-                        <Route path="/teams/:id" element={<TeamDetails flags={flags} year={year} text={text}  />} />
-                        <Route path="/races/:id" element={<RacesDetails flags={flags} year={year} text={text}  />} />
+                        <Route path="/teams" element={<Teams flags={flags} year={year} text={text} />} />
+                        <Route path="/races" element={<Races flags={flags} year={year} text={text} />} />
+                        <Route path="/drivers/:id" element={<DriversDetails flags={flags} year={year} text={text} />} />
+                        <Route path="/teams/:id" element={<TeamDetails flags={flags} year={year} text={text} />} />
+                        <Route path="/races/:id" element={<RacesDetails flags={flags} year={year} text={text} />} />
                     </Routes>
                 </div>
             </div>
