@@ -237,16 +237,17 @@ body {
 
 @media (max-width:400px) {
     .main-navigation {
-        .logo-container {
-            a {}
-            ul {
-                li {
-                    a {
-                        border-bottom: "3px white solid";
-                        background-color: "white";
-                    }
-                }
+        .loader-container{
+            justify-content: center;
+            .logo{
+                width: 100%;
             }
         }
+        ul {
+            li {
+                text-align: center;
+            }
+        }
+        
     }
 }

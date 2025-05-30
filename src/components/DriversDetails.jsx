@@ -17,9 +17,6 @@ export default function DriversDetails(props) {
     const [error, setError] = useState(false);
     const params = useParams();
     const navigate = useNavigate();
-    console.log("path", location.pathname);
-
-
 
     useEffect(() => {
         setLoading(true);
@@ -32,17 +29,12 @@ export default function DriversDetails(props) {
             const driverRacesUrl = `http://ergast.com/api/f1/${props.year}/drivers/${params.id}/results.json`;
             const resultsResponse = await axios.get(driverUrl);
             const driverStandingsResponse = await axios.get(driverRacesUrl);
-            console.log(resultsResponse.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]);
-
             setDriversDetails(resultsResponse.data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0])
-
             setResults(driverStandingsResponse.data.MRData.RaceTable.Races)
-            console.log("response2", driverStandingsResponse.data.MRData.RaceTable.Races);
             setLoading(false);
 
         } catch (error) {
             setError(error);
-            console.log("error", error);
             setLoading(false);
         }
 

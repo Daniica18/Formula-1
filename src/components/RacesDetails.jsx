@@ -29,20 +29,14 @@ export default function RacesDetails(props) {
             const qualifyingUrl = `http://ergast.com/api/f1/${props.year}/${params.id}/qualifying.json`;
             const resultsResponse = await axios.get(resultsUrl);
             const qualifyingResponse = await axios.get(qualifyingUrl);
-            console.log("Qualifying Response", qualifyingResponse.data.MRData.RaceTable.Races[0]);
-            console.log("Result Response", resultsResponse.data.MRData.RaceTable.Races[0]);
             setResultsDetails(resultsResponse.data.MRData.RaceTable.Races[0]);
             setQualifyingDetails(qualifyingResponse.data.MRData.RaceTable.Races[0]);
             setIsLoading(false);
         } catch (error) {
             setError(error);
-            console.log("error", error);
             setLoading(false);
         }
     };
-
-    console.log("resultResponse ", resultsDetails);
-    console.log("qualifyingResponse ", qualifyingDetails);
 
     const filteredResultsDetails = resultsDetails?.Results?.filter((el) => {
         //if no input the return the original
@@ -70,7 +64,6 @@ export default function RacesDetails(props) {
     });
 
     const handleClickDriverDetailes = (id) => {
-        console.log(id);
         const linkTo = `/drivers/${id}`;
         navigate(linkTo);
     };

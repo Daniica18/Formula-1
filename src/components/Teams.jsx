@@ -12,6 +12,7 @@ import ErrorPage from "./ErrorPage";
 export default function Teams(props) {
     const [teams, setTeams] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -22,12 +23,10 @@ export default function Teams(props) {
         try {
             const url = `http://ergast.com/api/f1/${props.year}/constructorStandings.json`;
             const response = await axios.get(url);
-            console.log("res ", response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
             setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
             setIsLoading(false);
         } catch (error) {
             setError(error);
-            console.log("error", error);
             setLoading(false);
         }
     };
@@ -52,6 +51,12 @@ export default function Teams(props) {
 
     if (isLoading) {
         return <Loader />
+    };
+
+    if (error) {
+        return (
+            <ErrorPage />
+        )
     };
 
     return (

@@ -21,12 +21,10 @@ export default function Drivers(props) {
     try {
       const url = `http://ergast.com/api/f1/${props.year}/driverStandings.json`;
       const response = await axios.get(url);
-      console.log(response);
       setDrivers(response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings);
       setLoading(false);
     } catch (error) {
       setError(error);
-      console.log("error", error);
       setLoading(false);
     }
   };

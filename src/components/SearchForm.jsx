@@ -7,7 +7,6 @@ import InputLabel from '@mui/material/InputLabel';
 import { useLocation, matchPath } from "react-router";
 
 export default function SearchForm({ years, year, text, setYear, setText }) {
-    console.log("year ", year, years);
     const location = useLocation("");
 
     const showSearch = () => {

@@ -29,7 +29,6 @@ export default function App() {
     const [text, setText] = useState("");
     const [year, setYear] = useState(`${curentYear}`);
 
-
     useEffect(() => {
         getFlags();
         getYears();

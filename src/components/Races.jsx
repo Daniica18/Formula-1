@@ -20,14 +20,10 @@ export default function Races(props) {
       try {
          const url = `http://ergast.com/api/f1/${props.year}/results/1.json`;
          const response = await axios.get(url);
-         console.log(response);
-         console.log(response.data);
-         console.log(response.data.MRData.RaceTable.Races);
          setRaces(response.data.MRData.RaceTable.Races);
          setIsLoading(false);
       } catch (error) {
          setError(error);
-         console.log("error", error);
          setLoading(false);
       }
    };
@@ -46,13 +42,11 @@ export default function Races(props) {
    });
 
    const handleClickDetailes = (id) => {
-      console.log(id);
       const linkTo = `/races/${id}`;
       navigate(linkTo);
    };
 
    const handleClickDriverDetailes = (id) => {
-      console.log(id);
       const linkTo = `/drivers/${id}`;
       navigate(linkTo);
    };
