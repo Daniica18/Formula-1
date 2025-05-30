@@ -8,7 +8,6 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
 import { getMedals } from "../helper/Medals";
 import ErrorPage from "./ErrorPage";
-const BASE_URL = import.meta.env.BASE_URL;
 
 
 export default function DriversDetails(props) {
@@ -18,6 +17,7 @@ export default function DriversDetails(props) {
     const [error, setError] = useState(false);
     const params = useParams();
     const navigate = useNavigate();
+    const BASE_URL = import.meta.env.BASE_URL;
 
     useEffect(() => {
         setLoading(true);
@@ -84,7 +84,7 @@ export default function DriversDetails(props) {
                 <ul>
                     <li><img src={`${BASE_URL + `img/_${driversDetails.Driver.driverId}.jpg`}`}
                         onError={(e) => {
-                            e.target.onerrore = null;
+                            e.target.onerror = null;
                             e.target.src = BASE_URL + "img/_avatar.jpg"
                         }} alt={BASE_URL + "img/_avatar.jpg"}
                         style={{

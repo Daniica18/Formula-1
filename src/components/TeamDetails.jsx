@@ -9,7 +9,6 @@ import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import { filteredFlagNationality, filteredFlagCountry } from "../helper/filteredFlag";
 import { getRang } from "../helper/getRang";
 import ErrorPage from "./ErrorPage";
-const BASE_URL = import.meta.env.BASE_URL;
 
 export default function TeamDetails(props) {
     const [teamDetails, setTeamDetails] = useState({});
@@ -18,6 +17,7 @@ export default function TeamDetails(props) {
     const [error, setError] = useState(false);
     const params = useParams();
     const navigate = useNavigate();
+    const BASE_URL = import.meta.env.BASE_URL;
 
     useEffect(() => {
         getTeamDetails();
@@ -75,7 +75,7 @@ export default function TeamDetails(props) {
                 <ul>
                     <li><img src={`${BASE_URL + `img/${teamDetails.Constructor.constructorId}.png`}`}
                         onError={(e) => {
-                            e.target.onerrore = null;
+                            e.target.onerror = null;
                             e.target.src = BASE_URL + "img/logo.png"
                         }} alt={BASE_URL + "img/logo.png"}
                         style={{

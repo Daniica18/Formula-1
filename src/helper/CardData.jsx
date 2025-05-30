@@ -23,7 +23,7 @@ Our experts’ scores are then averaged out to produce a race score with those s
     {
         id: 2,
         title: "TECH WEEKLY: McLaren’s ingenious design is the latest step in a spectacular evolution in rear brake duct design",
-        image: "../img/card3.jpg",
+        image: `${BASE_URL + "img/card3.jpg"}`,
         description: `There has been a lot of intrigue recently about how an ingenious McLaren rear brake duct design is helping the MCL39 have better tyre temperature control than the others. At circuits which induce particularly high rear tyre temperatures, it has helped amplify McLaren’s advantage.
 
 Although the exact way the duct is configured internally is not yet widely known, the FIA has checked and confirmed that the design is in full compliance with the regulations and that it has no concerns about it.`
@@ -39,7 +39,7 @@ That stunning move was the foundation of Verstappen's victory as he raced off at
     {
         id: 4,
         title: "McLaren reveal tweaked ‘Riviera-inspired’ livery for Monaco and Spanish Grands Prix",
-        image: `${BASE_URL + "../img/giphy.gif"}`,
+        image: `${BASE_URL + "img/giphy.gif"}`,
         description: `McLaren have revealed a special ‘Riviera-inspired’ livery enhancement that will run on their Formula 1 cars at the upcoming Monaco and Spanish Grands Prix.
 
 In collaboration with team partner OKX, the livery change is a nod to McLaren’s iconic M7A race car, while “drawing inspiration from the elegance of the Riviera”.
