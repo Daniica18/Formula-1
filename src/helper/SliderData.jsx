@@ -15,7 +15,7 @@ export const sliderData = [
     {
         id: 1,
         title: `5 Winners and 5 Losers from the Monaco Grand Prix – Who gambled and got lucky around the streets of Monte Carlo?`,
-        image_slide: `../img/Slider2.jpg`,
+        image_slide: `${BASE_URL + "img/Slider2.jpg"}`,
         image_article: `../img/formula1celebrating.jpg`,
         paragrafOne: `Lando Norris won the Grand Prix every driver wants to win with an emphatic drive in the Monaco Grand Prix. But as the McLaren racer reached for the bubbles to toast his triumph, others were keen to turn the page. Lawrence Barretto chooses his winners and losers from the streets of Monte Carlo…`,
         paragrafTwo: `Winner: Lando Norris
@@ -25,7 +25,7 @@ The 25-year-old soaked up the pressure in style to take his first pole position 
     {
         id: 2,
         title: `IT’S RACE WEEK: 5 storylines we’re excited about ahead of the Monaco Grand Prix`,
-        image_slide: `../img/Slider3.png`,
+        image_slide: `${BASE_URL + "img/Slider3.png"}`,
         image_article: `../img/ferr.jpg`,
         paragrafOne: `Mercedes rookie Kimi Antonelli left Monaco keen to bounce back after experiencing one of the most frustrating race weekends of his maiden season so far, with the Silver Arrows coming away empty handed.`,
         paragrafTwo: `Lando Norris converted pole to victory as he won in Monaco for the first time in his career, with home hero Charles Leclerc second and championship leader Oscar Piastri third. That reignited the intra-team battle at McLaren, with the Australian now just three points ahead of his team mate in the title race.`,
