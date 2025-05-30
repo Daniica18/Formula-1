@@ -21,7 +21,7 @@ export default function Teams(props) {
 
     const getTeams = async () => {
         try {
-            const url = `http://ergast.com/api/f1/${props.year}/constructorStandings.json`;
+            const url = `https://ergast.com/api/f1/${props.year}/constructorStandings.json`;
             const response = await axios.get(url);
             setTeams(response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
             setIsLoading(false);

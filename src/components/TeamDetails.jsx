@@ -24,8 +24,8 @@ export default function TeamDetails(props) {
 
     const getTeamDetails = async () => {
         try {
-            const url = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/constructorStandings.json`;
-            const url2 = `http://ergast.com/api/f1/${props.year}/constructors/${params.id}/results.json`
+            const url = `https://ergast.com/api/f1/${props.year}/constructors/${params.id}/constructorStandings.json`;
+            const url2 = `https://ergast.com/api/f1/${props.year}/constructors/${params.id}/results.json`
             const teamResponse = await axios.get(url);
             const teamStandingResponse = await axios.get(url2);
             setTeamDetails(teamResponse.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0]);
